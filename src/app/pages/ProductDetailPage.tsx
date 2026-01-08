@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { products } from '../../data/products';
+import defaultProductImage from '../../assets/edible-pink-salt-fine.png';
 
 export default function ProductDetailPage() {
   const { productId } = useParams();
@@ -26,6 +28,9 @@ export default function ProductDetailPage() {
     );
   }
 
+  const gallery = product.images?.length ? product.images : [product.image ?? defaultProductImage];
+  const [activeImage, setActiveImage] = useState(gallery[0]);
+
   return (
     <div className="pt-32 pb-20 bg-white dark:bg-stone-950">
       <div className="max-w-5xl mx-auto px-6">
@@ -44,36 +49,62 @@ export default function ProductDetailPage() {
 
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6">
-            <h2 className="text-lg text-stone-900 dark:text-white mb-4">Product Details</h2>
-            <div className="space-y-4 text-stone-700 dark:text-stone-200">
-              <div>
-                <div className="text-sm text-stone-500 dark:text-stone-400">Size / Detail</div>
-                <div>{product.size}</div>
-              </div>
-              <div>
-                <div className="text-sm text-stone-500 dark:text-stone-400">Packaging Options</div>
-                <div>{product.packaging}</div>
-              </div>
-              {product.description ? (
-                <div>
-                  <div className="text-sm text-stone-500 dark:text-stone-400">Description</div>
-                  <div>{product.description}</div>
-                </div>
-              ) : null}
+            <div className="aspect-square flex items-center justify-center overflow-hidden rounded-xl bg-white dark:bg-stone-950">
+              <img src={activeImage} alt={product.name} className="h-full w-full object-contain" />
             </div>
+            {gallery.length > 1 ? (
+              <div className="mt-4 flex gap-3">
+                {gallery.map((image, index) => (
+                  <button
+                    key={`${image}-${index}`}
+                    type="button"
+                    onClick={() => setActiveImage(image)}
+                    className={`h-16 w-16 rounded-lg border ${
+                      activeImage === image
+                        ? 'border-[#3D9B93]'
+                        : 'border-stone-200 dark:border-stone-800'
+                    } bg-white dark:bg-stone-950 overflow-hidden`}
+                  >
+                    <img src={image} alt={`${product.name} ${index + 1}`} className="h-full w-full object-contain" />
+                  </button>
+                ))}
+              </div>
+            ) : null}
           </div>
 
-          <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 shadow-sm">
-            <h2 className="text-lg text-stone-900 dark:text-white mb-4">Request a Quote</h2>
-            <p className="text-stone-600 dark:text-stone-300 mb-6">
-              Share your quantity, packaging preferences, and destination to receive a tailored quote.
-            </p>
-            <Link
-              to="/rfq"
-              className="inline-flex items-center justify-center bg-[#E88B7F] text-white px-6 py-3 rounded-lg hover:bg-[#d97a6e] transition-colors"
-            >
-              Start RFQ
-            </Link>
+          <div className="space-y-4">
+            <div className="bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6">
+              <h2 className="text-lg text-stone-900 dark:text-white mb-4">Product Details</h2>
+              <div className="space-y-4 text-stone-700 dark:text-stone-200">
+                <div>
+                  <div className="text-sm text-stone-500 dark:text-stone-400">Size / Detail</div>
+                  <div>{product.size}</div>
+                </div>
+                <div>
+                  <div className="text-sm text-stone-500 dark:text-stone-400">Packaging Options</div>
+                  <div>{product.packaging}</div>
+                </div>
+                {product.description ? (
+                  <div>
+                    <div className="text-sm text-stone-500 dark:text-stone-400">Description</div>
+                    <div>{product.description}</div>
+                  </div>
+                ) : null}
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6 shadow-sm">
+              <h2 className="text-lg text-stone-900 dark:text-white mb-4">Request a Quote</h2>
+              <p className="text-stone-600 dark:text-stone-300 mb-6">
+                Share your quantity, packaging preferences, and destination to receive a tailored quote.
+              </p>
+              <Link
+                to="/rfq"
+                className="inline-flex items-center justify-center bg-[#E88B7F] text-white px-6 py-3 rounded-lg hover:bg-[#d97a6e] transition-colors"
+              >
+                Start RFQ
+              </Link>
+            </div>
           </div>
         </div>
       </div>

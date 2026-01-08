@@ -2,16 +2,19 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { categories } from '../../data/products';
+import edibleSaltImage from '../../assets/edible-pink-salt-fine.png';
+import animalLickImage from '../../assets/animal-lick-pink-salt.png';
+import tilesBricksImage from '../../assets/tiles-bricks.png';
 
 export function ProductCategories() {
   const categoryImages: { [key: string]: string } = {
-    "edible-salt": "https://images.unsplash.com/photo-1606791450998-d3859ac80814?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaW5rJTIwc2FsdCUyMGNvb2tpbmd8ZW58MXx8fHwxNzY3MDM0MDYwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    "animal-lick": "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsaXZlc3RvY2slMjBmYXJtfGVufDF8fHx8MTc2NzAzMjg0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    "tiles-bricks": "https://images.unsplash.com/photo-1685788233350-ad3527bfca25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYXR1cmFsJTIwc2FsdCUyMHJvY2tzfGVufDF8fHx8MTc2NzAzMjg0Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    "spa-wellness": "https://images.unsplash.com/photo-1591020330942-e9c3bce82096?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGElMjB3ZWxsbmVzcyUyMHNhbHR8ZW58MXx8fHwxNzY3MDM0MDYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    "decor-crafts": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYWx0JTIwbGFtcHxlbnwxfHx8fDE3NjcwMzI4NDB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    "accessories": "https://images.unsplash.com/photo-1558394299-f2e6198506a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYWx0JTIwZ3JpbmRlciUyMHBlcHBlcnxlbnwxfHx8fDE3NjcwMzQwNjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    "raw-industrial": "https://images.unsplash.com/photo-1767534605038-10253ed0fcc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwc2FsdCUyMG1pbmluZ3xlbnwxfHx8fDE3Njc4NTQ1MzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    'edible-salt': edibleSaltImage,
+    'animal-lick': animalLickImage,
+    'tiles-bricks': tilesBricksImage,
+    'spa-wellness': edibleSaltImage,
+    'decor-crafts': edibleSaltImage,
+    'accessories': edibleSaltImage,
+    'raw-industrial': edibleSaltImage,
   };
 
   return (
@@ -37,6 +40,7 @@ export function ProductCategories() {
                   alt={category.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
+                <div className="absolute inset-0 bg-black/35 transition-opacity duration-500 group-hover:bg-black/45" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               </div>
               

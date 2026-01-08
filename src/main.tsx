@@ -13,6 +13,7 @@ import ProductDetailPage from "./app/pages/ProductDetailPage.tsx";
 import ProductsPageRoute from "./app/pages/ProductsPageRoute.tsx";
 import RfqPage from "./app/pages/RfqPage.tsx";
 import SourcingPage from "./app/pages/SourcingPage.tsx";
+import ScrollToTop from "./app/ScrollToTop.tsx";
 import "./styles/index.css";
 
 const MAINTENANCE_MODE = (import.meta.env.VITE_MAINTENANCE_MODE ?? "true") === "true";
@@ -29,6 +30,7 @@ function MaintenanceGate() {
 createRoot(document.getElementById("root")!).render(
   <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
       <Route path="/coming-soon" element={<ComingSoonGate />} />
       <Route path="/coming-soon-dark" element={<ComingSoonGate variant="dark" />} />
