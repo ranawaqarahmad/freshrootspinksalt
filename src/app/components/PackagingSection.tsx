@@ -1,0 +1,149 @@
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Box, Tag, Palette, Truck } from 'lucide-react';
+
+export function PackagingSection() {
+  return (
+    <section className="py-20 bg-gradient-to-br from-stone-50 to-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <div className="inline-block bg-[#E88B7F]/10 text-[#E88B7F] px-4 py-2 rounded-full text-sm mb-6">
+            Value Addition
+          </div>
+          <h2 className="text-4xl lg:text-5xl text-stone-900 mb-4">Packaging & Private Label Services</h2>
+          <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+            Flexible packaging solutions and private labeling support to help you 
+            build your brand in your target market
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="space-y-8">
+            <div className="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 bg-[#3D9B93]/10 rounded-xl flex items-center justify-center">
+                  <Box className="w-7 h-7 text-[#3D9B93]" />
+                </div>
+                <h3 className="text-2xl text-stone-900">Retail Packaging</h3>
+              </div>
+              <ul className="space-y-3 text-stone-600">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#3D9B93]">•</span>
+                  <span>100g, 250g, 500g, 1kg retail pouches</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#3D9B93]">•</span>
+                  <span>Stand-up pouches with resealable zippers</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#3D9B93]">•</span>
+                  <span>Glass jars and shaker bottles</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#3D9B93]">•</span>
+                  <span>Premium gift boxes and sets</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#3D9B93]">•</span>
+                  <span>Custom shapes and sizes available</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 bg-[#E88B7F]/10 rounded-xl flex items-center justify-center">
+                  <Truck className="w-7 h-7 text-[#E88B7F]" />
+                </div>
+                <h3 className="text-2xl text-stone-900">Bulk Packaging</h3>
+              </div>
+              <ul className="space-y-3 text-stone-600">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#E88B7F]">•</span>
+                  <span>25kg, 50kg PP woven bags</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#E88B7F]">•</span>
+                  <span>Palletized and shrink-wrapped loads</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#E88B7F]">•</span>
+                  <span>Wooden crates for fragile items</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#E88B7F]">•</span>
+                  <span>Container loading supervision</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#E88B7F]">•</span>
+                  <span>Export-standard packaging materials</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            <ImageWithFallback
+              src="https://images.unsplash.com/photo-1570374969484-5f247267a615?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9kdWN0JTIwcGFja2FnaW5nJTIwZmFjdG9yeXxlbnwxfHx8fDE3Njc4NTQ1MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              alt="Product Packaging"
+              className="w-full h-[600px] object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-br from-[#3D9B93] to-[#348780] rounded-3xl p-12 text-white">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
+                <Palette className="w-8 h-8" />
+              </div>
+              <div>
+                <h3 className="text-3xl mb-2">Private Label & White Label</h3>
+                <p className="text-white/90">Build your brand with our support</p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl mb-4 flex items-center gap-2">
+                  <Tag className="w-5 h-5" />
+                  What We Offer
+                </h4>
+                <ul className="space-y-3 text-white/90">
+                  <li>→ Your brand name and logo on packaging</li>
+                  <li>→ Custom label design and printing</li>
+                  <li>→ Barcode and QR code integration</li>
+                  <li>→ Multi-language labeling support</li>
+                  <li>→ Nutritional information formatting</li>
+                  <li>→ Country-specific compliance labeling</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-xl mb-4 flex items-center gap-2">
+                  <Box className="w-5 h-5" />
+                  Buyer Responsibilities
+                </h4>
+                <ul className="space-y-3 text-white/90">
+                  <li>→ Provide brand artwork and specifications</li>
+                  <li>→ Confirm label content and legal requirements</li>
+                  <li>→ Approve packaging samples before production</li>
+                  <li>→ Provide trademark authorization if required</li>
+                  <li>→ Specify country-specific regulations</li>
+                  <li>→ Minimum order quantities apply</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-8 p-6 bg-white/10 rounded-xl border border-white/20">
+              <p className="text-sm text-white/90">
+                <strong className="text-white">Note:</strong> Private labeling requires advance coordination 
+                and may have minimum order quantity requirements. Contact us for detailed discussion 
+                about your branding needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
