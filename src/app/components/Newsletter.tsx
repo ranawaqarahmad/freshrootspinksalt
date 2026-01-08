@@ -3,7 +3,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function Newsletter() {
   return (
-    <section className="py-20 bg-gradient-to-br from-rose-50 to-pink-50">
+    <section className="py-20 bg-gradient-to-br from-rose-50 to-pink-50 dark:from-stone-950 dark:to-stone-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative bg-gradient-to-r from-rose-400 to-pink-500 rounded-3xl overflow-hidden">
           <div className="absolute inset-0 opacity-10">
@@ -52,25 +52,25 @@ export function Newsletter() {
             </div>
             
             <div>
-              <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-2xl text-stone-900 mb-6">Join Our Community</h3>
+              <div className="bg-white dark:bg-stone-950 rounded-2xl p-8 shadow-2xl">
+                <h3 className="text-2xl text-stone-900 dark:text-white mb-6">Join Our Community</h3>
                 
                 <form className="space-y-4">
                   <div>
-                    <label className="block text-sm text-stone-700 mb-2">Full Name</label>
+                    <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">Full Name</label>
                     <input
                       type="text"
                       placeholder="Enter your name"
-                      className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-stone-200 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:placeholder:text-stone-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-transparent"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm text-stone-700 mb-2">Email Address</label>
+                    <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">Email Address</label>
                     <input
                       type="email"
                       placeholder="your@email.com"
-                      className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-stone-200 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-100 dark:placeholder:text-stone-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400 focus:border-transparent"
                     />
                   </div>
                   
@@ -80,7 +80,7 @@ export function Newsletter() {
                       id="terms"
                       className="mt-1 w-4 h-4 text-rose-500 border-stone-300 rounded focus:ring-rose-400"
                     />
-                    <label htmlFor="terms" className="text-sm text-stone-600">
+                    <label htmlFor="terms" className="text-sm text-stone-600 dark:text-stone-300">
                       I agree to receive marketing emails and understand I can unsubscribe at any time
                     </label>
                   </div>
@@ -93,7 +93,7 @@ export function Newsletter() {
                     Subscribe & Save 15%
                   </button>
                   
-                  <p className="text-xs text-stone-500 text-center">
+                  <p className="text-xs text-stone-500 dark:text-stone-400 text-center">
                     Your information is safe with us. We respect your privacy.
                   </p>
                 </form>

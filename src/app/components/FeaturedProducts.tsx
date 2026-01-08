@@ -78,14 +78,14 @@ const products = [
 
 export function FeaturedProducts() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-stone-950">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between mb-12">
           <div>
-            <h2 className="text-4xl lg:text-5xl text-stone-900 mb-4">Featured Products</h2>
-            <p className="text-xl text-stone-600">Our most popular and highest-rated products</p>
+            <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">Featured Products</h2>
+            <p className="text-xl text-stone-600 dark:text-stone-300">Our most popular and highest-rated products</p>
           </div>
-          <button className="hidden md:block px-6 py-3 border-2 border-stone-200 rounded-lg hover:border-rose-300 transition-colors text-stone-700">
+          <button className="hidden md:block px-6 py-3 border-2 border-stone-200 dark:border-stone-700 rounded-lg hover:border-rose-300 transition-colors text-stone-700 dark:text-stone-200">
             View All Products
           </button>
         </div>
@@ -94,10 +94,10 @@ export function FeaturedProducts() {
           {products.map((product) => (
             <div
               key={product.id}
-              className="group bg-white rounded-2xl overflow-hidden border border-stone-100 hover:shadow-2xl transition-all duration-300"
+              className="group bg-white dark:bg-stone-900 rounded-2xl overflow-hidden border border-stone-100 dark:border-stone-800 hover:shadow-2xl transition-all duration-300"
             >
               {/* Product Image */}
-              <div className="relative aspect-square overflow-hidden bg-stone-50">
+              <div className="relative aspect-square overflow-hidden bg-stone-50 dark:bg-stone-800">
                 <ImageWithFallback
                   src={product.image}
                   alt={product.name}
@@ -113,14 +113,14 @@ export function FeaturedProducts() {
                 
                 {/* Quick Actions */}
                 <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-rose-50 transition-colors">
-                    <Heart className="w-5 h-5 text-stone-600" strokeWidth={1.5} />
+                  <button className="w-10 h-10 bg-white dark:bg-stone-900 rounded-full flex items-center justify-center shadow-lg hover:bg-rose-50 dark:hover:bg-stone-800 transition-colors">
+                    <Heart className="w-5 h-5 text-stone-600 dark:text-stone-300" strokeWidth={1.5} />
                   </button>
                 </div>
                 
                 {/* Hover overlay */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex items-end">
-                  <button className="w-full bg-white text-stone-900 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-rose-50 transition-colors">
+                  <button className="w-full bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-rose-50 dark:hover:bg-stone-800 transition-colors">
                     <ShoppingCart className="w-5 h-5" strokeWidth={1.5} />
                     Quick Add
                   </button>
@@ -130,15 +130,15 @@ export function FeaturedProducts() {
               {/* Product Info */}
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs text-rose-500 bg-rose-50 px-2 py-1 rounded">{product.category}</span>
-                  <span className="text-xs text-stone-500">{product.weight}</span>
+                  <span className="text-xs text-rose-500 bg-rose-50 dark:bg-rose-500/10 px-2 py-1 rounded">{product.category}</span>
+                  <span className="text-xs text-stone-500 dark:text-stone-400">{product.weight}</span>
                 </div>
                 
-                <h3 className="text-xl text-stone-900 mb-2 group-hover:text-rose-500 transition-colors">
+                <h3 className="text-xl text-stone-900 dark:text-white mb-2 group-hover:text-rose-500 transition-colors">
                   {product.name}
                 </h3>
                 
-                <p className="text-stone-600 mb-4 line-clamp-2">{product.description}</p>
+                <p className="text-stone-600 dark:text-stone-300 mb-4 line-clamp-2">{product.description}</p>
                 
                 {/* Rating */}
                 <div className="flex items-center gap-2 mb-4">
@@ -149,21 +149,21 @@ export function FeaturedProducts() {
                         className={`w-4 h-4 ${
                           i < Math.floor(product.rating)
                             ? 'text-amber-400 fill-amber-400'
-                            : 'text-stone-300'
+                            : 'text-stone-300 dark:text-stone-600'
                         }`}
                         strokeWidth={1.5}
                       />
                     ))}
                   </div>
-                  <span className="text-sm text-stone-600">
+                  <span className="text-sm text-stone-600 dark:text-stone-300">
                     {product.rating} ({product.reviews})
                   </span>
                 </div>
                 
                 {/* Price & Button */}
-                <div className="flex items-center justify-between pt-4 border-t border-stone-100">
+                <div className="flex items-center justify-between pt-4 border-t border-stone-100 dark:border-stone-800">
                   <div>
-                    <span className="text-2xl text-stone-900">${product.price}</span>
+                    <span className="text-2xl text-stone-900 dark:text-white">${product.price}</span>
                   </div>
                   <button className="text-rose-500 hover:text-rose-600 transition-colors flex items-center gap-1">
                     View Details

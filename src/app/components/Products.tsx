@@ -53,11 +53,11 @@ const products = [
 
 export function Products() {
   return (
-    <section className="py-16 bg-stone-50">
+    <section className="py-16 bg-stone-50 dark:bg-stone-950">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl mb-4 text-stone-800">Our Products</h2>
-          <p className="text-stone-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl mb-4 text-stone-800 dark:text-white">Our Products</h2>
+          <p className="text-stone-600 dark:text-stone-300 max-w-2xl mx-auto">
             Discover our carefully curated selection of premium Himalayan pink salt products, 
             each offering unique benefits for your culinary and wellness needs.
           </p>
@@ -65,7 +65,7 @@ export function Products() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
-            <div key={product.id} className="bg-white rounded-sm overflow-hidden group hover:shadow-lg transition-shadow">
+            <div key={product.id} className="bg-white dark:bg-stone-900 rounded-sm overflow-hidden group hover:shadow-lg transition-shadow">
               <div className="aspect-square overflow-hidden">
                 <ImageWithFallback
                   src={product.image}
@@ -75,12 +75,12 @@ export function Products() {
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-stone-800">{product.name}</h3>
+                  <h3 className="text-stone-800 dark:text-white">{product.name}</h3>
                   <span className="text-rose-500">{product.price}</span>
                 </div>
-                <p className="text-stone-600 mb-3">{product.description}</p>
+                <p className="text-stone-600 dark:text-stone-300 mb-3">{product.description}</p>
                 <div className="flex justify-between items-center">
-                  <span className="text-stone-500">{product.weight}</span>
+                  <span className="text-stone-500 dark:text-stone-400">{product.weight}</span>
                   <button className="text-rose-500 hover:text-rose-600 transition-colors">
                     Add to Cart
                   </button>

@@ -2,24 +2,24 @@ import { CheckCircle2, Users, Globe, Award } from 'lucide-react';
 
 export function AboutSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-stone-50 to-white">
+    <section className="py-20 bg-gradient-to-br from-stone-50 to-white dark:from-stone-950 dark:to-stone-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="inline-block bg-[#3D9B93]/10 text-[#3D9B93] px-4 py-2 rounded-full text-sm mb-6">
               Who We Are
             </div>
-            <h2 className="text-4xl lg:text-5xl text-stone-900 mb-6">
+            <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-6">
               Professional Trading & Export Company
             </h2>
-            <div className="space-y-4 text-lg text-stone-600 leading-relaxed">
+            <div className="space-y-4 text-lg text-stone-600 dark:text-stone-300 leading-relaxed">
               <p>
-                We are a <strong className="text-stone-900">B2B trading and export company</strong> specializing 
+                We are a <strong className="text-stone-900 dark:text-white">B2B trading and export company</strong> specializing 
                 in Himalayan Pink Salt products, sourced from verified manufacturers and processing 
                 units in Pakistan, and supplied to international wholesale buyers.
               </p>
               <p>
-                <strong className="text-stone-900">Important:</strong> We do not claim to be 
+                <strong className="text-stone-900 dark:text-white">Important:</strong> We do not claim to be 
                 manufacturers or mine owners. Our strength lies in our robust sourcing network, 
                 quality inspection protocols, export documentation expertise, and custom packaging 
                 coordination.
@@ -32,56 +32,56 @@ export function AboutSection() {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6 mt-8">
-              <div className="flex items-start gap-4 p-5 bg-white rounded-xl border border-stone-200">
+              <div className="flex items-start gap-4 p-5 bg-white dark:bg-stone-900 rounded-xl border border-stone-200 dark:border-stone-800">
                 <div className="w-12 h-12 bg-[#3D9B93]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <CheckCircle2 className="w-6 h-6 text-[#3D9B93]" />
                 </div>
                 <div>
-                  <h4 className="text-stone-900 mb-1">Verified Suppliers</h4>
-                  <p className="text-sm text-stone-600">Strict vetting process</p>
+                  <h4 className="text-stone-900 dark:text-white mb-1">Verified Suppliers</h4>
+                  <p className="text-sm text-stone-600 dark:text-stone-400">Strict vetting process</p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-4 p-5 bg-white rounded-xl border border-stone-200">
+              <div className="flex items-start gap-4 p-5 bg-white dark:bg-stone-900 rounded-xl border border-stone-200 dark:border-stone-800">
                 <div className="w-12 h-12 bg-[#3D9B93]/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Award className="w-6 h-6 text-[#3D9B93]" />
                 </div>
                 <div>
-                  <h4 className="text-stone-900 mb-1">Quality Control</h4>
-                  <p className="text-sm text-stone-600">Pre-shipment inspection</p>
+                  <h4 className="text-stone-900 dark:text-white mb-1">Quality Control</h4>
+                  <p className="text-sm text-stone-600 dark:text-stone-400">Pre-shipment inspection</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="space-y-6">
-            <div className="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
+            <div className="bg-white dark:bg-stone-900 p-8 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-sm">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-14 h-14 bg-[#E88B7F]/10 rounded-xl flex items-center justify-center">
                   <Users className="w-7 h-7 text-[#E88B7F]" />
                 </div>
-                <h3 className="text-2xl text-stone-900">Our Strengths</h3>
+                <h3 className="text-2xl text-stone-900 dark:text-white">Our Strengths</h3>
               </div>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#3D9B93] flex-shrink-0 mt-0.5" />
-                  <span className="text-stone-600">Strong sourcing network across Pakistan</span>
+                  <span className="text-stone-600 dark:text-stone-300">Strong sourcing network across Pakistan</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#3D9B93] flex-shrink-0 mt-0.5" />
-                  <span className="text-stone-600">Comprehensive quality inspection protocols</span>
+                  <span className="text-stone-600 dark:text-stone-300">Comprehensive quality inspection protocols</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#3D9B93] flex-shrink-0 mt-0.5" />
-                  <span className="text-stone-600">Export documentation and compliance expertise</span>
+                  <span className="text-stone-600 dark:text-stone-300">Export documentation and compliance expertise</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#3D9B93] flex-shrink-0 mt-0.5" />
-                  <span className="text-stone-600">Custom packaging and private labeling services</span>
+                  <span className="text-stone-600 dark:text-stone-300">Custom packaging and private labeling services</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#3D9B93] flex-shrink-0 mt-0.5" />
-                  <span className="text-stone-600">Transparent and ethical business practices</span>
+                  <span className="text-stone-600 dark:text-stone-300">Transparent and ethical business practices</span>
                 </li>
               </ul>
             </div>

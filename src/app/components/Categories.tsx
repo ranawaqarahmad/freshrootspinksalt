@@ -38,11 +38,11 @@ const categories = [
 
 export function Categories() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-stone-950">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl text-stone-900 mb-4">Shop by Category</h2>
-          <p className="text-xl text-stone-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">Shop by Category</h2>
+          <p className="text-xl text-stone-600 dark:text-stone-300 max-w-2xl mx-auto">
             Discover our carefully curated collection of premium pink salt products
           </p>
         </div>
@@ -51,7 +51,7 @@ export function Categories() {
           {categories.map((category) => (
             <div
               key={category.id}
-              className="group relative overflow-hidden rounded-2xl bg-stone-100 hover:shadow-2xl transition-all duration-500 cursor-pointer"
+              className="group relative overflow-hidden rounded-2xl bg-stone-100 dark:bg-stone-900 hover:shadow-2xl transition-all duration-500 cursor-pointer"
             >
               <div className="aspect-[3/4] relative overflow-hidden">
                 <ImageWithFallback

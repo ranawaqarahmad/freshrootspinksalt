@@ -2,26 +2,26 @@ import { FileText, Globe, Ship, CheckCircle2 } from 'lucide-react';
 
 export function ExportCompliance() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-stone-950">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-block bg-[#3D9B93]/10 text-[#3D9B93] px-4 py-2 rounded-full text-sm mb-6">
             Export Excellence
           </div>
-          <h2 className="text-4xl lg:text-5xl text-stone-900 mb-4">Export & Compliance</h2>
-          <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">Export & Compliance</h2>
+          <p className="text-xl text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">
             Comprehensive export support and compliance assistance to ensure smooth 
             international transactions and customs clearance
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <div className="bg-stone-50 p-8 rounded-2xl border border-stone-200 hover:shadow-lg transition-all">
+          <div className="bg-stone-50 dark:bg-stone-900 p-8 rounded-2xl border border-stone-200 dark:border-stone-800 hover:shadow-lg transition-all">
             <div className="w-14 h-14 bg-[#3D9B93]/10 rounded-xl flex items-center justify-center mb-6">
               <FileText className="w-7 h-7 text-[#3D9B93]" />
             </div>
-            <h3 className="text-xl text-stone-900 mb-3">Export Documentation</h3>
-            <ul className="space-y-2 text-stone-600 text-sm">
+            <h3 className="text-xl text-stone-900 dark:text-white mb-3">Export Documentation</h3>
+            <ul className="space-y-2 text-stone-600 dark:text-stone-300 text-sm">
               <li>• Commercial Invoice</li>
               <li>• Packing List</li>
               <li>• Certificate of Origin</li>
@@ -30,12 +30,12 @@ export function ExportCompliance() {
             </ul>
           </div>
 
-          <div className="bg-stone-50 p-8 rounded-2xl border border-stone-200 hover:shadow-lg transition-all">
+          <div className="bg-stone-50 dark:bg-stone-900 p-8 rounded-2xl border border-stone-200 dark:border-stone-800 hover:shadow-lg transition-all">
             <div className="w-14 h-14 bg-[#E88B7F]/10 rounded-xl flex items-center justify-center mb-6">
               <Globe className="w-7 h-7 text-[#E88B7F]" />
             </div>
-            <h3 className="text-xl text-stone-900 mb-3">HS Code Support</h3>
-            <ul className="space-y-2 text-stone-600 text-sm">
+            <h3 className="text-xl text-stone-900 dark:text-white mb-3">HS Code Support</h3>
+            <ul className="space-y-2 text-stone-600 dark:text-stone-300 text-sm">
               <li>• Product classification</li>
               <li>• Duty calculation assistance</li>
               <li>• Country-specific codes</li>
@@ -44,12 +44,12 @@ export function ExportCompliance() {
             </ul>
           </div>
 
-          <div className="bg-stone-50 p-8 rounded-2xl border border-stone-200 hover:shadow-lg transition-all">
+          <div className="bg-stone-50 dark:bg-stone-900 p-8 rounded-2xl border border-stone-200 dark:border-stone-800 hover:shadow-lg transition-all">
             <div className="w-14 h-14 bg-[#3D9B93]/10 rounded-xl flex items-center justify-center mb-6">
               <CheckCircle2 className="w-7 h-7 text-[#3D9B93]" />
             </div>
-            <h3 className="text-xl text-stone-900 mb-3">Quality Certificates</h3>
-            <ul className="space-y-2 text-stone-600 text-sm">
+            <h3 className="text-xl text-stone-900 dark:text-white mb-3">Quality Certificates</h3>
+            <ul className="space-y-2 text-stone-600 dark:text-stone-300 text-sm">
               <li>• Food Safety Certificates</li>
               <li>• Lab Test Reports</li>
               <li>• Heavy Metal Analysis</li>
@@ -58,12 +58,12 @@ export function ExportCompliance() {
             </ul>
           </div>
 
-          <div className="bg-stone-50 p-8 rounded-2xl border border-stone-200 hover:shadow-lg transition-all">
+          <div className="bg-stone-50 dark:bg-stone-900 p-8 rounded-2xl border border-stone-200 dark:border-stone-800 hover:shadow-lg transition-all">
             <div className="w-14 h-14 bg-[#E88B7F]/10 rounded-xl flex items-center justify-center mb-6">
               <Ship className="w-7 h-7 text-[#E88B7F]" />
             </div>
-            <h3 className="text-xl text-stone-900 mb-3">Shipping Terms</h3>
-            <ul className="space-y-2 text-stone-600 text-sm">
+            <h3 className="text-xl text-stone-900 dark:text-white mb-3">Shipping Terms</h3>
+            <ul className="space-y-2 text-stone-600 dark:text-stone-300 text-sm">
               <li>• FOB (Free on Board)</li>
               <li>• CFR (Cost and Freight)</li>
               <li>• CIF (Cost, Insurance, Freight)</li>
@@ -106,48 +106,48 @@ export function ExportCompliance() {
 
           <div>
             <div className="bg-[#E88B7F]/10 border border-[#E88B7F]/20 p-10 rounded-2xl mb-6">
-              <h3 className="text-3xl text-stone-900 mb-6">Our Export Process</h3>
+              <h3 className="text-3xl text-stone-900 dark:text-white mb-6">Our Export Process</h3>
               <ol className="space-y-4">
                 <li className="flex items-start gap-4">
                   <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">1</div>
                   <div>
-                    <h4 className="text-lg text-stone-900 mb-1">RFQ Submission</h4>
-                    <p className="text-stone-600">Buyer submits detailed quotation request</p>
+                    <h4 className="text-lg text-stone-900 dark:text-white mb-1">RFQ Submission</h4>
+                    <p className="text-stone-600 dark:text-stone-300">Buyer submits detailed quotation request</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">2</div>
                   <div>
-                    <h4 className="text-lg text-stone-900 mb-1">Quote & Samples</h4>
-                    <p className="text-stone-600">We provide pricing and product samples</p>
+                    <h4 className="text-lg text-stone-900 dark:text-white mb-1">Quote & Samples</h4>
+                    <p className="text-stone-600 dark:text-stone-300">We provide pricing and product samples</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">3</div>
                   <div>
-                    <h4 className="text-lg text-stone-900 mb-1">Contract Agreement</h4>
-                    <p className="text-stone-600">Terms, specifications, and payment agreed</p>
+                    <h4 className="text-lg text-stone-900 dark:text-white mb-1">Contract Agreement</h4>
+                    <p className="text-stone-600 dark:text-stone-300">Terms, specifications, and payment agreed</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">4</div>
                   <div>
-                    <h4 className="text-lg text-stone-900 mb-1">Production & QC</h4>
-                    <p className="text-stone-600">Order fulfillment with quality checks</p>
+                    <h4 className="text-lg text-stone-900 dark:text-white mb-1">Production & QC</h4>
+                    <p className="text-stone-600 dark:text-stone-300">Order fulfillment with quality checks</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">5</div>
                   <div>
-                    <h4 className="text-lg text-stone-900 mb-1">Documentation</h4>
-                    <p className="text-stone-600">All export documents prepared</p>
+                    <h4 className="text-lg text-stone-900 dark:text-white mb-1">Documentation</h4>
+                    <p className="text-stone-600 dark:text-stone-300">All export documents prepared</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">6</div>
                   <div>
-                    <h4 className="text-lg text-stone-900 mb-1">Shipment</h4>
-                    <p className="text-stone-600">Cargo dispatched with tracking details</p>
+                    <h4 className="text-lg text-stone-900 dark:text-white mb-1">Shipment</h4>
+                    <p className="text-stone-600 dark:text-stone-300">Cargo dispatched with tracking details</p>
                   </div>
                 </li>
               </ol>

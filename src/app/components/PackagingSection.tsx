@@ -3,14 +3,14 @@ import { Box, Tag, Palette, Truck } from 'lucide-react';
 
 export function PackagingSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-stone-50 to-white">
+    <section className="py-20 bg-gradient-to-br from-stone-50 to-white dark:from-stone-950 dark:to-stone-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-block bg-[#E88B7F]/10 text-[#E88B7F] px-4 py-2 rounded-full text-sm mb-6">
             Value Addition
           </div>
-          <h2 className="text-4xl lg:text-5xl text-stone-900 mb-4">Packaging & Private Label Services</h2>
-          <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">Packaging & Private Label Services</h2>
+          <p className="text-xl text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">
             Flexible packaging solutions and private labeling support to help you 
             build your brand in your target market
           </p>
@@ -18,14 +18,14 @@ export function PackagingSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-8">
-            <div className="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
+            <div className="bg-white dark:bg-stone-900 p-8 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-sm">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-[#3D9B93]/10 rounded-xl flex items-center justify-center">
                   <Box className="w-7 h-7 text-[#3D9B93]" />
                 </div>
-                <h3 className="text-2xl text-stone-900">Retail Packaging</h3>
+                <h3 className="text-2xl text-stone-900 dark:text-white">Retail Packaging</h3>
               </div>
-              <ul className="space-y-3 text-stone-600">
+              <ul className="space-y-3 text-stone-600 dark:text-stone-300">
                 <li className="flex items-start gap-3">
                   <span className="text-[#3D9B93]">•</span>
                   <span>100g, 250g, 500g, 1kg retail pouches</span>
@@ -49,14 +49,14 @@ export function PackagingSection() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
+            <div className="bg-white dark:bg-stone-900 p-8 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-sm">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-[#E88B7F]/10 rounded-xl flex items-center justify-center">
                   <Truck className="w-7 h-7 text-[#E88B7F]" />
                 </div>
-                <h3 className="text-2xl text-stone-900">Bulk Packaging</h3>
+                <h3 className="text-2xl text-stone-900 dark:text-white">Bulk Packaging</h3>
               </div>
-              <ul className="space-y-3 text-stone-600">
+              <ul className="space-y-3 text-stone-600 dark:text-stone-300">
                 <li className="flex items-start gap-3">
                   <span className="text-[#E88B7F]">•</span>
                   <span>25kg, 50kg PP woven bags</span>

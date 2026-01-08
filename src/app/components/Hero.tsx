@@ -1,13 +1,10 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-interface HeroProps {
-  onNavigate: (section: string) => void;
-}
-
-export function Hero({ onNavigate }: HeroProps) {
+export function Hero() {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-stone-50 to-white">
+    <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-stone-50 to-white dark:from-stone-950 dark:to-stone-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -17,17 +14,17 @@ export function Hero({ onNavigate }: HeroProps) {
             </div>
             
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-6xl text-stone-900 leading-tight">
+              <h1 className="text-5xl lg:text-6xl text-stone-900 dark:text-white leading-tight">
                 B2B Exporters of
                 <span className="block text-[#3D9B93] mt-2">
                   Himalayan Pink Salt
                 </span>
-                <span className="block text-stone-700 text-3xl lg:text-4xl mt-2">
+                <span className="block text-stone-700 dark:text-stone-300 text-3xl lg:text-4xl mt-2">
                   from Pakistan
                 </span>
               </h1>
               
-              <p className="text-xl text-stone-600 leading-relaxed">
+              <p className="text-xl text-stone-600 dark:text-stone-300 leading-relaxed">
                 Professional trading company specializing in sourcing and exporting 
                 premium Himalayan salt products to international wholesale buyers, 
                 distributors, and importers worldwide.
@@ -35,19 +32,19 @@ export function Hero({ onNavigate }: HeroProps) {
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <button 
-                onClick={() => onNavigate('rfq')}
+              <Link 
+                to="/rfq"
                 className="group bg-[#E88B7F] text-white px-8 py-4 rounded-lg hover:bg-[#d97a6e] transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl"
               >
                 Request a Quote
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button 
-                onClick={() => onNavigate('products')}
-                className="bg-white text-stone-700 px-8 py-4 rounded-lg border-2 border-stone-200 hover:border-[#3D9B93] transition-colors"
+              </Link>
+              <Link 
+                to="/products"
+                className="bg-white dark:bg-stone-900 text-stone-700 dark:text-stone-200 px-8 py-4 rounded-lg border-2 border-stone-200 dark:border-stone-700 hover:border-[#3D9B93] transition-colors"
               >
                 View Products
-              </button>
+              </Link>
             </div>
             
             {/* Trust Indicators */}
@@ -55,29 +52,29 @@ export function Hero({ onNavigate }: HeroProps) {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-[#3D9B93] flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-stone-900 font-medium">Verified Sourcing</div>
-                  <div className="text-sm text-stone-600">From trusted manufacturers</div>
+                  <div className="text-stone-900 dark:text-stone-100 font-medium">Verified Sourcing</div>
+                  <div className="text-sm text-stone-600 dark:text-stone-400">From trusted manufacturers</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-[#3D9B93] flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-stone-900 font-medium">Export Ready</div>
-                  <div className="text-sm text-stone-600">Full documentation support</div>
+                  <div className="text-stone-900 dark:text-stone-100 font-medium">Export Ready</div>
+                  <div className="text-sm text-stone-600 dark:text-stone-400">Full documentation support</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-[#3D9B93] flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-stone-900 font-medium">Quality Inspection</div>
-                  <div className="text-sm text-stone-600">Pre-shipment checks</div>
+                  <div className="text-stone-900 dark:text-stone-100 font-medium">Quality Inspection</div>
+                  <div className="text-sm text-stone-600 dark:text-stone-400">Pre-shipment checks</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-[#3D9B93] flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-stone-900 font-medium">Custom Packaging</div>
-                  <div className="text-sm text-stone-600">Private label available</div>
+                  <div className="text-stone-900 dark:text-stone-100 font-medium">Custom Packaging</div>
+                  <div className="text-sm text-stone-600 dark:text-stone-400">Private label available</div>
                 </div>
               </div>
             </div>
@@ -95,14 +92,14 @@ export function Hero({ onNavigate }: HeroProps) {
             </div>
             
             {/* Floating info card */}
-            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-stone-100 max-w-xs">
+            <div className="absolute -bottom-6 -left-6 bg-white dark:bg-stone-900 p-6 rounded-xl shadow-xl border border-stone-100 dark:border-stone-800 max-w-xs">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 bg-[#3D9B93]/10 rounded-xl flex items-center justify-center">
                   <span className="text-2xl">🏔️</span>
                 </div>
                 <div>
-                  <div className="text-stone-900 font-semibold">Sourced from Pakistan</div>
-                  <div className="text-sm text-stone-600">Himalayan Salt Mines</div>
+                  <div className="text-stone-900 dark:text-stone-100 font-semibold">Sourced from Pakistan</div>
+                  <div className="text-sm text-stone-600 dark:text-stone-400">Himalayan Salt Mines</div>
                 </div>
               </div>
             </div>

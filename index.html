@@ -17,6 +17,15 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.freshrootspinksalt.com/" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const redirect = params.get("path");
+        if (redirect) {
+          window.history.replaceState(null, "", redirect);
+        }
+      })();
+    </script>
   </head>
 
   <body>

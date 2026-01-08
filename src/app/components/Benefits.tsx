@@ -36,39 +36,39 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="py-20 bg-gradient-to-br from-stone-50 to-rose-50">
+    <section className="py-20 bg-gradient-to-br from-stone-50 to-rose-50 dark:from-stone-950 dark:to-stone-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
             <div className="inline-block bg-rose-100 text-rose-600 px-4 py-2 rounded-full text-sm mb-6">
               Health Benefits
             </div>
-            <h2 className="text-4xl lg:text-5xl text-stone-900 mb-6">
+            <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-6">
               Why Choose Himalayan Pink Salt?
             </h2>
-            <p className="text-xl text-stone-600 leading-relaxed mb-8">
+            <p className="text-xl text-stone-600 dark:text-stone-300 leading-relaxed mb-8">
               Unlike regular table salt, Himalayan pink salt is completely natural and 
               contains a wealth of minerals that support your overall health and wellness.
             </p>
             
             <div className="space-y-4">
-              <div className="flex items-start gap-4 bg-white p-5 rounded-xl shadow-sm">
+              <div className="flex items-start gap-4 bg-white dark:bg-stone-900 p-5 rounded-xl shadow-sm">
                 <div className="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <span className="text-2xl">✓</span>
                 </div>
                 <div>
-                  <h4 className="text-stone-900 mb-1">No Artificial Additives</h4>
-                  <p className="text-stone-600">100% pure with zero chemicals or processing</p>
+                  <h4 className="text-stone-900 dark:text-white mb-1">No Artificial Additives</h4>
+                  <p className="text-stone-600 dark:text-stone-300">100% pure with zero chemicals or processing</p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-4 bg-white p-5 rounded-xl shadow-sm">
+              <div className="flex items-start gap-4 bg-white dark:bg-stone-900 p-5 rounded-xl shadow-sm">
                 <div className="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <span className="text-2xl">✓</span>
                 </div>
                 <div>
-                  <h4 className="text-stone-900 mb-1">Ancient Purity</h4>
-                  <p className="text-stone-600">Formed over 250 million years ago</p>
+                  <h4 className="text-stone-900 dark:text-white mb-1">Ancient Purity</h4>
+                  <p className="text-stone-600 dark:text-stone-300">Formed over 250 million years ago</p>
                 </div>
               </div>
             </div>
@@ -92,13 +92,13 @@ export function Benefits() {
             return (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group"
+                className="bg-white dark:bg-stone-900 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="w-14 h-14 bg-gradient-to-br from-rose-400 to-pink-500 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                   <Icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl text-stone-900 mb-3">{benefit.title}</h3>
-                <p className="text-stone-600 leading-relaxed">{benefit.description}</p>
+                <h3 className="text-xl text-stone-900 dark:text-white mb-3">{benefit.title}</h3>
+                <p className="text-stone-600 dark:text-stone-300 leading-relaxed">{benefit.description}</p>
               </div>
             );
           })}

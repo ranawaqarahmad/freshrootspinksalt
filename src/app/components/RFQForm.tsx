@@ -23,14 +23,14 @@ export function RFQForm() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-stone-50 to-white">
+    <section className="py-20 bg-gradient-to-br from-stone-50 to-white dark:from-stone-950 dark:to-stone-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-block bg-[#E88B7F]/10 text-[#E88B7F] px-4 py-2 rounded-full text-sm mb-6">
             Get in Touch
           </div>
-          <h2 className="text-4xl lg:text-5xl text-stone-900 mb-4">Request for Quotation (RFQ)</h2>
-          <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">Request for Quotation (RFQ)</h2>
+          <p className="text-xl text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">
             Fill out the form below with your requirements and our export team will 
             respond with a detailed quotation within 24 hours
           </p>
@@ -83,8 +83,8 @@ export function RFQForm() {
             </div>
 
             <div className="bg-[#E88B7F]/10 border border-[#E88B7F]/20 p-8 rounded-2xl">
-              <h4 className="text-xl text-stone-900 mb-4">Business Hours</h4>
-              <div className="space-y-2 text-stone-600">
+              <h4 className="text-xl text-stone-900 dark:text-white mb-4">Business Hours</h4>
+              <div className="space-y-2 text-stone-600 dark:text-stone-300">
                 <div className="flex justify-between">
                   <span>Monday - Friday:</span>
                   <span>9:00 AM - 6:00 PM</span>
@@ -98,13 +98,13 @@ export function RFQForm() {
                   <span>Closed</span>
                 </div>
               </div>
-              <p className="text-sm text-stone-600 mt-4">
+              <p className="text-sm text-stone-600 dark:text-stone-300 mt-4">
                 Pakistan Standard Time (PKT - GMT+5)
               </p>
             </div>
 
-            <div className="bg-stone-100 p-6 rounded-xl border border-stone-200">
-              <p className="text-sm text-stone-700">
+            <div className="bg-stone-100 dark:bg-stone-900 p-6 rounded-xl border border-stone-200 dark:border-stone-800">
+              <p className="text-sm text-stone-700 dark:text-stone-300">
                 <strong>Note:</strong> For urgent inquiries, please contact us directly 
                 via phone or WhatsApp. We typically respond to RFQs within 24 business hours.
               </p>
@@ -113,10 +113,10 @@ export function RFQForm() {
 
           {/* RFQ Form */}
           <div className="lg:col-span-2">
-            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
+            <form onSubmit={handleSubmit} className="bg-white dark:bg-stone-900 p-8 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-sm">
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-sm text-stone-700 mb-2">
+                  <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
                     Company Name *
                   </label>
                   <input
@@ -124,13 +124,13 @@ export function RFQForm() {
                     required
                     value={formData.companyName}
                     onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                    className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-stone-200 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 dark:placeholder:text-stone-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
                     placeholder="Your company name"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-stone-700 mb-2">
+                  <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
                     Contact Person *
                   </label>
                   <input
@@ -138,13 +138,13 @@ export function RFQForm() {
                     required
                     value={formData.contactPerson}
                     onChange={(e) => setFormData({ ...formData, contactPerson: e.target.value })}
-                    className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-stone-200 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 dark:placeholder:text-stone-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
                     placeholder="Your full name"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-stone-700 mb-2">
+                  <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
                     Email Address *
                   </label>
                   <input
@@ -152,13 +152,13 @@ export function RFQForm() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-stone-200 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 dark:placeholder:text-stone-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
                     placeholder="your@email.com"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-stone-700 mb-2">
+                  <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
                     Phone Number *
                   </label>
                   <input
@@ -166,13 +166,13 @@ export function RFQForm() {
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-stone-200 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 dark:placeholder:text-stone-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
                     placeholder="+1 XXX XXX XXXX"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-stone-700 mb-2">
+                  <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
                     Country / Region *
                   </label>
                   <input
@@ -180,20 +180,20 @@ export function RFQForm() {
                     required
                     value={formData.country}
                     onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                    className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-stone-200 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 dark:placeholder:text-stone-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
                     placeholder="Destination country"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-stone-700 mb-2">
+                  <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
                     Product Category *
                   </label>
                   <select
                     required
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-stone-200 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
                   >
                     <option value="">Select category</option>
                     {categories.map((cat) => (
@@ -206,7 +206,7 @@ export function RFQForm() {
               </div>
 
               <div className="mb-6">
-                <label className="block text-sm text-stone-700 mb-2">
+                <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
                   Product Details *
                 </label>
                 <textarea
@@ -214,14 +214,14 @@ export function RFQForm() {
                   rows={3}
                   value={formData.productDetails}
                   onChange={(e) => setFormData({ ...formData, productDetails: e.target.value })}
-                  className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-stone-200 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 dark:placeholder:text-stone-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
                   placeholder="Specify product names, sizes, grain types, etc."
                 />
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-sm text-stone-700 mb-2">
+                  <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
                     Quantity Required *
                   </label>
                   <input
@@ -229,19 +229,19 @@ export function RFQForm() {
                     required
                     value={formData.quantity}
                     onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                    className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-stone-200 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 dark:placeholder:text-stone-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
                     placeholder="e.g., 5000 kg, 1 container"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm text-stone-700 mb-2">
+                  <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
                     Packaging Preference
                   </label>
                   <select
                     value={formData.packaging}
                     onChange={(e) => setFormData({ ...formData, packaging: e.target.value })}
-                    className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-stone-200 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
                   >
                     <option value="">Select packaging</option>
                     <option value="retail">Retail Packaging</option>
@@ -253,14 +253,14 @@ export function RFQForm() {
               </div>
 
               <div className="mb-6">
-                <label className="block text-sm text-stone-700 mb-2">
+                <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
                   Additional Information
                 </label>
                 <textarea
                   rows={4}
                   value={formData.additionalInfo}
                   onChange={(e) => setFormData({ ...formData, additionalInfo: e.target.value })}
-                  className="w-full px-4 py-3 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-stone-200 dark:border-stone-700 dark:bg-stone-950 dark:text-stone-100 dark:placeholder:text-stone-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3D9B93] focus:border-transparent"
                   placeholder="Target price, preferred shipping terms, certification requirements, delivery timeline, etc."
                 />
               </div>
@@ -273,7 +273,7 @@ export function RFQForm() {
                 Submit RFQ
               </button>
 
-              <p className="text-sm text-stone-500 text-center mt-4">
+              <p className="text-sm text-stone-500 dark:text-stone-400 text-center mt-4">
                 By submitting this form, you agree to our privacy policy and terms of service
               </p>
             </form>

@@ -1,11 +1,8 @@
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 
-interface FooterProps {
-  onNavigate: (section: string) => void;
-}
-
-export function Footer({ onNavigate }: FooterProps) {
+export function Footer() {
   return (
     <footer className="bg-stone-900 text-stone-300">
       {/* Main Footer */}
@@ -43,29 +40,29 @@ export function Footer({ onNavigate }: FooterProps) {
             <h4 className="text-white mb-4 font-semibold">Company</h4>
             <ul className="space-y-3">
               <li>
-                <button onClick={() => onNavigate('home')} className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                <Link to="/" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
                   Home
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={() => onNavigate('about')} className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                <Link to="/about" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
                   About Us
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={() => onNavigate('products')} className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                <Link to="/products" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
                   Products
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={() => onNavigate('sourcing')} className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                <Link to="/sourcing" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
                   Sourcing & Quality
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={() => onNavigate('rfq')} className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                <Link to="/rfq" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
                   Request Quote
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -75,29 +72,29 @@ export function Footer({ onNavigate }: FooterProps) {
             <h4 className="text-white mb-4 font-semibold">Services</h4>
             <ul className="space-y-3">
               <li>
-                <button onClick={() => onNavigate('packaging')} className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                <Link to="/packaging" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
                   Custom Packaging
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={() => onNavigate('packaging')} className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                <Link to="/packaging" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
                   Private Labeling
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={() => onNavigate('export')} className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                <Link to="/export" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
                   Export Documentation
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={() => onNavigate('export')} className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                <Link to="/export" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
                   Compliance Support
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={() => onNavigate('sourcing')} className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                <Link to="/sourcing" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
                   Quality Inspection
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

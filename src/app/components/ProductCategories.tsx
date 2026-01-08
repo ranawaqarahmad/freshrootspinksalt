@@ -1,12 +1,9 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { categories } from '../../data/products';
 
-interface ProductCategoriesProps {
-  onNavigate: (section: string) => void;
-}
-
-export function ProductCategories({ onNavigate }: ProductCategoriesProps) {
+export function ProductCategories() {
   const categoryImages: { [key: string]: string } = {
     "edible-salt": "https://images.unsplash.com/photo-1606791450998-d3859ac80814?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaW5rJTIwc2FsdCUyMGNvb2tpbmd8ZW58MXx8fHwxNzY3MDM0MDYwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     "animal-lick": "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsaXZlc3RvY2slMjBmYXJtfGVufDF8fHx8MTc2NzAzMjg0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
@@ -18,20 +15,21 @@ export function ProductCategories({ onNavigate }: ProductCategoriesProps) {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-stone-950">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl text-stone-900 mb-4">Product Categories</h2>
-          <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">Product Categories</h2>
+          <p className="text-xl text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">
             Comprehensive range of Himalayan pink salt products for various commercial applications
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {categories.map((category) => (
-            <div
+            <Link
               key={category.slug}
-              className="group relative overflow-hidden rounded-xl bg-stone-50 hover:shadow-xl transition-all duration-500 cursor-pointer border border-stone-200"
+              to={`/products?category=${category.slug}`}
+              className="group relative overflow-hidden rounded-xl bg-stone-50 dark:bg-stone-900 hover:shadow-xl transition-all duration-500 cursor-pointer border border-stone-200 dark:border-stone-800"
             >
               <div className="aspect-[4/3] relative overflow-hidden">
                 <ImageWithFallback
@@ -50,18 +48,18 @@ export function ProductCategories({ onNavigate }: ProductCategoriesProps) {
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         <div className="text-center">
-          <button
-            onClick={() => onNavigate('products')}
+          <Link
+            to="/products"
             className="bg-[#3D9B93] text-white px-8 py-4 rounded-lg hover:bg-[#348780] transition-colors inline-flex items-center gap-2"
           >
             View All Products
             <ArrowRight className="w-5 h-5" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
