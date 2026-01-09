@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { FileText, Package } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { products, categories } from '../../data/products';
-import defaultProductImage from '../../assets/edible-pink-salt-fine.png';
+import defaultProductImage from '../../assets/edible-pink-salt-fine.jpg';
 
 const validCategories = new Set(['all', ...categories.map((category) => category.slug)]);
 
@@ -85,6 +85,8 @@ export function ProductsPage() {
                 <img
                   src={product.image ?? defaultProductImage}
                   alt={product.name}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
                 />
               </div>

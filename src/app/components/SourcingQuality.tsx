@@ -1,6 +1,6 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Search, ClipboardCheck, Package, CheckCircle2 } from 'lucide-react';
-
+import spaWellnessImage from '../../assets/spa_and_wellness.jpg';
 export function SourcingQuality() {
   const processes = [
     {
@@ -65,7 +65,7 @@ export function SourcingQuality() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1599583863916-e06c29087f51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxxdWFsaXR5JTIwY29udHJvbCUyMGluc3BlY3Rpb258ZW58MXx8fHwxNzY3NzgzMDE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src={spaWellnessImage}
               alt="Quality Control"
               className="w-full h-[500px] object-cover"
             />

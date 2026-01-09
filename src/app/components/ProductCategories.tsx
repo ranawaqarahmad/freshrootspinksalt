@@ -2,19 +2,23 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { categories } from '../../data/products';
-import edibleSaltImage from '../../assets/edible-pink-salt-fine.png';
-import animalLickImage from '../../assets/animal-lick-pink-salt.png';
-import tilesBricksImage from '../../assets/tiles-bricks.png';
+import edibleSaltImage from '../../assets/edible_and_culinary_salt.jpg';
+import animalLickImage from '../../assets/animal_lick_salt.jpg';
+import tilesBricksImage from '../../assets/tiles_and_bricks.jpg';
+import spaWellnessImage from '../../assets/spa_and_wellness.jpg';
+import decorCraftImage from '../../assets/decor_and_craft.jpg';
+import accessoriesImage from '../../assets/accessories.jpg';
+import rawIndustrialImage from '../../assets/raw_industrial_salt.jpg';
 
 export function ProductCategories() {
   const categoryImages: { [key: string]: string } = {
     'edible-salt': edibleSaltImage,
     'animal-lick': animalLickImage,
     'tiles-bricks': tilesBricksImage,
-    'spa-wellness': edibleSaltImage,
-    'decor-crafts': edibleSaltImage,
-    'accessories': edibleSaltImage,
-    'raw-industrial': edibleSaltImage,
+    'spa-wellness': spaWellnessImage,
+    'decor-crafts': decorCraftImage,
+    'accessories': accessoriesImage,
+    'raw-industrial': rawIndustrialImage,
   };
 
   return (
@@ -38,9 +42,10 @@ export function ProductCategories() {
                 <ImageWithFallback
                   src={categoryImages[category.slug]}
                   alt={category.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-black/35 transition-opacity duration-500 group-hover:bg-black/45" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               </div>
               

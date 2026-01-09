@@ -27,6 +27,7 @@ function MaintenanceGate() {
   return unlocked ? <Outlet /> : <Navigate to="/coming-soon" replace />;
 }
 
+
 createRoot(document.getElementById("root")!).render(
   <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
     <BrowserRouter>

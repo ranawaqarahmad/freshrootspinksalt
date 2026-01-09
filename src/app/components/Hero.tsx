@@ -1,6 +1,7 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import edibleSaltImage from '../../assets/edible_and_culinary_salt.jpg';
 
 export function Hero() {
   return (
@@ -84,11 +85,11 @@ export function Hero() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1695405919222-c7423b4280f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaW1hbGF5YW4lMjBtb3VudGFpbnMlMjBwYWtpc3RhbnxlbnwxfHx8fDE3Njc4NTQ1MzB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src={edibleSaltImage}
                 alt="Himalayan Mountains"
                 className="w-full h-[600px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" /> */}
             </div>
             
             {/* Floating info card */}

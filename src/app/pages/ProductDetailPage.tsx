@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { products } from '../../data/products';
-import defaultProductImage from '../../assets/edible-pink-salt-fine.png';
+import defaultProductImage from '../../assets/edible-pink-salt-fine.jpg';
 
 export default function ProductDetailPage() {
   const { productId } = useParams();
@@ -50,7 +50,12 @@ export default function ProductDetailPage() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6">
             <div className="aspect-square flex items-center justify-center overflow-hidden rounded-xl bg-white dark:bg-stone-950">
-              <img src={activeImage} alt={product.name} className="h-full w-full object-contain" />
+              <img
+                src={activeImage}
+                alt={product.name}
+                decoding="async"
+                className="h-full w-full object-contain"
+              />
             </div>
             {gallery.length > 1 ? (
               <div className="mt-4 flex gap-3">
@@ -65,7 +70,13 @@ export default function ProductDetailPage() {
                         : 'border-stone-200 dark:border-stone-800'
                     } bg-white dark:bg-stone-950 overflow-hidden`}
                   >
-                    <img src={image} alt={`${product.name} ${index + 1}`} className="h-full w-full object-contain" />
+                      <img
+                        src={image}
+                        alt={`${product.name} ${index + 1}`}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-contain"
+                      />
                   </button>
                 ))}
               </div>
