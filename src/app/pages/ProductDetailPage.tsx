@@ -95,6 +95,12 @@ export default function ProductDetailPage() {
                   <div className="text-sm text-stone-500 dark:text-stone-400">Packaging Options</div>
                   <div>{product.packaging}</div>
                 </div>
+                {product.shade ? (
+                  <div>
+                    <div className="text-sm text-stone-500 dark:text-stone-400">Salt Shade</div>
+                    <div className="capitalize">{product.shade}</div>
+                  </div>
+                ) : null}
                 {product.description ? (
                   <div>
                     <div className="text-sm text-stone-500 dark:text-stone-400">Description</div>

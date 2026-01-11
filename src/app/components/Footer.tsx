@@ -55,8 +55,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/sourcing" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
-                  Sourcing & Quality
+                <Link to="/blog" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                  Blog
                 </Link>
               </li>
               <li>
@@ -92,8 +92,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/sourcing" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
-                  Quality Inspection
+                <Link to="/packaging/catalog" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                  Packaging Catalog
                 </Link>
               </li>
             </ul>

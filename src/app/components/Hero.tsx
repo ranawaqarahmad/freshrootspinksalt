@@ -5,7 +5,7 @@ import edibleSaltImage from '../../assets/edible_and_culinary_salt.jpg';
 
 export function Hero() {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-stone-50 to-white dark:from-stone-950 dark:to-stone-900">
+    <section className="relative pt-20 pb-20 overflow-hidden bg-gradient-to-br from-stone-50 to-white dark:from-stone-950 dark:to-stone-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}

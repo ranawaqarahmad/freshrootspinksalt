@@ -7,6 +7,7 @@ export interface Product {
   description?: string;
   image?: string;
   images?: string[];
+  shade?: 'light' | 'medium' | 'dark';
 }
 
 export const products: Product[] = [
@@ -16,6 +17,7 @@ export const products: Product[] = [
     size: "Fine grain (< 1 mm)",
     packaging: "100g–1kg retail pouches / 25kg bulk bags",
     category: "Culinary / Edible Salt",
+    shade: "light",
   },
   {
     id: 2,
@@ -23,6 +25,7 @@ export const products: Product[] = [
     size: "1 mm – 2 mm",
     packaging: "500g–1kg pouches / 25kg–50kg bulk bags",
     category: "Culinary / Edible Salt",
+    shade: "medium",
   },
   {
     id: 3,
@@ -30,6 +33,7 @@ export const products: Product[] = [
     size: "2 mm – 5 mm",
     packaging: "1kg retail packs / 25kg–50kg bulk bags",
     category: "Culinary / Edible Salt",
+    shade: "medium",
   },
   {
     id: 4,
@@ -37,6 +41,7 @@ export const products: Product[] = [
     size: "> 5 mm",
     packaging: "25kg–50kg PP woven bags",
     category: "Culinary / Edible Salt",
+    shade: "dark",
   },
   {
     id: 5,

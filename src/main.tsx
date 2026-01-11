@@ -5,10 +5,14 @@ import App from "./app/App.tsx";
 import ComingSoonGate from "./app/ComingSoonGate.tsx";
 import PreviewGate from "./app/PreviewGate.tsx";
 import AboutPage from "./app/pages/AboutPage.tsx";
+import BlogDetailPage from "./app/pages/BlogDetailPage.tsx";
+import BlogIndexPage from "./app/pages/BlogIndexPage.tsx";
 import ExportPage from "./app/pages/ExportPage.tsx";
 import HomePage from "./app/pages/HomePage.tsx";
 import NotFoundPage from "./app/pages/NotFoundPage.tsx";
 import PackagingPage from "./app/pages/PackagingPage.tsx";
+import PackagingCatalogPage from "./app/pages/PackagingCatalogPage.tsx";
+import PackagingDetailPage from "./app/pages/PackagingDetailPage.tsx";
 import ProductDetailPage from "./app/pages/ProductDetailPage.tsx";
 import ProductsPageRoute from "./app/pages/ProductsPageRoute.tsx";
 import RfqPage from "./app/pages/RfqPage.tsx";
@@ -43,9 +47,13 @@ createRoot(document.getElementById("root")!).render(
           <Route path="products" element={<ProductsPageRoute />} />
           <Route path="products/:productId" element={<ProductDetailPage />} />
           <Route path="sourcing" element={<SourcingPage />} />
-          <Route path="packaging" element={<PackagingPage />} />
-          <Route path="export" element={<ExportPage />} />
-          <Route path="rfq" element={<RfqPage />} />
+        <Route path="packaging" element={<PackagingPage />} />
+        <Route path="packaging/catalog" element={<PackagingCatalogPage />} />
+        <Route path="packaging/catalog/:slug" element={<PackagingDetailPage />} />
+        <Route path="export" element={<ExportPage />} />
+        <Route path="blog" element={<BlogIndexPage />} />
+        <Route path="blog/:slug" element={<BlogDetailPage />} />
+        <Route path="rfq" element={<RfqPage />} />
         </Route>
       </Route>
         <Route path="*" element={<NotFoundPage />} />

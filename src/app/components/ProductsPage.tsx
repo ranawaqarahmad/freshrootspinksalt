@@ -9,27 +9,38 @@ const validCategories = new Set(['all', ...categories.map((category) => category
 export function ProductsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.get('category') ?? 'all';
+  const initialShade = searchParams.get('shade') ?? '';
   const [selectedCategory, setSelectedCategory] = useState<string>(
     validCategories.has(initialCategory) ? initialCategory : 'all'
   );
+  const [selectedShade, setSelectedShade] = useState<string>(initialShade);
 
   useEffect(() => {
     const category = searchParams.get('category') ?? 'all';
+    const shade = searchParams.get('shade') ?? '';
     if (validCategories.has(category) && category !== selectedCategory) {
       setSelectedCategory(category);
     }
-  }, [searchParams, selectedCategory]);
+    if (shade !== selectedShade) {
+      setSelectedShade(shade);
+    }
+  }, [searchParams, selectedCategory, selectedShade]);
 
   const filteredProducts = useMemo(() => {
-    if (selectedCategory === 'all') {
-      return products;
-    }
-    const categoryName = categories.find((cat) => cat.slug === selectedCategory)?.name;
-    return products.filter((product) => product.category === categoryName);
-  }, [selectedCategory]);
+    const categoryName =
+      selectedCategory === 'all'
+        ? null
+        : categories.find((cat) => cat.slug === selectedCategory)?.name;
+    return products.filter((product) => {
+      const matchesCategory = categoryName ? product.category === categoryName : true;
+      const matchesShade = selectedShade ? product.shade === selectedShade : true;
+      return matchesCategory && matchesShade;
+    });
+  }, [selectedCategory, selectedShade]);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
+    setSelectedShade('');
     if (category === 'all') {
       setSearchParams({});
     } else {
@@ -94,9 +105,16 @@ export function ProductsPage() {
                 <div className="w-12 h-12 bg-[#E88B7F]/10 rounded-lg flex items-center justify-center">
                   <Package className="w-6 h-6 text-[#E88B7F]" />
                 </div>
-                <span className="text-xs bg-[#3D9B93]/10 text-[#3D9B93] px-3 py-1 rounded-full">
-                  {product.category}
-                </span>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs bg-[#3D9B93]/10 text-[#3D9B93] px-3 py-1 rounded-full">
+                    {product.category}
+                  </span>
+                  {product.shade ? (
+                    <span className="text-xs bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 px-3 py-1 rounded-full">
+                      {product.shade} tone
+                    </span>
+                  ) : null}
+                </div>
               </div>
 
               <h3 className="text-xl text-stone-900 dark:text-white mb-3">{product.name}</h3>
