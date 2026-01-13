@@ -1,6 +1,6 @@
 import edibleSaltImage from '../assets/edible-pink-salt-fine.jpg';
-import tilesBricksImage from '../assets/tiles-bricks.jpg';
-import animalLickImage from '../assets/animal-lick-pink-salt.jpg';
+import tilesBricksImage from '../assets/tiles_and_bricks.jpg';
+import animalLickImage from '../assets/animal_lick_salt.jpg';
 
 export interface PackagingItem {
   slug: string;
