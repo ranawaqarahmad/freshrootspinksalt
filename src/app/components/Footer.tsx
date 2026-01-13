@@ -106,8 +106,8 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#E88B7F] flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                 <div>
-                  <a href="mailto:info@freshroots.com" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
-                    info@freshroots.com
+                  <a href="mailto:info@freshrootspinksalt.com" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                    info@freshrootspinksalt.com
                   </a>
                 </div>
               </li>

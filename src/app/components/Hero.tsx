@@ -11,7 +11,9 @@ export function Hero() {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 bg-[#3D9B93]/10 border border-[#3D9B93]/20 px-4 py-2 rounded-full">
-              <span className="text-sm text-[#3D9B93]">B2B Trading & Export Company</span>
+              <span className="text-sm text-[#3D9B93]">
+                B2B Trading & Export Company
+              </span>
             </div>
             
             <div className="space-y-6">
@@ -26,9 +28,14 @@ export function Hero() {
               </h1>
               
               <p className="text-xl text-stone-600 dark:text-stone-300 leading-relaxed">
-                Professional trading company specializing in sourcing and exporting 
-                premium Himalayan salt products to international wholesale buyers, 
-                distributors, and importers worldwide.
+                Fresh Roots Pink Salt is a Pakistan-based Himalayan Pink Salt trading company
+                specializing in sourcing and supplying premium-quality pink salt products to
+                international B2B buyers. We work closely with verified manufacturers and
+                processing units located near the Himalayan salt range to ensure consistent
+                quality, ethical sourcing, and export-ready supply. Our role as a trader allows
+                us to offer flexibility, multiple product ranges, customized packaging, and
+                reliable delivery solutions while maintaining full transparency in our business
+                operations.
               </p>
             </div>
             

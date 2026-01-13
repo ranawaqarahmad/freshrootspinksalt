@@ -26,8 +26,8 @@ export function ProductCategories() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">Product Categories</h2>
-          <p className="text-xl text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">
-            Comprehensive range of Himalayan pink salt products for various commercial applications
+          <p className="text-xl text-stone-600 dark:text-stone-300 max-w-4xl mx-auto">
+            We offer a complete product range that meets the diverse requirements of global buyers.
           </p>
         </div>
 

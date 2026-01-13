@@ -9,10 +9,18 @@ export function PackagingSection() {
           <div className="inline-block bg-[#E88B7F]/10 text-[#E88B7F] px-4 py-2 rounded-full text-sm mb-6">
             Value Addition
           </div>
-          <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">Packaging & Private Label Services</h2>
+          <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">
+            Packaging & Private Label Services
+          </h2>
           <p className="text-xl text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">
-            Flexible packaging solutions and private labeling support to help you 
-            build your brand in your target market
+            Our packaging solutions are tailored to meet product type, buyer needs, and international
+            shipping requirements. Bulk packaging includes polypropylene (PP) woven bags equipped with
+            inner liners to ensure protection from moisture and contamination during long-distance
+            transport. For retail markets, we offer stand-up pouches, zipper pouches, and consumer
+            bottles that are attractive and durable. Premium packaging options include jars and grinder
+            bottles for culinary applications and decorative gift boxes for décor products. We also
+            provide custom printing and private-label packaging upon request to help brands present
+            their products professionally in target markets.
           </p>
         </div>
 

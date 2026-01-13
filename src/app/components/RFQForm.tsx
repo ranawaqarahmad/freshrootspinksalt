@@ -49,8 +49,8 @@ export function RFQForm() {
                   </div>
                   <div>
                     <div className="text-sm text-white/80 mb-1">Email</div>
-                    <a href="mailto:info@freshroots.com" className="text-white hover:text-white/90">
-                      info@freshroots.com
+                    <a href="mailto:info@freshrootspinksalt.com" className="text-white hover:text-white/90">
+                      info@freshrootspinksalt.com
                     </a>
                   </div>
                 </div>

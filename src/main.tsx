@@ -11,7 +11,6 @@ import ExportPage from "./app/pages/ExportPage.tsx";
 import HomePage from "./app/pages/HomePage.tsx";
 import NotFoundPage from "./app/pages/NotFoundPage.tsx";
 import PackagingPage from "./app/pages/PackagingPage.tsx";
-import PackagingCatalogPage from "./app/pages/PackagingCatalogPage.tsx";
 import PackagingDetailPage from "./app/pages/PackagingDetailPage.tsx";
 import ProductDetailPage from "./app/pages/ProductDetailPage.tsx";
 import ProductsPageRoute from "./app/pages/ProductsPageRoute.tsx";
@@ -48,7 +47,6 @@ createRoot(document.getElementById("root")!).render(
           <Route path="products/:productId" element={<ProductDetailPage />} />
           <Route path="sourcing" element={<SourcingPage />} />
         <Route path="packaging" element={<PackagingPage />} />
-        <Route path="packaging/catalog" element={<PackagingCatalogPage />} />
         <Route path="packaging/catalog/:slug" element={<PackagingDetailPage />} />
         <Route path="export" element={<ExportPage />} />
         <Route path="blog" element={<BlogIndexPage />} />

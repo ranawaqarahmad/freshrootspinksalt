@@ -14,20 +14,18 @@ export function AboutSection() {
             </h2>
             <div className="space-y-4 text-lg text-stone-600 dark:text-stone-300 leading-relaxed">
               <p>
-                We are a <strong className="text-stone-900 dark:text-white">B2B trading and export company</strong> specializing 
-                in Himalayan Pink Salt products, sourced from verified manufacturers and processing 
-                units in Pakistan, and supplied to international wholesale buyers.
+                Fresh Roots Pink Salt is a Pakistan-based Himalayan Pink Salt export company supplying
+                a comprehensive range of salt products for culinary, wellness, decorative, animal
+                nutrition, and industrial applications. We work in close coordination with established
+                sourcing and processing partners near the Himalayan salt range to ensure consistent
+                quality, reliable availability, and export-ready products.
               </p>
               <p>
-                <strong className="text-stone-900 dark:text-white">Important:</strong> We do not claim to be 
-                manufacturers or mine owners. Our strength lies in our robust sourcing network, 
-                quality inspection protocols, export documentation expertise, and custom packaging 
-                coordination.
-              </p>
-              <p>
-                This transparent and ethical approach has made us a trusted partner for serious 
-                international importers, distributors, and private-label buyers who value honesty 
-                and professional service.
+                Our role extends across product selection, quality supervision, packaging solutions,
+                and international order fulfillment. By understanding the specific needs of global
+                buyers, we offer flexible product options, multiple packaging formats, and customized
+                supply solutions that support wholesalers, distributors, and private-label brands. Our
+                approach is built on transparency, quality focus, and long-term business relationships.
               </p>
             </div>
 

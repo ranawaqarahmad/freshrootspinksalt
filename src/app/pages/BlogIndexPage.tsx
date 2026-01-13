@@ -7,11 +7,16 @@ export default function BlogIndexPage() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-12">
           <div className="inline-flex items-center gap-2 bg-[#3D9B93]/10 text-[#3D9B93] px-4 py-2 rounded-full text-sm mb-4">
-            Insights
+            Blogs & Knowledge Center
           </div>
-          <h1 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-3">Fresh Roots Blog</h1>
-          <p className="text-lg text-stone-600 dark:text-stone-300 max-w-2xl">
-            Export insights, packaging guides, and product knowledge to help you source with clarity.
+          <h1 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-3">Blogs & Knowledge Center</h1>
+          <p className="text-lg text-stone-600 dark:text-stone-300 max-w-3xl">
+            Our Blogs & Knowledge Center is an educational resource designed to help buyers understand
+            product differences, appropriate usage, packaging selection, storage recommendations, and
+            market insights. These articles provide practical guidance and in-depth information that
+            supports informed decision-making. Whether you want to compare grain sizes for culinary use
+            or assess the benefits of wellness salts, our blog content is crafted to add value to your
+            buyer journey.
           </p>
         </div>
 

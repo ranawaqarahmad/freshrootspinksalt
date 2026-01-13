@@ -32,10 +32,12 @@ export function SourcingQuality() {
           <div className="inline-block bg-[#3D9B93]/10 text-[#3D9B93] px-4 py-2 rounded-full text-sm mb-6">
             Our Process
           </div>
-          <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">Sourcing & Quality Control</h2>
+          <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">
+            Sourcing & Quality Control
+          </h2>
           <p className="text-xl text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">
-            While we don't manufacture, our strength lies in our systematic approach to 
-            sourcing and quality assurance that ensures consistent product excellence
+            Fresh Roots Pink Salt adheres to a structured sourcing and quality supervision model. All
+            products undergo inspection at multiple stages.
           </p>
         </div>
 

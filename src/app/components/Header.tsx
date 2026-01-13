@@ -67,11 +67,11 @@ export function Header() {
           <div className="flex flex-wrap items-center justify-between text-sm">
             <div className="flex items-center gap-6">
               <a
-                href="mailto:info@freshroots.com"
+                href="mailto:info@freshrootspinksalt.com"
                 className="flex items-center gap-2 hover:text-white/90 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                <span className="hidden sm:inline">info@freshroots.com</span>
+                <span className="hidden sm:inline">info@freshrootspinksalt.com</span>
               </a>
               <a
                 href="tel:+92"
