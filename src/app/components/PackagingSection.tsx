@@ -3,7 +3,7 @@ import { Box, Tag, Palette, Truck } from 'lucide-react';
 import rawIndustrialImage from '../../assets/raw_industrial_salt.jpg';
 export function PackagingSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-stone-50 to-white dark:from-stone-950 dark:to-stone-900">
+    <section className="py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-block bg-[#E88B7F]/10 text-[#E88B7F] px-4 py-2 rounded-full text-sm mb-6">
@@ -12,7 +12,7 @@ export function PackagingSection() {
           <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">
             Packaging & Private Label Services
           </h2>
-          <p className="text-xl text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">
+          <p className="text-xl text-stone-600 dark:text-stone-300 max-w-6xl mx-auto">
             Our packaging solutions are tailored to meet product type, buyer needs, and international
             shipping requirements. Bulk packaging includes polypropylene (PP) woven bags equipped with
             inner liners to ensure protection from moisture and contamination during long-distance

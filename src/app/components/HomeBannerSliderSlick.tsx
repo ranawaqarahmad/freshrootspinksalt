@@ -49,13 +49,13 @@ export function HomeBannerSliderSlick() {
   } as const;
 
   return (
-    <section className="pt-38 pb-6">
+    <section className="pt-32 sm:pt-36 lg:pt-40 pb-6 sm:pb-8">
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative rounded-2xl overflow-hidden shadow-xl border border-stone-200 dark:border-stone-800">
           <Slider ref={sliderRef} {...settings}>
             {slides.map((slide) => (
               <div key={slide.title} className="relative">
-                <div className="relative h-[360px] sm:h-[420px] lg:h-[480px]">
+                <div className="relative h-[360px] max-[380px]:h-[420px] sm:h-[420px] lg:h-[480px]">
                   <div className="absolute inset-0">
                     <img
                       src={slide.image}
@@ -66,15 +66,15 @@ export function HomeBannerSliderSlick() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
                   </div>
-                  <div className="relative h-full flex items-center px-8 sm:px-12 lg:px-16">
-                    <div className="max-w-2xl space-y-4 sm:space-y-6 text-white">
-                      <div className="inline-flex items-center gap-2 bg-[#3D9B93]/20 backdrop-blur-sm border border-[#3D9B93]/30 px-4 py-2 rounded-full text-sm">
+                  <div className="relative h-full flex items-center px-6 sm:px-12 lg:px-16">
+                    <div className="max-w-2xl space-y-4 sm:space-y-6 text-white max-[380px]:space-y-3">
+                      <div className="inline-flex items-center gap-2 bg-[#3D9B93]/20 backdrop-blur-sm border border-[#3D9B93]/30 px-4 py-2 rounded-full text-sm max-[380px]:text-[13px]">
                         {slide.subtitle}
                       </div>
-                      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight">
+                      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight max-[380px]:text-[26px]">
                         {slide.title}
                       </h2>
-                      <p className="text-lg sm:text-xl text-white/90 leading-relaxed">
+                      <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-[380px]:text-base">
                         {slide.description}
                       </p>
                     </div>

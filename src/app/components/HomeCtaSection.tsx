@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export function HomeCtaSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-stone-50 to-white dark:from-stone-950 dark:to-stone-900">
+    <section className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <div className="relative overflow-hidden rounded-3xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 shadow-xl">
           <div className="absolute -top-16 -right-10 h-48 w-48 rounded-full bg-[#3D9B93]/20 blur-3xl" />

@@ -3,8 +3,10 @@ import { FileText, Package } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { products, categories } from '../../data/products';
 import defaultProductImage from '../../assets/edible-pink-salt-fine.jpg';
+import { HomeCtaSection } from './HomeCtaSection';
 
 const validCategories = new Set(['all', ...categories.map((category) => category.slug)]);
+const PAGE_SIZE = 9;
 
 export function ProductsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -14,6 +16,8 @@ export function ProductsPage() {
     validCategories.has(initialCategory) ? initialCategory : 'all'
   );
   const [selectedShade, setSelectedShade] = useState<string>(initialShade);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const category = searchParams.get('category') ?? 'all';
@@ -36,6 +40,10 @@ export function ProductsPage() {
       const matchesShade = selectedShade ? product.shade === selectedShade : true;
       return matchesCategory && matchesShade;
     });
+  }, [selectedCategory, selectedShade]);
+
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
   }, [selectedCategory, selectedShade]);
 
   const handleCategoryChange = (category: string) => {
@@ -87,10 +95,10 @@ export function ProductsPage() {
 
         {/* Products Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProducts.map((product) => (
+          {filteredProducts.slice(0, visibleCount).map((product) => (
             <div
               key={product.id}
-              className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+              className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl p-6 hover:shadow-lg transition-all duration-300 animate-in fade-in-0 slide-in-from-bottom-2"
             >
               <div className="mb-5 overflow-hidden rounded-lg bg-stone-50 dark:bg-stone-800 aspect-square flex items-center justify-center">
                 <img
@@ -149,19 +157,37 @@ export function ProductsPage() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center bg-gradient-to-br from-stone-50 to-stone-100 dark:from-stone-900 dark:to-stone-800 p-12 rounded-2xl border border-stone-200 dark:border-stone-800">
-          <h3 className="text-3xl text-stone-900 dark:text-white mb-4">Don't See What You Need?</h3>
-          <p className="text-lg text-stone-600 dark:text-stone-300 mb-6 max-w-2xl mx-auto">
-            We can source custom specifications and sizes based on your requirements. 
-            Contact us to discuss your specific needs.
-          </p>
-          <Link
-            to="/rfq"
-            className="bg-[#E88B7F] text-white px-8 py-4 rounded-lg hover:bg-[#d97a6e] transition-colors inline-flex items-center gap-2"
-          >
-            Custom Product Inquiry
-          </Link>
+        {visibleCount < filteredProducts.length ? (
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => {
+                setIsLoading(true);
+                window.setTimeout(() => {
+                  setVisibleCount((count) =>
+                    Math.min(count + PAGE_SIZE, filteredProducts.length)
+                  );
+                  setIsLoading(false);
+                }, 300);
+              }}
+              className="inline-flex items-center gap-2 rounded-full border border-[#E88B7F]/30 bg-[#E88B7F]/10 px-6 py-2.5 text-sm text-[#E88B7F] hover:bg-[#E88B7F]/20 transition-colors"
+              aria-live="polite"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#E88B7F] border-t-transparent" />
+                  Loading
+                </>
+              ) : (
+                'Load More'
+              )}
+            </button>
+          </div>
+        ) : null}
+
+        <div className="mt-16">
+          <HomeCtaSection />
         </div>
       </div>
     </section>

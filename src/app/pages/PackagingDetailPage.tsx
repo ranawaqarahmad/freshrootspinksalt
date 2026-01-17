@@ -15,10 +15,10 @@ export default function PackagingDetailPage() {
               The packaging item you are looking for does not exist.
             </p>
             <Link
-              to="/packaging/catalog"
+              to="/packaging"
               className="inline-flex items-center justify-center bg-[#3D9B93] text-white px-6 py-3 rounded-lg hover:bg-[#348780] transition-colors"
             >
-              Back to Catalog
+              Back to Packaging
             </Link>
           </div>
         </div>
@@ -29,8 +29,8 @@ export default function PackagingDetailPage() {
   return (
     <div className="pt-32 pb-20 bg-white dark:bg-stone-950">
       <div className="max-w-5xl mx-auto px-6">
-        <Link to="/packaging/catalog" className="text-sm text-stone-500 dark:text-stone-400">
-          ← Back to Catalog
+        <Link to="/packaging" className="text-sm text-stone-500 dark:text-stone-400">
+          ← Back to Packaging
         </Link>
         <div className="mt-6 mb-10">
           <div className="text-xs uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">
@@ -55,18 +55,23 @@ export default function PackagingDetailPage() {
 
           <div className="space-y-6">
             <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6">
+              <h2 className="text-lg text-stone-900 dark:text-white mb-4">Quick Specs</h2>
+              <div className="space-y-3 text-stone-600 dark:text-stone-300">
+                <div>
+                  <div className="text-sm text-stone-500 dark:text-stone-400">Weight / Range</div>
+                  <div>{item.range}</div>
+                </div>
+                <div>
+                  <div className="text-sm text-stone-500 dark:text-stone-400">Material / Detail</div>
+                  <div>{item.material}</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6">
               <h2 className="text-lg text-stone-900 dark:text-white mb-4">Highlights</h2>
               <ul className="space-y-2 text-stone-600 dark:text-stone-300">
                 {item.highlights.map((highlight) => (
                   <li key={highlight}>• {highlight}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6">
-              <h2 className="text-lg text-stone-900 dark:text-white mb-4">Specs</h2>
-              <ul className="space-y-2 text-stone-600 dark:text-stone-300">
-                {item.specs.map((spec) => (
-                  <li key={spec}>• {spec}</li>
                 ))}
               </ul>
             </div>

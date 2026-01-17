@@ -5,7 +5,7 @@ export default function PackagingPage() {
   return (
     <div className="pt-32">
       <PackagingSection />
-      <PackagingCatalogSection columns={4} />
+      <PackagingCatalogSection columns={4} enableLoadMore pageSize={8} />
     </div>
   );
 }

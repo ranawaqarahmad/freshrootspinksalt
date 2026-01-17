@@ -47,7 +47,7 @@ export function Header() {
     { label: "Tiles & Bricks", slug: "tiles-bricks", icon: Grid2x2 },
     { label: "Spa & Wellness", slug: "spa-wellness", icon: Sparkles },
     { label: "Decor & Crafts", slug: "decor-crafts", icon: LampDesk },
-    { label: "Accessories", slug: "accessories", icon: Package },
+    // { label: "Accessories", slug: "accessories", icon: Package },
     { label: "Raw / Industrial", slug: "raw-industrial", icon: Factory },
   ];
 
