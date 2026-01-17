@@ -223,12 +223,12 @@ export const categories = [
     description:
       "Decorative salt lamps, candle holders, and artistic pieces",
   },
-  {
-    name: "Accessories",
-    slug: "accessories",
-    description:
-      "Salt grinders, adhesives, and complementary products",
-  },
+  // {
+  //   name: "Accessories",
+  //   slug: "accessories",
+  //   description:
+  //     "Salt grinders, adhesives, and complementary products",
+  // },
   {
     name: "Raw / Industrial",
     slug: "raw-industrial",

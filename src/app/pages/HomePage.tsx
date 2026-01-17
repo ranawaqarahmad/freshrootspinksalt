@@ -15,8 +15,8 @@ export default function HomePage() {
       <AboutSection />
       <ProductCategories />
       {/* <PackagingSection /> */}
-      <SourcingQuality />
       <PackagingCatalogSection />
+      <SourcingQuality />
       <HomeCtaSection />
     </>
   );

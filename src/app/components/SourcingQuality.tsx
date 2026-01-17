@@ -30,7 +30,7 @@ export function SourcingQuality() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-block bg-[#3D9B93]/10 text-[#3D9B93] px-4 py-2 rounded-full text-sm mb-6">
-            Our Process
+            What We Do
           </div>
           <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">
             Sourcing & Quality Control

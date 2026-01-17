@@ -12,13 +12,13 @@ export function Hero() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 bg-[#3D9B93]/10 border border-[#3D9B93]/20 px-4 py-2 rounded-full">
               <span className="text-sm text-[#3D9B93]">
-                B2B Trading & Export Company
+                Introduction
               </span>
             </div>
             
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl text-stone-900 dark:text-white leading-tight">
-                B2B Exporters of
+                Global Trade Partner
                 <span className="block text-[#3D9B93] mt-2">
                   Himalayan Pink Salt
                 </span>
