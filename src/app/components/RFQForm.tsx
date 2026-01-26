@@ -1,5 +1,6 @@
 import { Send, Mail, Phone, MapPin } from 'lucide-react';
 import { useState } from 'react';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { categories } from '../../data/products';
 
 export function RFQForm() {
@@ -15,11 +16,44 @@ export function RFQForm() {
     packaging: '',
     additionalInfo: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('RFQ submitted:', formData);
-    alert('Thank you for your quote request. We will contact you within 24 hours.');
+    setIsSubmitting(true);
+    setStatusMessage(null);
+    try {
+      const response = await fetch('/api/rfq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, captchaToken }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Submission failed');
+      }
+
+      setStatusMessage('Thank you for your quote request. We will contact you within 24 hours.');
+      setCaptchaToken(null);
+      setFormData({
+        companyName: '',
+        contactPerson: '',
+        email: '',
+        phone: '',
+        country: '',
+        category: '',
+        productDetails: '',
+        quantity: '',
+        packaging: '',
+        additionalInfo: ''
+      });
+    } catch (error) {
+      setStatusMessage('Sorry, something went wrong. Please try again or email us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -265,13 +299,32 @@ export function RFQForm() {
                 />
               </div>
 
+              <div className="mb-6">
+                <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
+                  Verification
+                </label>
+                <HCaptcha
+                  sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY || ''}
+                  onVerify={(token) => setCaptchaToken(token)}
+                  onExpire={() => setCaptchaToken(null)}
+                  theme={document.documentElement.classList.contains('dark') ? 'dark' : 'light'}
+                />
+              </div>
+
               <button
                 type="submit"
-                className="w-full bg-[#E88B7F] text-white px-8 py-4 rounded-lg hover:bg-[#d97a6e] transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                className="w-full bg-[#E88B7F] text-white px-8 py-4 rounded-lg hover:bg-[#d97a6e] transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl disabled:opacity-70"
+                disabled={isSubmitting || !captchaToken}
               >
                 <Send className="w-5 h-5" />
-                Submit RFQ
+                {isSubmitting ? 'Submitting...' : 'Submit RFQ'}
               </button>
+
+              {statusMessage ? (
+                <p className="text-sm text-stone-600 dark:text-stone-300 text-center mt-4">
+                  {statusMessage}
+                </p>
+              ) : null}
 
               <p className="text-sm text-stone-500 dark:text-stone-400 text-center mt-4">
                 By submitting this form, you agree to our privacy policy and terms of service
