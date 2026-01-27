@@ -126,7 +126,6 @@ exports.handler = async function handler(event) {
     },
   });
 
-  const subject = `New RFQ - ${companyName} (${contactPerson})`;
   const textBody = [
     `Company: ${companyName}`,
     `Contact: ${contactPerson}`,
@@ -143,14 +142,60 @@ exports.handler = async function handler(event) {
     'Additional Info:',
     additionalInfo || 'None',
   ].join('\n');
+  const safe = (value) => String(value || '').replace(/[&<>"]/g, (char) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+  }[char]));
+
+  const htmlBody = `
+    <div style="font-family: Arial, Helvetica, sans-serif; background:#f7f5f2; padding:24px;">
+      <div style="max-width:640px; margin:0 auto; background:#ffffff; border:1px solid #eee3e0; border-radius:16px; overflow:hidden;">
+        <div style="background:linear-gradient(90deg,#3D9B93,#348780); padding:18px 24px; color:#fff;">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <img src="https://res.cloudinary.com/digdbqcct/image/upload/v1769540544/logo_stspcq.png" alt="Fresh Roots Pink Salt" style="height:36px; width:auto; display:block;" />
+            <div>
+              <div style="font-size:12px; letter-spacing:2px; text-transform:uppercase;">Fresh Roots Pink Salt</div>
+              <div style="font-size:20px; font-weight:700; margin-top:4px;">Website RFQ Submission</div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:20px 24px;">
+          <div style="margin-bottom:18px;">
+            <span style="display:inline-block; background:#E88B7F1A; color:#E88B7F; padding:6px 12px; border-radius:999px; font-size:12px; font-weight:600;">
+              Category: ${safe(category)}
+            </span>
+          </div>
+          <table style="width:100%; border-collapse:collapse; font-size:14px; color:#3b3b3b;">
+            <tr><td style="padding:6px 0; width:40%; color:#8a8a8a;">Company</td><td style="padding:6px 0; font-weight:600;">${safe(companyName)}</td></tr>
+            <tr><td style="padding:6px 0; color:#8a8a8a;">Contact</td><td style="padding:6px 0; font-weight:600;">${safe(contactPerson)}</td></tr>
+            <tr><td style="padding:6px 0; color:#8a8a8a;">Email</td><td style="padding:6px 0;"><a href="mailto:${safe(email)}" style="color:#3D9B93; text-decoration:none;">${safe(email)}</a></td></tr>
+            <tr><td style="padding:6px 0; color:#8a8a8a;">Phone</td><td style="padding:6px 0;">${safe(phone)}</td></tr>
+            <tr><td style="padding:6px 0; color:#8a8a8a;">Country</td><td style="padding:6px 0;">${safe(country)}</td></tr>
+            <tr><td style="padding:6px 0; color:#8a8a8a;">Quantity</td><td style="padding:6px 0;">${safe(quantity)}</td></tr>
+            <tr><td style="padding:6px 0; color:#8a8a8a;">Packaging</td><td style="padding:6px 0;">${safe(packaging || 'Not specified')}</td></tr>
+          </table>
+          <div style="margin:18px 0 6px; font-weight:700; color:#333;">Product Details</div>
+          <div style="background:#faf7f6; border:1px solid #f0e6e2; padding:12px; border-radius:10px; white-space:pre-wrap;">${safe(productDetails)}</div>
+          <div style="margin:18px 0 6px; font-weight:700; color:#333;">Additional Info</div>
+          <div style="background:#faf7f6; border:1px solid #f0e6e2; padding:12px; border-radius:10px; white-space:pre-wrap;">${safe(additionalInfo || 'None')}</div>
+        </div>
+        <div style="border-top:1px solid #f0e6e2; padding:14px 24px; font-size:12px; color:#8a8a8a;">
+          This inquiry was submitted via the Fresh Roots Pink Salt website RFQ form. Reply directly to contact the sender.
+        </div>
+      </div>
+    </div>
+  `;
 
   try {
     await transporter.sendMail({
-      from: `Fresh Roots RFQ <${smtpUser}>`,
+      from: `Fresh Roots Website RFQ <${smtpUser}>`,
       to: mailTo,
       replyTo: email,
-      subject,
+      subject: `Website RFQ - ${companyName} (${contactPerson})`,
       text: textBody,
+      html: htmlBody,
     });
 
     return jsonResponse(200, { ok: true });

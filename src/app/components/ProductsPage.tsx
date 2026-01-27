@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { FileText, Package } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { products, categories } from '../../data/products';
-import defaultProductImage from '../../assets/edible-pink-salt-fine.jpg';
+import { imageUrls } from '../../data/imageUrls';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 import { HomeCtaSection } from './HomeCtaSection';
 
 const validCategories = new Set(['all', ...categories.map((category) => category.slug)]);
@@ -101,13 +102,14 @@ export function ProductsPage() {
               className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl p-6 hover:shadow-lg transition-all duration-300 animate-in fade-in-0 slide-in-from-bottom-2"
             >
               <div className="mb-5 overflow-hidden rounded-lg bg-stone-50 dark:bg-stone-800 aspect-square flex items-center justify-center">
-                <img
-                  src={product.image ?? defaultProductImage}
-                  alt={product.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
-                />
+                  <ImageWithSkeleton
+                    src={product.image ?? imageUrls.edibleFine}
+                    alt={product.name}
+                    loading="lazy"
+                    decoding="async"
+                    wrapperClassName="h-full w-full"
+                    imgClassName="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
+                  />
               </div>
               <div className="flex items-start justify-between mb-4">
                 <div className="w-12 h-12 bg-[#E88B7F]/10 rounded-lg flex items-center justify-center">

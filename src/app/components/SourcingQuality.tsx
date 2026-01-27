@@ -1,6 +1,6 @@
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Search, ClipboardCheck, Package, CheckCircle2 } from 'lucide-react';
-import spaWellnessImage from '../../assets/spa_and_wellness.jpg';
+import { imageUrls } from '../../data/imageUrls';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 export function SourcingQuality() {
   const processes = [
     {
@@ -66,10 +66,11 @@ export function SourcingQuality() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
-            <ImageWithFallback
-              src={spaWellnessImage}
+            <ImageWithSkeleton
+              src={imageUrls.spaWellness}
               alt="Quality Control"
-              className="w-full h-[500px] object-cover"
+              wrapperClassName="w-full h-[500px]"
+              imgClassName="w-full h-full object-cover"
             />
           </div>
 

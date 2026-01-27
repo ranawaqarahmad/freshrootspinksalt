@@ -3,9 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import bannerImage2 from "../../assets/banner_image_2.jpg";
-import bannerImage1 from "../../assets/banner_image_1.jpg";
-import bannerImage3 from "../../assets/banner_image_3.jpg";
+import { imageUrls } from "../../data/imageUrls";
+import { ImageWithSkeleton } from "./ImageWithSkeleton";
 
 const slides = [
   {
@@ -13,21 +12,21 @@ const slides = [
     subtitle: "B2B Trading & Export Company • Pakistan",
     description:
       "We source premium Himalayan pink salt through verified processing partners and deliver export-ready supply with full transparency.",
-    image: bannerImage1,
+    image: imageUrls.banner1,
   },
   {
     title: "Responsible Sourcing, Reliable Supply",
     subtitle: "Verified Manufacturers • Quality Supervision",
     description:
       "Our team manages product selection, inspection, and packaging oversight to ensure consistent quality for global buyers.",
-    image: bannerImage2,
+    image: imageUrls.banner2,
   },
   {
     title: "Complete Product Range for Global Buyers",
     subtitle: "Edible • Wellness • Decor • Industrial",
     description:
       "From culinary grades to salt tiles and animal lick blocks, we supply tailored solutions for wholesale and private-label brands.",
-    image: bannerImage3,
+    image: imageUrls.banner3,
   },
 ];
 
@@ -57,12 +56,13 @@ export function HomeBannerSliderSlick() {
               <div key={slide.title} className="relative">
                 <div className="relative h-[360px] max-[380px]:h-[420px] sm:h-[420px] lg:h-[480px]">
                   <div className="absolute inset-0">
-                    <img
+                    <ImageWithSkeleton
                       src={slide.image}
                       alt={slide.title}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover"
+                      wrapperClassName="w-full h-full"
+                      imgClassName="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
                   </div>

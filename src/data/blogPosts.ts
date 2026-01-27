@@ -1,6 +1,4 @@
-import edibleSaltImage from '../assets/edible_and_culinary_salt.jpg';
-import tilesBricksImage from '../assets/tiles_and_bricks.jpg';
-import animalLickImage from '../assets/animal_lick_salt.jpg';
+import { imageUrls } from './imageUrls';
 
 export interface BlogPost {
   slug: string;
@@ -23,7 +21,7 @@ export const blogPosts: BlogPost[] = [
       'Understand the differences between fine, medium, and coarse grades and how to choose the right option for your buyers.',
     date: 'Jan 12, 2026',
     readTime: '6 min read',
-    image: edibleSaltImage,
+    image: imageUrls.edibleSalt,
     tags: ['Grades', 'Export', 'Culinary'],
     content: [
       'Salt grades are defined by granulation size and purity. For export buyers, selecting the right grade helps meet market expectations and production requirements.',
@@ -39,7 +37,7 @@ export const blogPosts: BlogPost[] = [
       'A practical checklist for brands preparing private-label packaging for international markets.',
     date: 'Feb 03, 2026',
     readTime: '5 min read',
-    image: tilesBricksImage,
+    image: imageUrls.tilesBricks,
     tags: ['Packaging', 'Compliance', 'Branding'],
     content: [
       'Private labeling begins with clear artwork, regulatory labels, and packaging material choices. The checklist helps you avoid delays during production.',
@@ -55,7 +53,7 @@ export const blogPosts: BlogPost[] = [
       'Key documents every import buyer should verify before shipment leaves Pakistan.',
     date: 'Feb 28, 2026',
     readTime: '7 min read',
-    image: animalLickImage,
+    image: imageUrls.animalLick,
     tags: ['Export', 'Documentation', 'Logistics'],
     content: [
       'Export documentation protects both buyers and sellers. The core set includes invoices, packing lists, certificates of origin, and shipping documents.',

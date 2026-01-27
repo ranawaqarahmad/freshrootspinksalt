@@ -1,6 +1,6 @@
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Box, Tag, Palette, Truck } from 'lucide-react';
-import rawIndustrialImage from '../../assets/raw_industrial_salt.jpg';
+import { imageUrls } from '../../data/imageUrls';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 export function PackagingSection() {
   return (
     <section className="py-20">
@@ -90,10 +90,11 @@ export function PackagingSection() {
           </div>
 
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
-            <ImageWithFallback
-              src={rawIndustrialImage}
+            <ImageWithSkeleton
+              src={imageUrls.rawIndustrial}
               alt="Product Packaging"
-              className="w-full h-[600px] object-cover"
+              wrapperClassName="w-full h-[600px]"
+              imgClassName="w-full h-full object-cover"
             />
           </div>
         </div>

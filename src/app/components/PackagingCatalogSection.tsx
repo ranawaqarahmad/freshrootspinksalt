@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { packagingItems } from '../../data/packaging';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 interface PackagingCatalogSectionProps {
   columns?: 2 | 3 | 4;
@@ -76,12 +77,13 @@ export function PackagingCatalogSection({
               className="group bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl overflow-hidden hover:shadow-lg transition-all animate-in fade-in-0 slide-in-from-bottom-2 duration-500"
             >
               <div className="aspect-[4/3] bg-stone-50 dark:bg-stone-800 overflow-hidden">
-                <img
+                <ImageWithSkeleton
                   src={item.image}
                   alt={item.name}
                   loading="lazy"
                   decoding="async"
-                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  wrapperClassName="h-full w-full"
+                  imgClassName="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-5">

@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { blogPosts } from '../../data/blogPosts';
+import { ImageWithSkeleton } from '../components/ImageWithSkeleton';
 
 export default function BlogDetailPage() {
   const { slug } = useParams();
@@ -41,12 +42,13 @@ export default function BlogDetailPage() {
         </div>
 
         <div className="aspect-[16/9] rounded-2xl overflow-hidden bg-stone-50 dark:bg-stone-900 mb-10">
-          <img
+          <ImageWithSkeleton
             src={post.image}
             alt={post.title}
             loading="lazy"
             decoding="async"
-            className="h-full w-full object-cover"
+            wrapperClassName="h-full w-full"
+            imgClassName="h-full w-full object-cover"
           />
         </div>
 

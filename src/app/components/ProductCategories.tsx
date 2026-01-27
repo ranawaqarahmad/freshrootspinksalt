@@ -1,24 +1,18 @@
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { categories } from '../../data/products';
-import edibleSaltImage from '../../assets/edible_and_culinary_salt.jpg';
-import animalLickImage from '../../assets/animal_lick_salt.jpg';
-import tilesBricksImage from '../../assets/tiles_and_bricks.jpg';
-import spaWellnessImage from '../../assets/spa_and_wellness.jpg';
-import decorCraftImage from '../../assets/decor_and_craft.jpg';
-import accessoriesImage from '../../assets/accessories.jpg';
-import rawIndustrialImage from '../../assets/raw_industrial_salt.jpg';
+import { imageUrls } from '../../data/imageUrls';
+import { ImageWithSkeleton } from './ImageWithSkeleton';
 
 export function ProductCategories() {
   const categoryImages: { [key: string]: string } = {
-    'edible-salt': edibleSaltImage,
-    'animal-lick': animalLickImage,
-    'tiles-bricks': tilesBricksImage,
-    'spa-wellness': spaWellnessImage,
-    'decor-crafts': decorCraftImage,
-    'accessories': accessoriesImage,
-    'raw-industrial': rawIndustrialImage,
+    'edible-salt': imageUrls.edibleSalt,
+    'animal-lick': imageUrls.animalLick,
+    'tiles-bricks': imageUrls.tilesBricks,
+    'spa-wellness': imageUrls.spaWellness,
+    'decor-crafts': imageUrls.decorCraft,
+    'accessories': imageUrls.accessories,
+    'raw-industrial': imageUrls.rawIndustrial,
   };
 
   return (
@@ -39,12 +33,13 @@ export function ProductCategories() {
               className="group relative overflow-hidden rounded-xl bg-stone-50 dark:bg-stone-900 hover:shadow-xl transition-all duration-500 cursor-pointer border border-stone-200 dark:border-stone-800"
             >
               <div className="aspect-[4/3] relative overflow-hidden">
-                <ImageWithFallback
+                <ImageWithSkeleton
                   src={categoryImages[category.slug]}
                   alt={category.name}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  wrapperClassName="w-full h-full"
+                  imgClassName="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               </div>

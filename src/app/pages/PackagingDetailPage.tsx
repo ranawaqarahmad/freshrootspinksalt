@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { packagingItems } from '../../data/packaging';
+import { ImageWithSkeleton } from '../components/ImageWithSkeleton';
 
 export default function PackagingDetailPage() {
   const { slug } = useParams();
@@ -43,12 +44,13 @@ export default function PackagingDetailPage() {
         <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-8">
           <div className="bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6">
             <div className="aspect-[4/3] rounded-xl overflow-hidden bg-white dark:bg-stone-950">
-              <img
+              <ImageWithSkeleton
                 src={item.image}
                 alt={item.name}
                 loading="lazy"
                 decoding="async"
-                className="h-full w-full object-cover"
+                wrapperClassName="h-full w-full"
+                imgClassName="h-full w-full object-cover"
               />
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { Send, Mail, Phone, MapPin } from 'lucide-react';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { categories } from '../../data/products';
 
@@ -19,6 +19,18 @@ export function RFQForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const captchaSiteKey = useMemo(() => {
+    if (typeof window === 'undefined') {
+      return import.meta.env.VITE_HCAPTCHA_SITE_KEY || '';
+    }
+    const hostname = window.location.hostname;
+    const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1';
+    if (isLocalhost && import.meta.env.VITE_HCAPTCHA_SITE_KEY_LOCAL) {
+      return import.meta.env.VITE_HCAPTCHA_SITE_KEY_LOCAL;
+    }
+    return import.meta.env.VITE_HCAPTCHA_SITE_KEY || '';
+  }, []);
+  const isCaptchaReady = Boolean(captchaSiteKey);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,17 +77,17 @@ export function RFQForm() {
           </div>
           <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">Request for Quotation (RFQ)</h2>
           <p className="text-xl text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">
-            Fill out the form below with your requirements and our export team will 
+            Fill out the form below with your requirements and our export team will
             respond with a detailed quotation within 24 hours
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Contact Info */}
-          <div className="space-y-6">
-            <div className="bg-gradient-to-br from-[#3D9B93] to-[#348780] p-8 rounded-2xl text-white">
+          <div className="space-y-6 min-w-0">
+            <div className="bg-gradient-to-br from-[#3D9B93] to-[#348780] p-6 sm:p-8 rounded-2xl text-white">
               <h3 className="text-2xl mb-6">Contact Information</h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -83,7 +95,10 @@ export function RFQForm() {
                   </div>
                   <div>
                     <div className="text-sm text-white/80 mb-1">Email</div>
-                    <a href="mailto:info@freshrootspinksalt.com" className="text-white hover:text-white/90">
+                    <a
+                      href="mailto:info@freshrootspinksalt.com"
+                      className="text-white hover:text-white/90 break-all"
+                    >
                       info@freshrootspinksalt.com
                     </a>
                   </div>
@@ -93,7 +108,7 @@ export function RFQForm() {
                   <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Phone className="w-6 h-6" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-sm text-white/80 mb-1">Phone</div>
                     <a href="tel:+92" className="text-white hover:text-white/90">
                       +92 XXX XXXXXXX
@@ -105,7 +120,7 @@ export function RFQForm() {
                   <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-sm text-white/80 mb-1">Address</div>
                     <div className="text-white">
                       [Your Address]<br />
@@ -116,18 +131,18 @@ export function RFQForm() {
               </div>
             </div>
 
-            <div className="bg-[#E88B7F]/10 border border-[#E88B7F]/20 p-8 rounded-2xl">
+            <div className="bg-[#E88B7F]/10 border border-[#E88B7F]/20 p-6 sm:p-8 rounded-2xl">
               <h4 className="text-xl text-stone-900 dark:text-white mb-4">Business Hours</h4>
               <div className="space-y-2 text-stone-600 dark:text-stone-300">
-                <div className="flex justify-between">
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
                   <span>Monday - Friday:</span>
                   <span>9:00 AM - 6:00 PM</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
                   <span>Saturday:</span>
                   <span>10:00 AM - 2:00 PM</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
                   <span>Sunday:</span>
                   <span>Closed</span>
                 </div>
@@ -139,15 +154,18 @@ export function RFQForm() {
 
             <div className="bg-stone-100 dark:bg-stone-900 p-6 rounded-xl border border-stone-200 dark:border-stone-800">
               <p className="text-sm text-stone-700 dark:text-stone-300">
-                <strong>Note:</strong> For urgent inquiries, please contact us directly 
+                <strong>Note:</strong> For urgent inquiries, please contact us directly
                 via phone or WhatsApp. We typically respond to RFQs within 24 business hours.
               </p>
             </div>
           </div>
 
           {/* RFQ Form */}
-          <div className="lg:col-span-2">
-            <form onSubmit={handleSubmit} className="bg-white dark:bg-stone-900 p-8 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-sm">
+          <div className="lg:col-span-2 min-w-0">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white dark:bg-stone-900 p-6 sm:p-8 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-sm"
+            >
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
@@ -303,18 +321,29 @@ export function RFQForm() {
                 <label className="block text-sm text-stone-700 dark:text-stone-300 mb-2">
                   Verification
                 </label>
-                <HCaptcha
-                  sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY || ''}
-                  onVerify={(token) => setCaptchaToken(token)}
-                  onExpire={() => setCaptchaToken(null)}
-                  theme={document.documentElement.classList.contains('dark') ? 'dark' : 'light'}
-                />
+                <div className="max-w-full overflow-hidden">
+                  <div className="inline-flex items-center">
+                    <div className="origin-left scale-[0.85] min-[360px]:scale-90 sm:scale-100">
+                    <HCaptcha
+                      sitekey={captchaSiteKey}
+                      onVerify={(token) => setCaptchaToken(token)}
+                      onExpire={() => setCaptchaToken(null)}
+                      theme={document.documentElement.classList.contains('dark') ? 'dark' : 'light'}
+                    />
+                    </div>
+                  </div>
+                </div>
+                {!isCaptchaReady ? (
+                  <p className="text-xs text-rose-500 mt-2">
+                    hCaptcha site key is missing. Please set it in your environment variables.
+                  </p>
+                ) : null}
               </div>
 
               <button
                 type="submit"
                 className="w-full bg-[#E88B7F] text-white px-8 py-4 rounded-lg hover:bg-[#d97a6e] transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl disabled:opacity-70"
-                disabled={isSubmitting || !captchaToken}
+                disabled={isSubmitting || !captchaToken || !isCaptchaReady}
               >
                 <Send className="w-5 h-5" />
                 {isSubmitting ? 'Submitting...' : 'Submit RFQ'}

@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { products } from '../../data/products';
 import { packagingItems } from '../../data/packaging';
-import defaultProductImage from '../../assets/edible-pink-salt-fine.jpg';
+import { imageUrls } from '../../data/imageUrls';
+import { ImageWithSkeleton } from '../components/ImageWithSkeleton';
 import { Package, ShoppingBag, Star, Truck } from 'lucide-react';
 
 export default function ProductDetailPage() {
@@ -30,7 +31,7 @@ export default function ProductDetailPage() {
     );
   }
 
-  const gallery = product.images?.length ? product.images : [product.image ?? defaultProductImage];
+  const gallery = product.images?.length ? product.images : [product.image ?? imageUrls.edibleFine];
   const [activeImage, setActiveImage] = useState(gallery[0]);
   const relatedPackaging = packagingItems.filter((item) => item.appliesTo.includes(product.category));
 
@@ -59,11 +60,12 @@ export default function ProductDetailPage() {
                 >
                   <span aria-hidden="true">←</span>
                 </Link>
-                <img
+                <ImageWithSkeleton
                   src={activeImage}
                   alt={product.name}
                   decoding="async"
-                  className="h-full w-full object-contain"
+                  wrapperClassName="h-full w-full"
+                  imgClassName="h-full w-full object-contain"
                 />
               </div>
               {gallery.length > 1 ? (
@@ -78,12 +80,13 @@ export default function ProductDetailPage() {
                         : 'border-stone-200 dark:border-stone-800'
                         } bg-white dark:bg-stone-950 overflow-hidden`}
                     >
-                      <img
+                      <ImageWithSkeleton
                         src={image}
                         alt={`${product.name} ${index + 1}`}
                         loading="lazy"
                         decoding="async"
-                        className="h-full w-full object-contain"
+                        wrapperClassName="h-full w-full"
+                        imgClassName="h-full w-full object-contain"
                       />
                     </button>
                   ))}

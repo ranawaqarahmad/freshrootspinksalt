@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../../data/blogPosts';
+import { ImageWithSkeleton } from '../components/ImageWithSkeleton';
 
 export default function BlogIndexPage() {
   return (
@@ -28,12 +29,13 @@ export default function BlogIndexPage() {
               className="group bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl overflow-hidden hover:shadow-lg transition-all"
             >
               <div className="aspect-[16/10] bg-stone-50 dark:bg-stone-800 overflow-hidden">
-                <img
+                <ImageWithSkeleton
                   src={post.image}
                   alt={post.title}
                   loading="lazy"
                   decoding="async"
-                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  wrapperClassName="h-full w-full"
+                  imgClassName="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">

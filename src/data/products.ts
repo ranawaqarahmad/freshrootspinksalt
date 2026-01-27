@@ -1,3 +1,5 @@
+import { imageUrls } from "./imageUrls";
+
 export interface Product {
   id: number;
   name: string;
@@ -18,6 +20,7 @@ export const products: Product[] = [
     packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
     category: "Edible Salt",
     shade: "light",
+    image: imageUrls.edibleSalt,
     description:
       "Fine Himalayan pink salt is a smooth, powder-like grade that dissolves quickly and blends evenly. Ideal for daily cooking, baking, and food processing. Best for home kitchens, restaurants, and packaged food brands.",
   },
@@ -28,6 +31,7 @@ export const products: Product[] = [
     packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
     category: "Edible Salt",
     shade: "medium",
+    image: imageUrls.smallGrainSalt,
     description:
       "Small grain crystals dissolve easily while keeping a natural crystal look. Balanced for cooking and table use. Best for gourmet cooking, retail packs, and seasoning jars.",
   },
@@ -38,6 +42,7 @@ export const products: Product[] = [
     packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
     category: "Edible Salt",
     shade: "dark",
+    image: imageUrls.granularSalt,
     description:
       "Granular crystals hold their shape during cooking and offer controlled seasoning. Preferred for grinders and finishing dishes. Best for salt grinders, seasoning blends, and professional kitchens.",
   },
@@ -48,6 +53,7 @@ export const products: Product[] = [
     packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
     category: "Edible Salt",
     shade: "medium",
+    image: imageUrls.rockSalt,
     description:
       "Coarse crystals dissolve slowly for controlled seasoning and long use. Common in mills, grilling, and refill packs. Best for salt mills, grilling, and gourmet preparation.",
   },
@@ -58,6 +64,7 @@ export const products: Product[] = [
     packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
     category: "Edible Salt",
     shade: "light",
+    image: imageUrls.edibleSalt,
     description:
       "Extra fine powder is milled for a smooth texture and fast dissolving. Suitable for seasoning blends and packaged foods. Best for private-label retail and food processing.",
   },
@@ -67,6 +74,7 @@ export const products: Product[] = [
     size: "1 kg – 2 kg (approx)",
     packaging: "Individual wrap, carton, or palletized",
     category: "Animal Lick Salt",
+    image: imageUrls.lickSalt2KG,
     description:
       "Small animal lick salt blocks provide essential natural minerals to livestock. Suitable for controlled feeding environments and smaller animals. Best for small livestock and indoor feeding areas.",
   },
@@ -76,6 +84,7 @@ export const products: Product[] = [
     size: "2 kg – 4 kg",
     packaging: "Individual wrap, carton, or palletized",
     category: "Animal Lick Salt",
+    image: imageUrls.lickSalt4KG,
     description:
       "Medium-sized lick salt blocks are long-lasting and suitable for regular livestock feeding. Weather resistant with consistent mineral supply. Best for cattle, goats, and horses.",
   },
@@ -85,6 +94,7 @@ export const products: Product[] = [
     size: "4 kg – 6 kg",
     packaging: "Individual wrap, carton, or palletized",
     category: "Animal Lick Salt",
+    image: imageUrls.lickSalt6KG,
     description:
       "Large animal lick salt blocks are designed for outdoor use and grazing fields. Their size ensures durability and extended usage. Best for open farms and large livestock herds.",
   },
@@ -94,6 +104,7 @@ export const products: Product[] = [
     size: "1 – 2 kg, 2 – 3 kg (with rope)",
     packaging: "Individual wrap, carton, or palletized",
     category: "Animal Lick Salt",
+    image: imageUrls.hangingLickSalt,
     description:
       "Hanging salt licks reduce ground contact and contamination, improving hygiene and reducing wastage. Best for barns, stables, and managed grazing systems.",
   },
@@ -103,6 +114,7 @@ export const products: Product[] = [
     size: "8″×4″×2″ (standard)",
     packaging: "Loose, carton, or palletized",
     category: "Tiles & Bricks",
+    image: imageUrls.standardSaltBrick,
     description:
       "Standard salt bricks are widely used in salt therapy rooms, spas, and wellness centers. Their thickness provides strength and long service life. Best for salt rooms, spa walls, and wellness centers.",
   },
@@ -112,6 +124,7 @@ export const products: Product[] = [
     size: "6″×4″×1″ (smaller)",
     packaging: "Loose, carton, or palletized",
     category: "Tiles & Bricks",
+    image: imageUrls.smallerSaltBrick,
     description:
       "Slim salt bricks are lighter and easier to install. Commonly used for decorative walls and interior design projects. Best for interior decor and light wall installations.",
   },
@@ -121,6 +134,7 @@ export const products: Product[] = [
     size: "8″×4″×1″",
     packaging: "Carton, crate, or palletized",
     category: "Tiles & Bricks",
+    image: imageUrls.standardSaltBrick,
     description:
       "Rectangular salt tiles create uniform patterns and smooth wall finishes for wellness rooms and decorative applications.",
   },
@@ -130,6 +144,7 @@ export const products: Product[] = [
     size: "12″×8″×1″",
     packaging: "Carton, crate, or palletized",
     category: "Tiles & Bricks",
+    image: imageUrls.tilesBricks,
     description:
       "Large-format salt tiles are ideal for premium spa interiors and architectural projects that require fewer joints.",
   },
@@ -139,6 +154,7 @@ export const products: Product[] = [
     size: "8″×8″×1″",
     packaging: "Carton, crate, or palletized",
     category: "Tiles & Bricks",
+    image: imageUrls.smallerSaltBrick,
     description:
       "Square tiles cover larger surface areas and are suitable for modern wall designs.",
   },
@@ -148,6 +164,7 @@ export const products: Product[] = [
     size: "Interlocking wellness panels",
     packaging: "Crate or palletized",
     category: "Tiles & Bricks",
+    image: imageUrls.saltPanels,
     description:
       "Interlocking panels simplify installation and ensure alignment. Commonly used in professional salt room construction.",
   },
