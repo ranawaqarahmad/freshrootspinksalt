@@ -185,8 +185,8 @@ export default function ProductDetailPage() {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-4 lg:grid-cols-4 gap-6">
-            {(relatedPackaging.length ? relatedPackaging : packagingItems).slice(0, 4).map((item) => (
+          <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
+            {(relatedPackaging.length ? relatedPackaging : packagingItems).slice(0, 3).map((item) => (
               <Link
                 key={item.slug}
                 to={`/packaging/catalog/${item.slug}`}

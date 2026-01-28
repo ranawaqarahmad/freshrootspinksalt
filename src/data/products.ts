@@ -144,7 +144,7 @@ export const products: Product[] = [
     size: "12″×8″×1″",
     packaging: "Carton, crate, or palletized",
     category: "Tiles & Bricks",
-    image: imageUrls.tilesBricks,
+    image: imageUrls.smallerSaltBrick,
     description:
       "Large-format salt tiles are ideal for premium spa interiors and architectural projects that require fewer joints.",
   },
@@ -154,7 +154,7 @@ export const products: Product[] = [
     size: "8″×8″×1″",
     packaging: "Carton, crate, or palletized",
     category: "Tiles & Bricks",
-    image: imageUrls.smallerSaltBrick,
+    image: imageUrls.standardSaltBrick,
     description:
       "Square tiles cover larger surface areas and are suitable for modern wall designs.",
   },
@@ -174,6 +174,7 @@ export const products: Product[] = [
     size: "Fine to coarse grain (various)",
     packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
     category: "Spa & Wellness",
+    image: imageUrls.bathSpaSalt,
     description:
       "Bath salt is used for relaxation, muscle relief, and skin care. It dissolves in warm water and is available in multiple grain sizes. Best for spas, wellness centers, and home baths.",
   },
@@ -183,6 +184,7 @@ export const products: Product[] = [
     size: "100 g – 200 g packs",
     packaging: "Retail jars/pouches or cartons",
     category: "Spa & Wellness",
+    image: imageUrls.scrubSalt,
     description:
       "Salt scrub exfoliates dead skin cells and improves circulation. Widely used in spa treatments and personal care routines.",
   },
@@ -192,6 +194,7 @@ export const products: Product[] = [
     size: "Variable sizes",
     packaging: "Individual box or carton",
     category: "Spa & Wellness",
+    image: imageUrls.massageStones,
     description:
       "Massage stones are smooth salt pieces used in therapy sessions. When warmed, they help relax muscles and improve blood flow.",
   },
@@ -201,6 +204,7 @@ export const products: Product[] = [
     size: "1 kg – 25 kg",
     packaging: "Individual box or carton",
     category: "Decor & Crafts",
+    image: imageUrls.saltLamps,
     description:
       "Natural salt lamps are carved from solid salt crystals. They provide warm ambient lighting for decorative and hospitality environments.",
   },
@@ -210,6 +214,7 @@ export const products: Product[] = [
     size: "Various diameters",
     packaging: "Individual box or carton",
     category: "Decor & Crafts",
+    image: imageUrls.saltLampsSphere,
     description:
       "Shaped lamps such as spheres add decorative value and visual appeal in home and commercial interiors.",
   },
@@ -219,6 +224,7 @@ export const products: Product[] = [
     size: "Tea-light size",
     packaging: "Individual box or carton",
     category: "Decor & Crafts",
+    image: imageUrls.candleHolders,
     description:
       "Candle holders are designed for tea lights and decorative lighting. They enhance ambiance in homes and hospitality settings.",
   },
@@ -228,6 +234,7 @@ export const products: Product[] = [
     size: "Custom shapes (various)",
     packaging: "Box or wooden crate",
     category: "Decor & Crafts",
+    image: imageUrls.sculpturesDecor,
     description:
       "Handcrafted salt sculptures are used as decorative pieces and custom designs for branded spaces.",
   },
@@ -237,6 +244,7 @@ export const products: Product[] = [
     size: "Variable sizes (serving / decorative)",
     packaging: "Individual box or carton",
     category: "Decor & Crafts",
+    image: imageUrls.saltPlates,
     description:
       "Salt plates are used for cooking, serving, and food presentation. They retain heat and enhance flavor.",
   },
@@ -246,6 +254,7 @@ export const products: Product[] = [
     size: "100 g – 500 g",
     packaging: "Retail packs or cartons",
     category: "Decor & Crafts",
+    image: imageUrls.saltGrinderBottles,
     description:
       "Grinder bottles allow fresh grinding of salt crystals. Easy to use and suitable for kitchens and dining tables.",
   },
@@ -255,6 +264,7 @@ export const products: Product[] = [
     size: "For bricks & tiles bonding",
     packaging: "Bags or cartons",
     category: "Decor & Crafts",
+    image: imageUrls.saltAdhesive,
     description:
       "Special adhesive used for installing salt tiles and bricks securely.",
   },
@@ -264,6 +274,7 @@ export const products: Product[] = [
     size: "20 mm – 50 mm crystal",
     packaging: "Bulk bags or palletized",
     category: "Raw / Industrial",
+    image: imageUrls.rawRockSalt,
     description:
       "Raw crystals are unprocessed salt pieces used for crushing, refining, or industrial purposes.",
   },
@@ -273,6 +284,7 @@ export const products: Product[] = [
     size: "3 cm – 7 cm chunks",
     packaging: "Bulk bags or palletized",
     category: "Raw / Industrial",
+    image: imageUrls.saltLumps,
     description:
       "Industrial chunks are used in manufacturing processes and large-scale applications.",
   },
@@ -282,6 +294,7 @@ export const products: Product[] = [
     size: "Bulk orders by weight",
     packaging: "Bulk bags or palletized",
     category: "Raw / Industrial",
+    image: imageUrls.rawSaltBulk,
     description:
       "Large salt lumps supplied for bulk industrial processing and trade orders.",
   },

@@ -101,16 +101,19 @@ export function ProductsPage() {
               key={product.id}
               className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl p-6 hover:shadow-lg transition-all duration-300 animate-in fade-in-0 slide-in-from-bottom-2"
             >
-              <div className="mb-5 overflow-hidden rounded-lg bg-stone-50 dark:bg-stone-800 aspect-square flex items-center justify-center">
-                  <ImageWithSkeleton
-                    src={product.image ?? imageUrls.edibleFine}
-                    alt={product.name}
-                    loading="lazy"
-                    decoding="async"
-                    wrapperClassName="h-full w-full"
-                    imgClassName="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
-                  />
-              </div>
+              <Link
+                to={`/products/${product.id}`}
+                className="mb-5 block overflow-hidden rounded-lg bg-stone-50 dark:bg-stone-800 aspect-square flex items-center justify-center"
+              >
+                <ImageWithSkeleton
+                  src={product.image ?? imageUrls.edibleFine}
+                  alt={product.name}
+                  loading="lazy"
+                  decoding="async"
+                  wrapperClassName="h-full w-full"
+                  imgClassName="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
+                />
+              </Link>
               <div className="flex items-start justify-between mb-4">
                 <div className="w-12 h-12 bg-[#E88B7F]/10 rounded-lg flex items-center justify-center">
                   <Package className="w-6 h-6 text-[#E88B7F]" />
@@ -127,7 +130,12 @@ export function ProductsPage() {
                 </div>
               </div>
 
-              <h3 className="text-xl text-stone-900 dark:text-white mb-3">{product.name}</h3>
+              <Link
+                to={`/products/${product.id}`}
+                className="block text-xl text-stone-900 dark:text-white mb-3 hover:text-[#3D9B93] transition-colors"
+              >
+                {product.name}
+              </Link>
               
               <div className="space-y-3 mb-6">
                 <div>
@@ -160,7 +168,7 @@ export function ProductsPage() {
         </div>
 
         {visibleCount < filteredProducts.length ? (
-          <div className="mt-10 flex justify-center">
+          <div className="mt-12 flex justify-center">
             <button
               type="button"
               onClick={() => {
@@ -172,17 +180,17 @@ export function ProductsPage() {
                   setIsLoading(false);
                 }, 300);
               }}
-              className="inline-flex items-center gap-2 rounded-full border border-[#E88B7F]/30 bg-[#E88B7F]/10 px-6 py-2.5 text-sm text-[#E88B7F] hover:bg-[#E88B7F]/20 transition-colors"
+              className="inline-flex items-center gap-3 rounded-lg border border-[#E88B7F]/40 bg-[#E88B7F]/20 px-8 py-3 text-sm font-semibold text-[#E88B7F] shadow-md transition-all hover:bg-[#E88B7F]/30 hover:shadow-lg hover:scale-[1.03] cursor-pointer"
               aria-live="polite"
               disabled={isLoading}
             >
               {isLoading ? (
                 <>
-                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#E88B7F] border-t-transparent" />
-                  Loading
+                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                  Loading more
                 </>
               ) : (
-                'Load More'
+                'Load more products'
               )}
             </button>
           </div>

@@ -152,9 +152,9 @@ exports.handler = async function handler(event) {
   const htmlBody = `
     <div style="font-family: Arial, Helvetica, sans-serif; background:#f7f5f2; padding:24px;">
       <div style="max-width:640px; margin:0 auto; background:#ffffff; border:1px solid #eee3e0; border-radius:16px; overflow:hidden;">
-        <div style="background:linear-gradient(90deg,#3D9B93,#348780); padding:18px 24px; color:#fff;">
+        <div style="background:linear-gradient(90deg,#0f1417,#348780); padding:18px 24px; color:#fff;">
           <div style="display:flex; align-items:center; gap:12px;">
-            <img src="https://res.cloudinary.com/digdbqcct/image/upload/v1769540544/logo_stspcq.png" alt="Fresh Roots Pink Salt" style="height:36px; width:auto; display:block;" />
+            <img src="https://res.cloudinary.com/digdbqcct/image/upload/v1769540544/logo_stspcq.png" alt="Fresh Roots Pink Salt" style="height:36px; width:auto; display:block;margin-right:15px" />
             <div>
               <div style="font-size:12px; letter-spacing:2px; text-transform:uppercase;">Fresh Roots Pink Salt</div>
               <div style="font-size:20px; font-weight:700; margin-top:4px;">Website RFQ Submission</div>
