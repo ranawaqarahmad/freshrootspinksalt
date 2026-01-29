@@ -1,5 +1,5 @@
 import { Send, Mail, Phone, MapPin } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { categories } from '../../data/products';
 
@@ -19,6 +19,8 @@ export function RFQForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [captchaTheme, setCaptchaTheme] = useState<'light' | 'dark'>('light');
+
   const captchaSiteKey = useMemo(() => {
     if (typeof window === 'undefined') {
       return import.meta.env.VITE_HCAPTCHA_SITE_KEY || '';
@@ -34,6 +36,12 @@ export function RFQForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!captchaToken) {
+      setStatusMessage('Please complete the verification.');
+      return;
+    }
+
     setIsSubmitting(true);
     setStatusMessage(null);
     try {
@@ -43,8 +51,10 @@ export function RFQForm() {
         body: JSON.stringify({ ...formData, captchaToken }),
       });
 
+      const result = await response.json().catch(() => null);
+
       if (!response.ok) {
-        throw new Error('Submission failed');
+        throw new Error(result?.error || 'Submission failed');
       }
 
       setStatusMessage('Thank you for your quote request. We will contact you within 24 hours.');
@@ -67,6 +77,13 @@ export function RFQForm() {
       setIsSubmitting(false);
     }
   };
+
+
+
+  useEffect(() => {
+    const isDark = document.documentElement.classList.contains('dark');
+    setCaptchaTheme(isDark ? 'dark' : 'light');
+  }, []);
 
   return (
     <section className="py-20 bg-gradient-to-br from-stone-50 to-white dark:from-stone-950 dark:to-stone-900">
@@ -324,12 +341,12 @@ export function RFQForm() {
                 <div className="max-w-full overflow-hidden">
                   <div className="inline-flex items-center">
                     <div className="origin-left scale-[0.85] min-[360px]:scale-90 sm:scale-100">
-                    <HCaptcha
-                      sitekey={captchaSiteKey}
-                      onVerify={(token) => setCaptchaToken(token)}
-                      onExpire={() => setCaptchaToken(null)}
-                      theme={document.documentElement.classList.contains('dark') ? 'dark' : 'light'}
-                    />
+                      <HCaptcha
+                        sitekey={captchaSiteKey}
+                        onVerify={(token) => setCaptchaToken(token)}
+                        onExpire={() => setCaptchaToken(null)}
+                        theme={captchaTheme}
+                      />
                     </div>
                   </div>
                 </div>

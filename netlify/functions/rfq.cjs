@@ -11,13 +11,21 @@ const requiredFields = [
   'quantity',
 ];
 
+function baseHeaders() {
+  return {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Max-Age': '86400',
+  };
+}
+
+
 function jsonResponse(statusCode, payload) {
   return {
     statusCode,
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-    },
+    headers: baseHeaders(),
     body: JSON.stringify(payload),
   };
 }
