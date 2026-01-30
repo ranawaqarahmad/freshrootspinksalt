@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 export const config = {
-  runtime: 'nodejs18.x',
+  runtime: 'nodejs',
 };
 
 const requiredFields = [
