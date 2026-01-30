@@ -186,7 +186,7 @@ export function ProductsPage() {
             >
               {isLoading ? (
                 <>
-                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#E88B7F] border-t-transparent" />
                   Loading more
                 </>
               ) : (

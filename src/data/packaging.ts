@@ -64,7 +64,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Premium Packaging',
     description:
       'Food-grade glass or PET jars that showcase product quality and enhance shelf presence.',
-    image: imageUrls.retailPack,
+    image: imageUrls.jarPackLabeled,
     range: '200 g, 300 g, 500 g',
     material: 'Glass or PET with lids',
     highlights: ['Premium appearance', 'Reusable', 'Strong shelf appeal'],
@@ -77,7 +77,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Retail Packaging',
     description:
       'Functional grinder bottles for coarse salt, designed for tabletop and culinary use.',
-    image: imageUrls.saltGrinderBottles,
+    image: imageUrls.grinderBottlesTable,
     range: '100 g, 200 g',
     material: 'Glass or plastic grinder bottles',
     highlights: ['Built-in grinder', 'Table-ready', 'Clean dispensing'],
@@ -90,7 +90,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Export Packaging',
     description:
       'Secondary cartons to pack and protect multiple retail units during shipment and storage.',
-    image: imageUrls.retailPack,
+    image: imageUrls.cartonPack,
     range: 'Multiple retail units',
     material: 'Corrugated cartons',
     highlights: ['Stackable', 'Export safe', 'Cost efficient'],
@@ -111,7 +111,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Decor Packaging',
     description:
       'Protective wooden crates for heavy and fragile decor items such as lamps and crafted products.',
-    image: imageUrls.saltLamps,
+    image: imageUrls.woodenCrates,
     range: 'Custom weights',
     material: 'Wooden crate packaging',
     highlights: ['Heavy-duty protection', 'Export safe', 'Reduced breakage'],
@@ -124,7 +124,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Export Packaging',
     description:
       'Stretch and shrink wrapping for secured pallets and stabilized export loads.',
-    image: imageUrls.rawSaltBulk,
+    image: imageUrls.wrappedPallets,
     range: 'Loaded pallet',
     material: 'Shrink film and stretch wrap',
     highlights: ['Stable loads', 'Moisture protection', 'Transit ready'],
@@ -145,7 +145,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Premium Packaging',
     description:
       'Multi-item retail sets that combine jars and bottles for premium presentation and gifting.',
-    image: imageUrls.retailPack,
+    image: imageUrls.retailSet,
     range: 'Multi-item sets',
     material: 'Boxed retail set packaging',
     highlights: ['Gift ready', 'Premium presentation', 'Customizable'],
@@ -158,7 +158,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Private Label',
     description:
       'Rigid or folding cartons with buyer branding for private label and retail-ready products.',
-    image: imageUrls.retailPack,
+    image: imageUrls.printedBox,
     range: 'As per buyer design',
     material: 'Rigid or folding cartons',
     highlights: ['Branding support', 'Premium finish', 'Retail ready'],
@@ -171,7 +171,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Private Label',
     description:
       'Label-only packaging for private label buyers using standard jars, pouches, or cartons.',
-    image: imageUrls.retailPack,
+    image: imageUrls.lidLabel,
     range: 'Retail labeling',
     material: 'Labels and lids only',
     highlights: ['Cost efficient', 'Private label ready', 'Fast turnaround'],
@@ -184,7 +184,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Decor Packaging',
     description:
       'Gift boxes and decorative packaging for premium craft and decor products.',
-    image: imageUrls.candleHolders,
+    image: imageUrls.decorGiftPack,
     range: 'Custom designs',
     material: 'Decorative gift boxes',
     highlights: ['Premium unboxing', 'Protective inserts', 'Retail gifting'],
@@ -197,7 +197,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Retail Packaging',
     description:
       'Small trial packs for market testing, sampling, and promotional distribution.',
-    image: imageUrls.smallRetailPouch,
+    image: imageUrls.samplePack,
     range: 'Small trial packs',
     material: 'Small pouch or sachet',
     highlights: ['Trial ready', 'Low cost', 'Easy distribution'],
@@ -210,7 +210,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Bulk Packaging',
     description:
       'Food-grade polypropylene bags for medium-volume edible salt and commercial buyers.',
-    image: imageUrls.rawSaltBulk,
+    image: imageUrls.ppBags,
     range: '5 kg, 10 kg',
     material: 'Food-grade PP bags',
     highlights: ['Food safe', 'Medium volume', 'Durable'],
@@ -223,7 +223,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Retail Packaging',
     description:
       'Vacuum-sealed packs to extend shelf life and protect against moisture.',
-    image: imageUrls.retailPack,
+    image: imageUrls.vacuumPack,
     range: '500 g, 1 kg',
     material: 'Vacuum-sealed pouches',
     highlights: ['Longer shelf life', 'Moisture protection', 'Clean presentation'],
@@ -236,7 +236,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Retail Packaging',
     description:
       'Resealable zipper bags for convenient repeated use while maintaining freshness.',
-    image: imageUrls.retailPouches,
+    image: imageUrls.vacuumPack,
     range: '500 g, 1 kg',
     material: 'Zipper pouch packaging',
     highlights: ['Reusable seal', 'Retail friendly', 'Freshness retention'],
@@ -249,7 +249,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Export Packaging',
     description:
       'Export cartons labeled with buyer information and handling instructions for compliance.',
-    image: imageUrls.retailPack,
+    image: imageUrls.exportBoxes,
     range: 'Custom export labels',
     material: 'Corrugated export cartons',
     highlights: ['Export compliant', 'Custom labels', 'Stackable'],
@@ -270,7 +270,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Decor Packaging',
     description:
       'Sturdy packaging for iron basket salt lamps to prevent damage during transit.',
-    image: imageUrls.saltLamps,
+    image: imageUrls.ironBasketPack,
     range: 'Lamp specific',
     material: 'Reinforced lamp packaging',
     highlights: ['Shock resistant', 'Lamp-specific fit', 'Export ready'],
@@ -283,7 +283,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Decor Packaging',
     description:
       'Wooden basket packaging for decorative salt lamps with premium presentation.',
-    image: imageUrls.saltLamps,
+    image: imageUrls.woodenBasket,
     range: 'Lamp specific',
     material: 'Wooden basket packaging',
     highlights: ['Premium look', 'Protective structure', 'Reusable'],
@@ -296,7 +296,7 @@ export const packagingItems: PackagingItem[] = [
     category: 'Decor Packaging',
     description:
       'Retail packaging designed for USB salt lamps with inserts for cables and accessories.',
-    image: imageUrls.saltLampsSphere,
+    image: imageUrls.lamBoxUsb,
     range: 'Lamp specific',
     material: 'Branded carton with inserts',
     highlights: ['Accessory storage', 'Retail ready', 'Protective fit'],
