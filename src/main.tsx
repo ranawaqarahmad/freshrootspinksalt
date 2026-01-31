@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { ThemeProvider } from "next-themes";
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 import App from "./app/App.tsx";
 import ComingSoonGate from "./app/ComingSoonGate.tsx";
 import PreviewGate from "./app/PreviewGate.tsx";
@@ -66,6 +67,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <SpeedInsights />
+      <Analytics />
     </BrowserRouter>
   </ThemeProvider>
 );
