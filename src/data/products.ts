@@ -248,22 +248,22 @@ export const products: Product[] = [
     description:
       "Salt plates are used for cooking, serving, and food presentation. They retain heat and enhance flavor.",
   },
-  {
-    id: 24,
-    name: "Salt Grinder Bottle",
-    size: "100 g – 500 g",
-    packaging: "Retail packs or cartons",
-    category: "Decor & Crafts",
-    image: imageUrls.saltGrinderBottles,
-    description:
-      "Grinder bottles allow fresh grinding of salt crystals. Easy to use and suitable for kitchens and dining tables.",
-  },
+  // {
+  //   id: 24,
+  //   name: "Salt Grinder Bottle",
+  //   size: "100 g – 500 g",
+  //   packaging: "Retail packs or cartons",
+  //   category: "Decor & Crafts",
+  //   image: imageUrls.saltGrinderBottles,
+  //   description:
+  //     "Grinder bottles allow fresh grinding of salt crystals. Easy to use and suitable for kitchens and dining tables.",
+  // },
   {
     id: 25,
     name: "Salt Adhesive",
     size: "For bricks & tiles bonding",
     packaging: "Bags or cartons",
-    category: "Decor & Crafts",
+    category: "Raw / Industrial",
     image: imageUrls.saltAdhesive,
     description:
       "Special adhesive used for installing salt tiles and bricks securely.",
@@ -271,10 +271,10 @@ export const products: Product[] = [
   {
     id: 26,
     name: "Raw Rock Salt",
-    size: "20 mm – 50 mm crystal",
+    size: "20 cm – 50 cm crystal",
     packaging: "Bulk bags or palletized",
     category: "Raw / Industrial",
-    image: imageUrls.rawRockSalt,
+    image: imageUrls.saltLumps,
     description:
       "Raw crystals are unprocessed salt pieces used for crushing, refining, or industrial purposes.",
   },
@@ -284,7 +284,7 @@ export const products: Product[] = [
     size: "3 cm – 7 cm chunks",
     packaging: "Bulk bags or palletized",
     category: "Raw / Industrial",
-    image: imageUrls.saltLumps,
+    image: imageUrls.rawRockSalt,
     description:
       "Industrial chunks are used in manufacturing processes and large-scale applications.",
   },

@@ -6,6 +6,7 @@ export interface PackagingItem {
   category: string;
   description: string;
   image: string;
+  images?: string[];
   range: string;
   material: string;
   highlights: string[];
@@ -77,8 +78,9 @@ export const packagingItems: PackagingItem[] = [
     category: 'Retail Packaging',
     description:
       'Functional grinder bottles for coarse salt, designed for tabletop and culinary use.',
-    image: imageUrls.grinderBottlesTable,
-    range: '100 g, 200 g',
+    image: imageUrls.saltGrinderBottles,
+    images: [imageUrls.saltGrinderBottles,imageUrls.grinderBottlesTable],
+    range: '100 g, 150 g,200 g, 300 g, 500 g',
     material: 'Glass or plastic grinder bottles',
     highlights: ['Built-in grinder', 'Table-ready', 'Clean dispensing'],
     specs: ['Refillable', 'Food-grade', 'Retail friendly'],

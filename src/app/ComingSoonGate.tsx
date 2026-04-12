@@ -1,4 +1,5 @@
-import logo from '../assets/logo.png';
+import React from "react";
+import { imageUrls } from "../data/imageUrls";
 
 type ComingSoonVariant = 'light' | 'dark';
 
@@ -31,7 +32,7 @@ export default function ComingSoonGate({ variant = 'light' }: ComingSoonGateProp
       <div className="max-w-6xl mx-auto px-6 py-20 relative">
         <div className="flex flex-col gap-12">
           <div className="flex items-center gap-4">
-            <img src={logo} alt="Fresh Roots" className="h-16 w-auto object-contain" />
+            <img src={imageUrls.pngLogo} alt="Fresh Roots" className="h-16 w-auto object-contain" />
             <div className={`text-xs uppercase tracking-[0.35em] ${isDark ? 'text-stone-400' : 'text-stone-500'}`}>
               Coming Soon
             </div>

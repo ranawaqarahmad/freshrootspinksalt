@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { packagingItems } from '../../data/packaging';
 import { ImageWithSkeleton } from '../components/ImageWithSkeleton';
@@ -27,6 +28,14 @@ export default function PackagingDetailPage() {
     );
   }
 
+  const gallery = item.images?.length ? item.images : [item.image];
+  const primaryImage = gallery[0];
+  const [activeImage, setActiveImage] = useState(primaryImage);
+
+  useEffect(() => {
+    setActiveImage(primaryImage);
+  }, [primaryImage, slug]);
+
   return (
     <div className="pt-32 pb-20 bg-white dark:bg-stone-950">
       <div className="max-w-5xl mx-auto px-6">
@@ -45,7 +54,7 @@ export default function PackagingDetailPage() {
           <div className="bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-6">
             <div className="aspect-[4/3] rounded-xl overflow-hidden bg-white dark:bg-stone-950">
               <ImageWithSkeleton
-                src={item.image}
+                src={activeImage}
                 alt={item.name}
                 loading="lazy"
                 decoding="async"
@@ -53,6 +62,31 @@ export default function PackagingDetailPage() {
                 imgClassName="h-full w-full object-cover"
               />
             </div>
+            {gallery.length > 1 ? (
+              <div className="mt-4 flex flex-wrap gap-3">
+                {gallery.map((image, index) => (
+                  <button
+                    key={`${image}-${index}`}
+                    type="button"
+                    onClick={() => setActiveImage(image)}
+                    className={`h-16 w-16 rounded-xl border ${activeImage === image
+                      ? 'border-[#3D9B93]'
+                      : 'border-stone-200 dark:border-stone-800'
+                      } bg-white dark:bg-stone-950 overflow-hidden`}
+                    aria-label={`View ${item.name} image ${index + 1}`}
+                  >
+                    <ImageWithSkeleton
+                      src={image}
+                      alt={`${item.name} ${index + 1}`}
+                      loading="lazy"
+                      decoding="async"
+                      wrapperClassName="h-full w-full"
+                      imgClassName="h-full w-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            ) : null}
           </div>
 
           <div className="space-y-6">

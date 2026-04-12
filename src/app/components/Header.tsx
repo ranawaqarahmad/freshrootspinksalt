@@ -23,7 +23,7 @@ import {
 import { useState } from "react";
 import { useTheme } from "next-themes";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import { imageUrls } from "../../data/imageUrls";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -93,7 +93,7 @@ export function Header() {
             {/* Logo */}
             <Link className="flex items-center gap-3 cursor-pointer" to="/">
               <img
-                src={logo}
+                src={imageUrls.pngLogo}
                 alt="Fresh Roots Salt & Minerals"
                 className="h-16 w-auto object-contain"
               />

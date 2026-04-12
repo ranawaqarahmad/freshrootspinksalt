@@ -50,7 +50,7 @@ export function SourcingQuality() {
                 className="relative bg-stone-50 dark:bg-stone-900 p-8 rounded-2xl border border-stone-200 dark:border-stone-800 hover:shadow-lg transition-all duration-300"
               >
                 <div className="absolute -top-4 left-8">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#3D9B93] to-[#348780] rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#d97a6e] to-[#e88b7f] rounded-xl flex items-center justify-center shadow-lg">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                 </div>

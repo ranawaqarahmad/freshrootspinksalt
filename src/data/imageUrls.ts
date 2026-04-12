@@ -1,7 +1,8 @@
-const cloudinaryBase = 'https://res.cloudinary.com/digdbqcct/image/upload/f_auto,q_auto';
+const cloudinaryBase = 'https://res.cloudinary.com/digdbqcct/image/upload/q_auto/f_auto';
 const cloudinaryUrl = (path: string) => `${cloudinaryBase}/${path}`;
 
 export const imageUrls = {
+  pngLogo: cloudinaryUrl('v1769540544/logo_stspcq.png'),
   banner1: cloudinaryUrl('v1769536579/banner_image_1_vuxzbe.jpg'),
   banner2: cloudinaryUrl('v1769536579/banner_image_2_h5waim.jpg'),
   banner3: cloudinaryUrl('v1769536580/banner_image_3_p0fjgl.jpg'),

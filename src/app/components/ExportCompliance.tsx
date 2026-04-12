@@ -10,7 +10,7 @@ export function ExportCompliance() {
           </div>
           <h2 className="text-4xl lg:text-5xl text-stone-900 dark:text-white mb-4">Export & Compliance</h2>
           <p className="text-xl text-stone-600 dark:text-stone-300 max-w-3xl mx-auto">
-            Comprehensive export support and compliance assistance to ensure smooth 
+            Comprehensive export support and compliance assistance to ensure smooth
             international transactions and customs clearance
           </p>
         </div>
@@ -74,7 +74,7 @@ export function ExportCompliance() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          <div className="bg-gradient-to-br from-stone-900 to-stone-800 p-10 rounded-2xl text-white">
+          {/* <div className="bg-gradient-to-br from-stone-900 to-stone-800 p-10 rounded-2xl text-white">
             <h3 className="text-3xl mb-6">Country-Specific Compliance</h3>
             <p className="text-white/90 mb-6 leading-relaxed">
               Different countries have different import regulations for food products. 
@@ -102,7 +102,7 @@ export function ExportCompliance() {
                 <p className="text-sm text-white/80">Country-specific food import licenses, quarantine requirements</p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div>
             <div className="bg-[#E88B7F]/10 border border-[#E88B7F]/20 p-10 rounded-2xl mb-6">
@@ -153,6 +153,9 @@ export function ExportCompliance() {
               </ol>
             </div>
 
+
+          </div>
+          <div>
             <div className="bg-[#3D9B93] p-8 rounded-2xl text-white">
               <h4 className="text-2xl mb-4">Payment Terms</h4>
               <p className="text-white/90 mb-4">

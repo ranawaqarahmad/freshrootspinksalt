@@ -1,8 +1,10 @@
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.png';
+import { imageUrls } from '../../data/imageUrls';
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-stone-900 text-stone-300">
       {/* Main Footer */}
@@ -11,7 +13,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <img 
-              src={logo}
+              src={imageUrls.pngLogo}
               alt="Fresh Roots Salt & Minerals" 
               className="h-20 w-auto object-contain mb-6 brightness-0 invert"
             />
@@ -138,7 +140,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-stone-400 text-sm">
-              &copy; 2025 Fresh Roots Salt & Minerals. All rights reserved.
+              &copy; {currentYear} Fresh Roots Salt & Minerals. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-stone-400 hover:text-[#3D9B93] transition-colors">

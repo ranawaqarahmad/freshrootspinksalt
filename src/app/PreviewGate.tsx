@@ -1,6 +1,6 @@
 import { useMemo, useState, type FormEvent } from 'react';
 import { Navigate } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import { imageUrls } from '../data/imageUrls';
 
 const PREVIEW_KEY = 'previewUnlocked';
 
@@ -36,7 +36,7 @@ export default function PreviewGate() {
     <div className="min-h-screen bg-stone-950 text-white flex items-center">
       <div className="max-w-xl mx-auto px-6 py-16 w-full">
         <div className="flex items-center gap-4 mb-8">
-          <img src={logo} alt="Fresh Roots" className="h-12 w-auto object-contain" />
+          <img src={imageUrls.pngLogo} alt="Fresh Roots" className="h-12 w-auto object-contain" />
           <span className="text-xs uppercase tracking-[0.35em] text-stone-400">Preview</span>
         </div>
         <div className="bg-white/10 border border-white/10 rounded-2xl p-6 shadow-xl">
