@@ -6,6 +6,12 @@ import { imageUrls } from '../../data/imageUrls';
 import { ImageWithSkeleton } from '../components/ImageWithSkeleton';
 import { Package, ShoppingBag, Star, Truck } from 'lucide-react';
 
+const REQUIRED_PACKAGING_BY_CATEGORY: Record<string, string[]> = {
+  'Animal Lick Salt': ['carton-packs', 'wooden-crates', 'shrink-wrapped-pallets'],
+  'Decor & Crafts': ['carton-packs', 'wooden-crates', 'shrink-wrapped-pallets'],
+  'Tiles & Bricks': ['carton-packs', 'wooden-crates', 'shrink-wrapped-pallets'],
+};
+
 export default function ProductDetailPage() {
   const { productId } = useParams();
   const product = products.find((item) => item.id === Number(productId));
@@ -33,7 +39,27 @@ export default function ProductDetailPage() {
 
   const gallery = product.images?.length ? product.images : [product.image ?? imageUrls.edibleFine];
   const [activeImage, setActiveImage] = useState(gallery[0]);
-  const relatedPackaging = packagingItems.filter((item) => item.appliesTo.includes(product.category));
+  const relatedPackaging = (() => {
+    const applicable = packagingItems.filter((item) => item.appliesTo.includes(product.category));
+    const requiredSlugs = REQUIRED_PACKAGING_BY_CATEGORY[product.category];
+
+    if (!requiredSlugs) {
+      return applicable.length ? applicable : packagingItems;
+    }
+
+    const bySlug = new Map(packagingItems.map((item) => [item.slug, item]));
+    const required = requiredSlugs
+      .map((slug) => bySlug.get(slug))
+      .filter((item): item is (typeof packagingItems)[number] => Boolean(item));
+
+    const remaining = applicable.filter((item) => !requiredSlugs.includes(item.slug));
+    const merged = [...required, ...remaining];
+
+    return merged.length ? merged : packagingItems;
+  })();
+
+  const getPackagingImage = (item: (typeof packagingItems)[number]) =>
+    item.categoryImages?.[product.category] ?? item.image;
 
 
   return (
@@ -186,15 +212,15 @@ export default function ProductDetailPage() {
           </div>
 
           <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
-            {(relatedPackaging.length ? relatedPackaging : packagingItems).slice(0, 3).map((item) => (
+            {relatedPackaging.slice(0, 3).map((item) => (
               <Link
                 key={item.slug}
                 to={`/packaging/catalog/${item.slug}`}
                 className="group bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl overflow-hidden hover:shadow-lg transition-all"
               >
-                <div className="aspect-[4/3] bg-stone-50 dark:bg-stone-800 overflow-hidden">
+                <div className="bg-stone-50 dark:bg-stone-800 overflow-hidden">
                   <img
-                    src={item.image}
+                    src={getPackagingImage(item)}
                     alt={item.name}
                     loading="lazy"
                     decoding="async"

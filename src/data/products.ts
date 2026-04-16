@@ -20,7 +20,7 @@ export const products: Product[] = [
     packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
     category: "Edible Salt",
     shade: "light",
-    image: imageUrls.edibleSalt,
+    image: imageUrls.smallGrainSalt,
     description:
       "Fine Himalayan pink salt is a smooth, powder-like grade that dissolves quickly and blends evenly. Ideal for daily cooking, baking, and food processing. Best for home kitchens, restaurants, and packaged food brands.",
   },
@@ -31,7 +31,7 @@ export const products: Product[] = [
     packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
     category: "Edible Salt",
     shade: "medium",
-    image: imageUrls.smallGrainSalt,
+    image: imageUrls.edibleSalt,
     description:
       "Small grain crystals dissolve easily while keeping a natural crystal look. Balanced for cooking and table use. Best for gourmet cooking, retail packs, and seasoning jars.",
   },

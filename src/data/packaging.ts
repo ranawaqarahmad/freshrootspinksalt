@@ -7,6 +7,7 @@ export interface PackagingItem {
   description: string;
   image: string;
   images?: string[];
+  categoryImages?: Record<string, string>;
   range: string;
   material: string;
   highlights: string[];
@@ -93,6 +94,11 @@ export const packagingItems: PackagingItem[] = [
     description:
       'Secondary cartons to pack and protect multiple retail units during shipment and storage.',
     image: imageUrls.cartonPack,
+    categoryImages: {
+      'Animal Lick Salt': imageUrls.cartonPack,
+      'Decor & Crafts': imageUrls.cartonPack,
+      'Tiles & Bricks': imageUrls.cartonPack,
+    },
     range: 'Multiple retail units',
     material: 'Corrugated cartons',
     highlights: ['Stackable', 'Export safe', 'Cost efficient'],
@@ -114,11 +120,16 @@ export const packagingItems: PackagingItem[] = [
     description:
       'Protective wooden crates for heavy and fragile decor items such as lamps and crafted products.',
     image: imageUrls.woodenCrates,
+    categoryImages: {
+      'Animal Lick Salt': imageUrls.woodenCrates,
+      'Decor & Crafts': imageUrls.woodenCrates,
+      'Tiles & Bricks': imageUrls.woodenCrates,
+    },
     range: 'Custom weights',
     material: 'Wooden crate packaging',
     highlights: ['Heavy-duty protection', 'Export safe', 'Reduced breakage'],
     specs: ['Custom sizes', 'Reinforced corners', 'Pallet compatible'],
-    appliesTo: ['Decor & Crafts', 'Tiles & Bricks'],
+    appliesTo: ['Animal Lick Salt', 'Decor & Crafts', 'Tiles & Bricks'],
   },
   {
     slug: 'shrink-wrapped-pallets',
@@ -127,6 +138,11 @@ export const packagingItems: PackagingItem[] = [
     description:
       'Stretch and shrink wrapping for secured pallets and stabilized export loads.',
     image: imageUrls.wrappedPallets,
+    categoryImages: {
+      'Animal Lick Salt': imageUrls.wrappedPallets,
+      'Decor & Crafts': imageUrls.wrappedPallets,
+      'Tiles & Bricks': imageUrls.wrappedPallets,
+    },
     range: 'Loaded pallet',
     material: 'Shrink film and stretch wrap',
     highlights: ['Stable loads', 'Moisture protection', 'Transit ready'],
