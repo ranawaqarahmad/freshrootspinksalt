@@ -126,28 +126,35 @@ export function ExportCompliance() {
                   <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">3</div>
                   <div>
                     <h4 className="text-lg text-stone-900 dark:text-white mb-1">Contract Agreement</h4>
-                    <p className="text-stone-600 dark:text-stone-300">Terms, specifications, and payment agreed</p>
+                    <p className="text-stone-600 dark:text-stone-300">Terms, specifications, payment method, and advance amount agreed</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">4</div>
+                  <div>
+                    <h4 className="text-lg text-stone-900 dark:text-white mb-1">Advance Payment</h4>
+                    <p className="text-stone-600 dark:text-stone-300">Buyer releases the agreed advance payment before production begins</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">5</div>
                   <div>
                     <h4 className="text-lg text-stone-900 dark:text-white mb-1">Production & QC</h4>
                     <p className="text-stone-600 dark:text-stone-300">Order fulfillment with quality checks</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">5</div>
+                  <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">6</div>
                   <div>
                     <h4 className="text-lg text-stone-900 dark:text-white mb-1">Documentation</h4>
-                    <p className="text-stone-600 dark:text-stone-300">All export documents prepared</p>
+                    <p className="text-stone-600 dark:text-stone-300">Invoice, packing list, and B/L documents prepared for payment clearance</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">6</div>
+                  <div className="w-8 h-8 bg-[#E88B7F] text-white rounded-full flex items-center justify-center flex-shrink-0 mt-1">7</div>
                   <div>
-                    <h4 className="text-lg text-stone-900 dark:text-white mb-1">Shipment</h4>
-                    <p className="text-stone-600 dark:text-stone-300">Cargo dispatched with tracking details</p>
+                    <h4 className="text-lg text-stone-900 dark:text-white mb-1">Remaining Payment & Shipment</h4>
+                    <p className="text-stone-600 dark:text-stone-300">Remaining payment is settled through CAD, L/C, B/L terms, or as agreed before cargo release</p>
                   </div>
                 </li>
               </ol>
@@ -164,7 +171,9 @@ export function ExportCompliance() {
               <ul className="space-y-2 text-white/90">
                 <li>• Letter of Credit (L/C)</li>
                 <li>• Telegraphic Transfer (T/T)</li>
+                <li>• Cash Against Documents (CAD)</li>
                 <li>• 30% advance, 70% before shipment</li>
+                <li>• Remaining payment against B/L or as agreed</li>
                 <li>• Other terms negotiable for established buyers</li>
               </ul>
             </div>

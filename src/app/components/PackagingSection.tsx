@@ -91,7 +91,7 @@ export function PackagingSection() {
 
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <ImageWithSkeleton
-              src={imageUrls.rawIndustrial}
+              src={imageUrls.rawSaltBulk}
               alt="Product Packaging"
               wrapperClassName="w-full h-[600px]"
               imgClassName="w-full h-full object-cover"

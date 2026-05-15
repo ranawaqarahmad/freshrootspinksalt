@@ -28,6 +28,7 @@ export const packagingItems: PackagingItem[] = [
     highlights: ['Export ready', 'Moisture protection', 'Custom labeling'],
     specs: ['Inner liner optional', 'Pallet friendly', 'Heavy-duty stitching'],
     appliesTo: [
+      'Edible Salt',
       'Spa & Wellness',
       'Raw / Industrial',
       'Animal Lick Salt',

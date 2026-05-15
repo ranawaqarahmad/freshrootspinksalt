@@ -7,6 +7,12 @@ import { ImageWithSkeleton } from '../components/ImageWithSkeleton';
 import { Package, ShoppingBag, Star, Truck } from 'lucide-react';
 
 const REQUIRED_PACKAGING_BY_CATEGORY: Record<string, string[]> = {
+  'Edible Salt': [
+    'retail-stand-up-pouches',
+    'small-retail-pouch',
+    'jar-packaging',
+    'bulk-pp-woven-bags',
+  ],
   'Animal Lick Salt': ['carton-packs', 'wooden-crates', 'shrink-wrapped-pallets'],
   'Decor & Crafts': ['carton-packs', 'wooden-crates', 'shrink-wrapped-pallets'],
   'Tiles & Bricks': ['carton-packs', 'wooden-crates', 'shrink-wrapped-pallets'],
@@ -61,6 +67,11 @@ export default function ProductDetailPage() {
   const getPackagingImage = (item: (typeof packagingItems)[number]) =>
     item.categoryImages?.[product.category] ?? item.image;
 
+  const packagingPreviewLimit = product.category === 'Edible Salt' ? 4 : 3;
+  const packagingGridClassName =
+    product.category === 'Edible Salt'
+      ? 'grid sm:grid-cols-2 lg:grid-cols-4 gap-6'
+      : 'grid md:grid-cols-3 lg:grid-cols-3 gap-6';
 
   return (
     <div className="pt-32 pb-20 bg-white dark:bg-stone-950">
@@ -211,8 +222,8 @@ export default function ProductDetailPage() {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
-            {relatedPackaging.slice(0, 3).map((item) => (
+          <div className={packagingGridClassName}>
+            {relatedPackaging.slice(0, packagingPreviewLimit).map((item) => (
               <Link
                 key={item.slug}
                 to={`/packaging/catalog/${item.slug}`}

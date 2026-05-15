@@ -57,17 +57,17 @@ export const products: Product[] = [
     description:
       "Coarse crystals dissolve slowly for controlled seasoning and long use. Common in mills, grilling, and refill packs. Best for salt mills, grilling, and gourmet preparation.",
   },
-  {
-    id: 5,
-    name: "Powder / Extra Fine",
-    size: "Custom packaging (pouch/jar)",
-    packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
-    category: "Edible Salt",
-    shade: "light",
-    image: imageUrls.edibleSalt,
-    description:
-      "Extra fine powder is milled for a smooth texture and fast dissolving. Suitable for seasoning blends and packaged foods. Best for private-label retail and food processing.",
-  },
+  // {
+  //   id: 5,
+  //   name: "Powder / Extra Fine",
+  //   size: "Custom packaging (pouch/jar)",
+  //   packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
+  //   category: "Edible Salt",
+  //   shade: "light",
+  //   image: imageUrls.edibleSalt,
+  //   description:
+  //     "Extra fine powder is milled for a smooth texture and fast dissolving. Suitable for seasoning blends and packaged foods. Best for private-label retail and food processing.",
+  // },
   {
     id: 6,
     name: "Natural Salt Lick Block",

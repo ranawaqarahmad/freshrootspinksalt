@@ -45,7 +45,6 @@ export function HomeCtaSection() {
               </div>
               <ul className="space-y-3 text-stone-700 dark:text-stone-200">
                 <li>• Category-wise product catalog</li>
-                <li>• MOQ guidance and price ranges</li>
                 <li>• Packaging & private label options</li>
                 <li>• Export documentation support</li>
               </ul>
