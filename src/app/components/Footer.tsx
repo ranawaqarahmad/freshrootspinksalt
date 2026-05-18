@@ -94,7 +94,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/packaging/catalog" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                <Link to="/packaging#packaging-options" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
                   Packaging Catalog
                 </Link>
               </li>

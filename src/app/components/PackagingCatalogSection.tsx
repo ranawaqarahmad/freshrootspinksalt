@@ -37,7 +37,7 @@ export function PackagingCatalogSection({
         : 'grid md:grid-cols-2 lg:grid-cols-4';
 
   return (
-    <section className="py-20 bg-white dark:bg-stone-950">
+    <section id="packaging-options" className="scroll-mt-32 py-20 bg-white dark:bg-stone-950">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
           <div>
