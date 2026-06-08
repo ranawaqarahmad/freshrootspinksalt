@@ -9,7 +9,8 @@ export interface Product {
   description?: string;
   image?: string;
   images?: string[];
-  shade?: 'light' | 'medium' | 'dark';
+  // Future use: restore edible salt shade filtering/content when needed.
+  // shade?: 'light' | 'medium' | 'dark';
 }
 
 export const products: Product[] = [
@@ -19,7 +20,7 @@ export const products: Product[] = [
     size: "< 1 mm (20–50 mesh)",
     packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
     category: "Edible Salt",
-    shade: "light",
+    // shade: "light",
     image: imageUrls.smallGrainSalt,
     description:
       "Fine Himalayan pink salt is a smooth, powder-like grade that dissolves quickly and blends evenly. Ideal for daily cooking, baking, and food processing. Best for home kitchens, restaurants, and packaged food brands.",
@@ -30,7 +31,7 @@ export const products: Product[] = [
     size: "1 mm – 2 mm",
     packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
     category: "Edible Salt",
-    shade: "medium",
+    // shade: "medium",
     image: imageUrls.edibleSalt,
     description:
       "Small grain crystals dissolve easily while keeping a natural crystal look. Balanced for cooking and table use. Best for gourmet cooking, retail packs, and seasoning jars.",
@@ -41,7 +42,7 @@ export const products: Product[] = [
     size: "2 mm – 5 mm",
     packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
     category: "Edible Salt",
-    shade: "dark",
+    // shade: "dark",
     image: imageUrls.granularSalt,
     description:
       "Granular crystals hold their shape during cooking and offer controlled seasoning. Preferred for grinders and finishing dishes. Best for salt grinders, seasoning blends, and professional kitchens.",
@@ -52,7 +53,7 @@ export const products: Product[] = [
     size: "5 mm – 10 mm",
     packaging: "Retail pouches/jars or 25kg-50kg bulk bags",
     category: "Edible Salt",
-    shade: "medium",
+    // shade: "medium",
     image: imageUrls.rockSalt,
     description:
       "Coarse crystals dissolve slowly for controlled seasoning and long use. Common in mills, grilling, and refill packs. Best for salt mills, grilling, and gourmet preparation.",
@@ -288,16 +289,17 @@ export const products: Product[] = [
     description:
       "Industrial chunks are used in manufacturing processes and large-scale applications.",
   },
-  {
-    id: 28,
-    name: "Rock Salt Bulk Supply",
-    size: "Bulk orders by weight",
-    packaging: "Bulk bags or palletized",
-    category: "Raw / Industrial",
-    image: imageUrls.rawSaltBulk,
-    description:
-      "Large salt lumps supplied for bulk industrial processing and trade orders.",
-  },
+  // Package-related item. Restore only if bulk supply should return as a product.
+  // {
+  //   id: 28,
+  //   name: "Rock Salt Bulk Supply",
+  //   size: "Bulk orders by weight",
+  //   packaging: "Bulk bags or palletized",
+  //   category: "Raw / Industrial",
+  //   image: imageUrls.rawSaltBulk,
+  //   description:
+  //     "Large salt lumps supplied for bulk industrial processing and trade orders.",
+  // },
 ];
 
 export const categories = [

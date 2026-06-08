@@ -45,7 +45,7 @@ export default function ComingSoonGate({ variant = 'light' }: ComingSoonGateProp
                   isDark ? 'text-white' : 'text-stone-900'
                 }`}
               >
-                Crafting a refined B2B experience for
+                Crafting a refined export experience for
                 <span className="block text-[#3D9B93]">Himalayan minerals.</span>
               </h1>
               <p className={`text-lg max-w-2xl ${isDark ? 'text-stone-300' : 'text-stone-600'}`}>
@@ -64,7 +64,7 @@ export default function ComingSoonGate({ variant = 'light' }: ComingSoonGateProp
                   Pakistan origin
                 </span>
                 <span className={`rounded-full border px-4 py-2 ${isDark ? 'border-white/20' : 'border-stone-300'}`}>
-                  B2B export focus
+                  Export focus
                 </span>
                 <span className={`rounded-full border px-4 py-2 ${isDark ? 'border-white/20' : 'border-stone-300'}`}>
                   Custom packaging

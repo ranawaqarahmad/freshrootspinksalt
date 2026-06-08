@@ -6,7 +6,7 @@ import { ImageWithSkeleton } from "./ImageWithSkeleton";
 const slides = [
   {
     title: "Your Trusted Partner for Himalayan Pink Salt Exports",
-    subtitle: "B2B Trading & Export Company • Pakistan",
+    subtitle: "Trading & Export Company • Pakistan",
     description:
       "We source premium Himalayan pink salt through verified processing partners and deliver export-ready supply with full transparency.",
     image: imageUrls.banner1,

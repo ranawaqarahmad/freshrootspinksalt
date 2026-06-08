@@ -12,24 +12,26 @@ const PAGE_SIZE = 9;
 export function ProductsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.get('category') ?? 'all';
-  const initialShade = searchParams.get('shade') ?? '';
   const [selectedCategory, setSelectedCategory] = useState<string>(
     validCategories.has(initialCategory) ? initialCategory : 'all'
   );
-  const [selectedShade, setSelectedShade] = useState<string>(initialShade);
+  // Future use: restore shade query/filtering for edible salt when needed.
+  // const initialShade = searchParams.get('shade') ?? '';
+  // const [selectedShade, setSelectedShade] = useState<string>(initialShade);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const category = searchParams.get('category') ?? 'all';
-    const shade = searchParams.get('shade') ?? '';
     if (validCategories.has(category) && category !== selectedCategory) {
       setSelectedCategory(category);
     }
-    if (shade !== selectedShade) {
-      setSelectedShade(shade);
-    }
-  }, [searchParams, selectedCategory, selectedShade]);
+    // Future use: restore shade query syncing for edible salt when needed.
+    // const shade = searchParams.get('shade') ?? '';
+    // if (shade !== selectedShade) {
+    //   setSelectedShade(shade);
+    // }
+  }, [searchParams, selectedCategory]);
 
   const filteredProducts = useMemo(() => {
     const categoryName =
@@ -38,18 +40,20 @@ export function ProductsPage() {
         : categories.find((cat) => cat.slug === selectedCategory)?.name;
     return products.filter((product) => {
       const matchesCategory = categoryName ? product.category === categoryName : true;
-      const matchesShade = selectedShade ? product.shade === selectedShade : true;
-      return matchesCategory && matchesShade;
+      // Future use: restore shade filtering for edible salt when needed.
+      // const matchesShade = selectedShade ? product.shade === selectedShade : true;
+      return matchesCategory;
     });
-  }, [selectedCategory, selectedShade]);
+  }, [selectedCategory]);
 
   useEffect(() => {
     setVisibleCount(PAGE_SIZE);
-  }, [selectedCategory, selectedShade]);
+  }, [selectedCategory]);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
-    setSelectedShade('');
+    // Future use: reset selected shade when edible shade filtering returns.
+    // setSelectedShade('');
     if (category === 'all') {
       setSearchParams({});
     } else {
@@ -123,11 +127,12 @@ export function ProductsPage() {
                   <span className="text-xs bg-[#3D9B93]/10 text-[#3D9B93] px-3 py-1 rounded-full">
                     {product.category}
                   </span>
-                  {product.shade ? (
+                  {/* Future use: restore edible salt shade badge when needed. */}
+                  {/* {product.shade ? (
                     <span className="text-xs bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 px-3 py-1 rounded-full">
                       {product.shade} tone
                     </span>
-                  ) : null}
+                  ) : null} */}
                 </div>
               </div>
 

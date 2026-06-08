@@ -6,7 +6,6 @@ import {
   Sun,
   X,
   ChevronDown,
-  ChevronRight,
   Leaf,
   PawPrint,
   Grid2x2,
@@ -28,7 +27,8 @@ import { imageUrls } from "../../data/imageUrls";
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
-  const [mobileEdibleOpen, setMobileEdibleOpen] = useState(false);
+  // Future use: restore edible salt shade submenu state when needed.
+  // const [mobileEdibleOpen, setMobileEdibleOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const isDark = theme === "dark";
 
@@ -37,11 +37,12 @@ export function Header() {
       label: "Edible Salt",
       slug: "edible-salt",
       icon: Leaf,
-      shades: [
-        { label: "Light", value: "light" },
-        { label: "Medium", value: "medium" },
-        { label: "Dark", value: "dark" },
-      ],
+      // Future use: restore edible salt shade submenu when needed.
+      // shades: [
+      //   { label: "Light", value: "light" },
+      //   { label: "Medium", value: "medium" },
+      //   { label: "Dark", value: "dark" },
+      // ],
     },
     { label: "Animal Lick", slug: "animal-lick", icon: PawPrint },
     { label: "Tiles & Bricks", slug: "tiles-bricks", icon: Grid2x2 },
@@ -81,7 +82,7 @@ export function Header() {
                 <span className="hidden sm:inline">+92 XXX XXXXXXX</span>
               </a>
             </div>
-            <div className="text-sm">B2B Exporters | Pakistan</div>
+            <div className="text-sm">Exporters | Pakistan</div>
           </div>
         </div>
       </div>
@@ -140,9 +141,7 @@ export function Header() {
                         return (
                           <div
                             key={category.slug}
-                            className={`rounded-xl hover:bg-stone-50 dark:hover:bg-stone-900 p-2 transition-colors ${
-                              category.shades ? "relative group/edible" : ""
-                            }`}
+                            className="rounded-xl hover:bg-stone-50 dark:hover:bg-stone-900 p-2 transition-colors"
                           >
                             <Link
                               to={`/products?category=${category.slug}`}
@@ -153,29 +152,8 @@ export function Header() {
                               </div>
                               <div className="text-sm font-medium flex items-center gap-2">
                                 {category.label}
-                                {category.shades ? (
-                                  <ChevronRight className="w-4 h-4 opacity-60" />
-                                ) : null}
                               </div>
                             </Link>
-                            {category.shades ? (
-                              <div className="absolute left-full top-2 ml-2 w-48 bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl shadow-xl p-3 opacity-0 invisible group-hover/edible:visible group-hover/edible:opacity-100 transition-all">
-                                <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400 mb-3 px-2">
-                                  Edible Shades
-                                </div>
-                                <div className="space-y-2">
-                                  {category.shades.map((shade) => (
-                                    <Link
-                                      key={shade.value}
-                                      to={`/products?category=${category.slug}&shade=${shade.value}`}
-                                      className="flex items-center gap-3 px-3 py-2 rounded-xl border border-transparent text-sm text-stone-700 dark:text-stone-200 hover:border-[#E88B7F]/40 hover:bg-white dark:hover:bg-stone-950 transition-colors"
-                                    >
-                                      {shade.label}
-                                    </Link>
-                                  ))}
-                                </div>
-                              </div>
-                            ) : null}
                           </div>
                         );
                       })}
@@ -287,45 +265,15 @@ export function Header() {
             {mobileProductsOpen ? (
               <div className="mt-2 space-y-2 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/70 dark:bg-stone-900/60 p-3">
                 {productCategories.map((category) => {
-                  const isEdible = Boolean(category.shades);
                   return (
                     <div key={category.slug} className="space-y-2">
-                      {isEdible ? (
-                        <button
-                          type="button"
-                          onClick={() => setMobileEdibleOpen(!mobileEdibleOpen)}
-                          className="w-full flex items-center justify-between rounded-lg px-3 py-2 text-sm text-stone-700 dark:text-stone-200 hover:bg-white/70 dark:hover:bg-stone-950 transition-colors"
-                        >
-                          <span>{category.label}</span>
-                          <ChevronDown
-                            className={`w-4 h-4 text-stone-400 transition-transform ${
-                              mobileEdibleOpen ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
-                      ) : (
-                        <NavLink
-                          to={`/products?category=${category.slug}`}
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="block rounded-lg px-3 py-2 text-sm text-stone-700 dark:text-stone-200 hover:bg-white/70 dark:hover:bg-stone-950 transition-colors"
-                        >
-                          {category.label}
-                        </NavLink>
-                      )}
-                      {isEdible && mobileEdibleOpen ? (
-                        <div className="grid grid-cols-3 gap-2 px-2">
-                          {category.shades?.map((shade) => (
-                            <NavLink
-                              key={shade.value}
-                              to={`/products?category=${category.slug}&shade=${shade.value}`}
-                              onClick={() => setMobileMenuOpen(false)}
-                              className="text-xs px-2 py-1.5 rounded-full border border-stone-200 dark:border-stone-700 text-stone-600 dark:text-stone-300 hover:border-[#3D9B93] hover:text-[#3D9B93] transition-colors text-center bg-white/70 dark:bg-stone-950"
-                            >
-                              {shade.label}
-                            </NavLink>
-                          ))}
-                        </div>
-                      ) : null}
+                      <NavLink
+                        to={`/products?category=${category.slug}`}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block rounded-lg px-3 py-2 text-sm text-stone-700 dark:text-stone-200 hover:bg-white/70 dark:hover:bg-stone-950 transition-colors"
+                      >
+                        {category.label}
+                      </NavLink>
                     </div>
                   );
                 })}

@@ -30,7 +30,7 @@ export function Hero() {
               <p className="text-xl text-stone-600 dark:text-stone-300 leading-relaxed">
                 Fresh Roots Pink Salt is a Pakistan-based Himalayan Pink Salt trading company
                 specializing in sourcing and supplying premium-quality pink salt products to
-                international B2B buyers. We work closely with verified manufacturers and
+                international buyers. We work closely with verified manufacturers and
                 processing units located near the Himalayan salt range to ensure consistent
                 quality, ethical sourcing, and export-ready supply. Our role as a trader allows
                 us to offer flexibility, multiple product ranges, customized packaging, and

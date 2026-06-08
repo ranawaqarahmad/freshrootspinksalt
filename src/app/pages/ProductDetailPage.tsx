@@ -147,12 +147,13 @@ export default function ProductDetailPage() {
                   <div className="text-sm text-stone-500 dark:text-stone-400">Packaging Options</div>
                   <div className="mt-1">{product.packaging}</div>
                 </div>
-                {product.shade ? (
+                {/* Future use: restore edible salt shade content when needed. */}
+                {/* {product.shade ? (
                   <div>
                     <div className="text-sm text-stone-500 dark:text-stone-400">Salt Shade</div>
                     <div className="mt-1 capitalize">{product.shade}</div>
                   </div>
-                ) : null}
+                ) : null} */}
               </div>
             </div>
 

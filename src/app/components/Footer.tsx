@@ -18,7 +18,7 @@ export function Footer() {
               className="h-20 w-auto object-contain mb-6 brightness-0 invert"
             />
             <p className="text-stone-400 mb-6 leading-relaxed">
-              Professional B2B trading and export company specializing in Himalayan pink salt 
+              Professional trading and export company specializing in Himalayan pink salt 
               products from Pakistan.
             </p>
             <div className="flex gap-3">
