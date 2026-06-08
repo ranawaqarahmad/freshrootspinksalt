@@ -38,6 +38,7 @@ export function ProductCategories() {
                   alt={category.name}
                   loading="lazy"
                   decoding="async"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 48px)"
                   wrapperClassName="w-full h-full"
                   imgClassName="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />

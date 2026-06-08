@@ -1,11 +1,34 @@
 const cloudinaryBase = 'https://res.cloudinary.com/digdbqcct/image/upload/q_auto/f_auto';
 const cloudinaryUrl = (path: string) => `${cloudinaryBase}/${path}`;
+const cloudinarySizedUrl = (path: string, width: number) =>
+  `https://res.cloudinary.com/digdbqcct/image/upload/q_auto/f_auto/c_limit,w_${width}/${path}`;
+const responsiveWidths = [320, 480, 640, 800, 1024, 1280, 1600] as const;
+
+export const cloudinaryResponsiveUrl = (src: string, width: number) => {
+  if (!src.includes('res.cloudinary.com')) {
+    return src;
+  }
+
+  return src.replace(
+    /\/upload\/(?:[^/]+\/)*(?=v\d+)/,
+    `/upload/q_auto/f_auto/c_limit,w_${width}/`
+  );
+};
+
+export const cloudinaryImageProps = (
+  src: string,
+  sizes: string,
+  widths: readonly number[] = responsiveWidths
+) => ({
+  sizes,
+  srcSet: widths.map((width) => `${cloudinaryResponsiveUrl(src, width)} ${width}w`).join(', '),
+});
 
 export const imageUrls = {
   pngLogo: cloudinaryUrl('v1769540544/logo_stspcq.png'),
-  banner1: cloudinaryUrl('v1769536579/banner_image_1_vuxzbe.jpg'),
-  banner2: cloudinaryUrl('v1769536579/banner_image_2_h5waim.jpg'),
-  banner3: cloudinaryUrl('v1769536580/banner_image_3_p0fjgl.jpg'),
+  banner1: cloudinarySizedUrl('v1769536579/banner_image_1_vuxzbe.jpg', 1600),
+  banner2: cloudinarySizedUrl('v1769536579/banner_image_2_h5waim.jpg', 1600),
+  banner3: cloudinarySizedUrl('v1769536580/banner_image_3_p0fjgl.jpg', 1600),
   edibleSalt: cloudinaryUrl('v1769536581/edible_and_culinary_salt_ejjgev.jpg'),
   culinarySalt: cloudinaryUrl('v1769536581/culinary_and_edible_salt_fq8urn.jpg'),
   animalLick: cloudinaryUrl('v1769536579/animal_lick_salt_ndskd1.jpg'),

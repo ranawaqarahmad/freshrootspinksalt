@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { cloudinaryImageProps } from '../../data/imageUrls';
 
 interface ImageWithSkeletonProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   wrapperClassName?: string;
@@ -9,16 +10,21 @@ export function ImageWithSkeleton({
   wrapperClassName = '',
   imgClassName = '',
   onLoad,
+  sizes,
+  src,
+  srcSet,
   ...props
 }: ImageWithSkeletonProps) {
   const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement | null>(null);
+  const responsiveImageProps =
+    typeof src === 'string' && sizes && !srcSet ? cloudinaryImageProps(src, sizes) : { sizes, srcSet };
 
   useEffect(() => {
     if (imgRef.current?.complete) {
       setLoaded(true);
     }
-  }, [props.src]);
+  }, [src]);
 
   return (
     <div className={`relative overflow-hidden ${wrapperClassName}`}>
@@ -30,6 +36,8 @@ export function ImageWithSkeleton({
       />
       <img
         {...props}
+        src={src}
+        {...responsiveImageProps}
         ref={imgRef}
         onLoad={(event) => {
           setLoaded(true);

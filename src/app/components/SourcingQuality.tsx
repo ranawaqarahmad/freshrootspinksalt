@@ -69,6 +69,9 @@ export function SourcingQuality() {
             <ImageWithSkeleton
               src={imageUrls.spaWellness}
               alt="Quality Control"
+              loading="lazy"
+              decoding="async"
+              sizes="(min-width: 1024px) 50vw, calc(100vw - 48px)"
               wrapperClassName="w-full h-[500px]"
               imgClassName="w-full h-full object-cover"
             />

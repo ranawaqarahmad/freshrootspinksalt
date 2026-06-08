@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { products } from '../../data/products';
 import { packagingItems } from '../../data/packaging';
-import { imageUrls } from '../../data/imageUrls';
+import { cloudinaryImageProps, imageUrls } from '../../data/imageUrls';
 import { ImageWithSkeleton } from '../components/ImageWithSkeleton';
 import { Package, ShoppingBag, Star, Truck } from 'lucide-react';
 
@@ -101,6 +101,7 @@ export default function ProductDetailPage() {
                   src={activeImage}
                   alt={product.name}
                   decoding="async"
+                  sizes="(min-width: 1024px) 55vw, calc(100vw - 48px)"
                   wrapperClassName="h-full w-full"
                   imgClassName="h-full w-full object-contain"
                 />
@@ -122,6 +123,7 @@ export default function ProductDetailPage() {
                         alt={`${product.name} ${index + 1}`}
                         loading="lazy"
                         decoding="async"
+                        sizes="64px"
                         wrapperClassName="h-full w-full"
                         imgClassName="h-full w-full object-contain"
                       />
@@ -235,6 +237,12 @@ export default function ProductDetailPage() {
                     alt={item.name}
                     loading="lazy"
                     decoding="async"
+                    {...cloudinaryImageProps(
+                      getPackagingImage(item),
+                      product.category === 'Edible Salt'
+                        ? '(min-width: 1024px) 25vw, (min-width: 640px) 50vw, calc(100vw - 48px)'
+                        : '(min-width: 768px) 33vw, calc(100vw - 48px)'
+                    )}
                     className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>

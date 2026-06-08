@@ -1,7 +1,4 @@
-import { useRef } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { imageUrls } from "../../data/imageUrls";
 import { ImageWithSkeleton } from "./ImageWithSkeleton";
@@ -31,36 +28,55 @@ const slides = [
 ];
 
 export function HomeBannerSliderSlick() {
-  const sliderRef = useRef<Slider>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    fade: true,
-    cssEase: "cubic-bezier(0.645, 0.045, 0.355, 1)",
-    pauseOnHover: true,
-    arrows: false,
-  } as const;
+  const showPreviousSlide = useCallback(() => {
+    setActiveIndex((current) => (current === 0 ? slides.length - 1 : current - 1));
+  }, []);
+
+  const showNextSlide = useCallback(() => {
+    setActiveIndex((current) => (current + 1) % slides.length);
+  }, []);
+
+  useEffect(() => {
+    if (isPaused) {
+      return;
+    }
+
+    const timer = window.setInterval(showNextSlide, 5000);
+    return () => window.clearInterval(timer);
+  }, [isPaused, showNextSlide]);
 
   return (
     <section className="pt-32 sm:pt-36 lg:pt-40 pb-6 sm:pb-8">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="relative rounded-2xl overflow-hidden shadow-xl border border-stone-200 dark:border-stone-800">
-          <Slider ref={sliderRef} {...settings}>
-            {slides.map((slide) => (
-              <div key={slide.title} className="relative">
-                <div className="relative h-[360px] max-[380px]:h-[420px] sm:h-[420px] lg:h-[480px]">
+        <div
+          className="relative rounded-2xl overflow-hidden shadow-xl border border-stone-200 dark:border-stone-800"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div className="relative h-[360px] max-[380px]:h-[420px] sm:h-[420px] lg:h-[480px]">
+            {slides.map((slide, index) => {
+              const isFirstSlide = index === 0;
+              const isActiveSlide = index === activeIndex;
+
+              return (
+                <div
+                  key={slide.title}
+                  aria-hidden={!isActiveSlide}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    isActiveSlide ? "opacity-100" : "opacity-0"
+                  }`}
+                >
                   <div className="absolute inset-0">
                     <ImageWithSkeleton
                       src={slide.image}
                       alt={slide.title}
-                      loading="lazy"
+                      loading={isFirstSlide ? "eager" : "lazy"}
                       decoding="async"
+                      fetchPriority={isFirstSlide ? "high" : "auto"}
+                      sizes="(min-width: 1280px) 1216px, calc(100vw - 48px)"
                       wrapperClassName="w-full h-full"
                       imgClassName="w-full h-full object-cover"
                     />
@@ -80,12 +96,12 @@ export function HomeBannerSliderSlick() {
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              );
+            })}
+          </div>
 
           <button
-            onClick={() => sliderRef.current?.slickPrev()}
+            onClick={showPreviousSlide}
             className="absolute left-4 bottom-4 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 group"
             aria-label="Previous slide"
           >
@@ -93,7 +109,7 @@ export function HomeBannerSliderSlick() {
           </button>
 
           <button
-            onClick={() => sliderRef.current?.slickNext()}
+            onClick={showNextSlide}
             className="absolute right-4 bottom-4 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 group"
             aria-label="Next slide"
           >

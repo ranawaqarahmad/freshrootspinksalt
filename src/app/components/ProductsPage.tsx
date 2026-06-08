@@ -110,6 +110,7 @@ export function ProductsPage() {
                   alt={product.name}
                   loading="lazy"
                   decoding="async"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 48px)"
                   wrapperClassName="h-full w-full"
                   imgClassName="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
                 />

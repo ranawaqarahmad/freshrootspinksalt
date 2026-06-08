@@ -34,6 +34,7 @@ export default function BlogIndexPage() {
                   alt={post.title}
                   loading="lazy"
                   decoding="async"
+                  sizes="(min-width: 768px) 50vw, calc(100vw - 48px)"
                   wrapperClassName="h-full w-full"
                   imgClassName="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />

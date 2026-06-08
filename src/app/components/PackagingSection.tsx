@@ -93,6 +93,9 @@ export function PackagingSection() {
             <ImageWithSkeleton
               src={imageUrls.rawSaltBulk}
               alt="Product Packaging"
+              loading="lazy"
+              decoding="async"
+              sizes="(min-width: 1024px) 50vw, calc(100vw - 48px)"
               wrapperClassName="w-full h-[600px]"
               imgClassName="w-full h-full object-cover"
             />

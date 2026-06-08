@@ -81,6 +81,13 @@ export function PackagingCatalogSection({
                   alt={item.name}
                   loading="lazy"
                   decoding="async"
+                  sizes={
+                    columns === 4
+                      ? '(min-width: 1024px) 25vw, (min-width: 768px) 50vw, calc(100vw - 48px)'
+                      : columns === 3
+                        ? '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, calc(100vw - 48px)'
+                        : '(min-width: 768px) 50vw, calc(100vw - 48px)'
+                  }
                   wrapperClassName="h-full w-full"
                   imgClassName="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />

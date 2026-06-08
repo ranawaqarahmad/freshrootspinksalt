@@ -58,6 +58,7 @@ export default function PackagingDetailPage() {
                 alt={item.name}
                 loading="lazy"
                 decoding="async"
+                sizes="(min-width: 768px) 55vw, calc(100vw - 48px)"
                 wrapperClassName="h-full w-full"
                 imgClassName="h-full w-full object-cover"
               />
@@ -80,6 +81,7 @@ export default function PackagingDetailPage() {
                       alt={`${item.name} ${index + 1}`}
                       loading="lazy"
                       decoding="async"
+                      sizes="64px"
                       wrapperClassName="h-full w-full"
                       imgClassName="h-full w-full object-cover"
                     />

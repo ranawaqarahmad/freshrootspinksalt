@@ -47,6 +47,7 @@ export default function BlogDetailPage() {
             alt={post.title}
             loading="lazy"
             decoding="async"
+            sizes="(min-width: 1024px) 1024px, calc(100vw - 48px)"
             wrapperClassName="h-full w-full"
             imgClassName="h-full w-full object-cover"
           />
