@@ -46,6 +46,15 @@ export default function ProductDetailPage() {
   const gallery = product.images?.length ? product.images : [product.image ?? imageUrls.edibleFine];
   const [activeImage, setActiveImage] = useState(gallery[0]);
   const relatedPackaging = (() => {
+    const bySlug = new Map(packagingItems.map((item) => [item.slug, item]));
+    const productSpecific = product.packagingSlugs
+      ?.map((slug) => bySlug.get(slug))
+      .filter((item): item is (typeof packagingItems)[number] => Boolean(item));
+
+    if (productSpecific?.length) {
+      return productSpecific;
+    }
+
     const applicable = packagingItems.filter((item) => item.appliesTo.includes(product.category));
     const requiredSlugs = REQUIRED_PACKAGING_BY_CATEGORY[product.category];
 
@@ -53,7 +62,6 @@ export default function ProductDetailPage() {
       return applicable.length ? applicable : packagingItems;
     }
 
-    const bySlug = new Map(packagingItems.map((item) => [item.slug, item]));
     const required = requiredSlugs
       .map((slug) => bySlug.get(slug))
       .filter((item): item is (typeof packagingItems)[number] => Boolean(item));
@@ -67,9 +75,9 @@ export default function ProductDetailPage() {
   const getPackagingImage = (item: (typeof packagingItems)[number]) =>
     item.categoryImages?.[product.category] ?? item.image;
 
-  const packagingPreviewLimit = product.category === 'Edible Salt' ? 4 : 3;
+  const packagingPreviewLimit = product.packagingSlugs?.length ?? (product.category === 'Edible Salt' ? 4 : 3);
   const packagingGridClassName =
-    product.category === 'Edible Salt'
+    packagingPreviewLimit >= 4
       ? 'grid sm:grid-cols-2 lg:grid-cols-4 gap-6'
       : 'grid md:grid-cols-3 lg:grid-cols-3 gap-6';
 

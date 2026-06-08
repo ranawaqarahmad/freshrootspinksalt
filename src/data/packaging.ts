@@ -46,7 +46,7 @@ export const packagingItems: PackagingItem[] = [
     material: 'Laminated pouch with optional zipper',
     highlights: ['Retail shelf appeal', 'Freshness seal', 'Custom print'],
     specs: ['Matte or gloss finish', 'Window option', 'Barrier film available'],
-    appliesTo: ['Spa & Wellness', 'Accessories'],
+    appliesTo: ['Edible Salt', 'Spa & Wellness', 'Accessories'],
   },
   {
     slug: 'small-retail-pouch',
