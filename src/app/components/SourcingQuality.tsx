@@ -72,8 +72,8 @@ export function SourcingQuality() {
               loading="lazy"
               decoding="async"
               sizes="(min-width: 1024px) 50vw, calc(100vw - 48px)"
-              wrapperClassName="w-full min-h-[260px] sm:min-h-[360px]"
-              imgClassName="w-full h-auto object-contain"
+              wrapperClassName="w-full"
+              imgClassName="block w-full h-auto object-contain"
             />
           </div>
 
