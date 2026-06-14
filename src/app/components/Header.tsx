@@ -22,6 +22,7 @@ import {
 import { useState } from "react";
 import { useTheme } from "next-themes";
 import { Link, NavLink } from "react-router-dom";
+import { contact } from "../../data/contact";
 import { imageUrls } from "../../data/imageUrls";
 
 export function Header() {
@@ -68,18 +69,18 @@ export function Header() {
           <div className="flex flex-wrap items-center justify-between text-sm">
             <div className="flex items-center gap-6">
               <a
-                href="mailto:info@freshrootspinksalt.com"
+                href={`mailto:${contact.email}`}
                 className="flex items-center gap-2 hover:text-white/90 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                <span className="hidden sm:inline">info@freshrootspinksalt.com</span>
+                <span className="hidden sm:inline">{contact.email}</span>
               </a>
               <a
-                href="tel:+92"
+                href={contact.telUrl}
                 className="flex items-center gap-2 hover:text-white/90 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                <span className="hidden sm:inline">+92 XXX XXXXXXX</span>
+                <span className="hidden sm:inline">{contact.displayPhoneNumber}</span>
               </a>
             </div>
             <div className="text-sm">Exporters | Pakistan</div>

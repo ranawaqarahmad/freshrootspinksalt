@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { contact } from '../../data/contact';
 import { imageUrls } from '../../data/imageUrls';
 
 export function Footer() {
@@ -108,16 +109,16 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#E88B7F] flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                 <div>
-                  <a href="mailto:info@freshrootspinksalt.com" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
-                    info@freshrootspinksalt.com
+                  <a href={`mailto:${contact.email}`} className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                    {contact.email}
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#E88B7F] flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                 <div>
-                  <a href="tel:+92" className="text-stone-400 hover:text-[#3D9B93] transition-colors">
-                    +92 XXX XXXXXXX
+                  <a href={contact.telUrl} className="text-stone-400 hover:text-[#3D9B93] transition-colors">
+                    {contact.displayPhoneNumber}
                   </a>
                 </div>
               </li>
@@ -125,8 +126,12 @@ export function Footer() {
                 <MapPin className="w-5 h-5 text-[#E88B7F] flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                 <div>
                   <span className="text-stone-400">
-                    [Your Address]<br />
-                    Pakistan
+                    {contact.addressLines.map((line) => (
+                      <span key={line}>
+                        {line}
+                        <br />
+                      </span>
+                    ))}
                   </span>
                 </div>
               </li>

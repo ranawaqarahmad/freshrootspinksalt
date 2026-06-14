@@ -65,15 +65,15 @@ export function SourcingQuality() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative mx-auto w-full max-w-[620px] overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-stone-200/70 dark:bg-stone-900 dark:ring-stone-800">
             <ImageWithSkeleton
-              src={imageUrls.spaWellness}
-              alt="Quality Control"
+              src={imageUrls.sourcingProcess}
+              alt="Fresh Roots process: quality sourcing, lab testing, secure packaging, and reliable delivery"
               loading="lazy"
               decoding="async"
               sizes="(min-width: 1024px) 50vw, calc(100vw - 48px)"
-              wrapperClassName="w-full h-[500px]"
-              imgClassName="w-full h-full object-cover"
+              wrapperClassName="w-full min-h-[260px] sm:min-h-[360px]"
+              imgClassName="w-full h-auto object-contain"
             />
           </div>
 

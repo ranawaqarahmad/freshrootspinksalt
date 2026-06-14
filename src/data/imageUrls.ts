@@ -34,6 +34,7 @@ export const imageUrls = {
   animalLick: cloudinaryUrl('v1769536579/animal_lick_salt_ndskd1.jpg'),
   tilesBricks: cloudinaryUrl('v1769536586/tiles_and_bricks_vqvez8.jpg'),
   spaWellness: cloudinaryUrl('v1769536584/spa_and_wellness_xalnvi.jpg'),
+  sourcingProcess: cloudinaryUrl('v1781467078/our_process_image_wa50f3.png'),
   decorCraft: cloudinaryUrl('v1769536580/decor_and_craft_g1akht.jpg'),
   accessories: cloudinaryUrl('v1769536578/accessories_ltxwjf.jpg'),
   rawIndustrial: cloudinaryUrl('v1769536584/raw_industrial_salt_zvcv7n.jpg'),

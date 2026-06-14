@@ -1,5 +1,7 @@
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { BackToTopButton } from './components/BackToTopButton';
+import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton';
 import { Outlet } from 'react-router-dom';
 
 export default function App() {
@@ -10,6 +12,8 @@ export default function App() {
         <Outlet />
       </main>
       <Footer />
+      <BackToTopButton />
+      <WhatsAppFloatingButton />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { Send, Mail, Phone, MapPin } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { contact } from '../../data/contact';
 import { categories } from '../../data/products';
 
 export function RFQForm() {
@@ -113,10 +114,10 @@ export function RFQForm() {
                   <div>
                     <div className="text-sm text-white/80 mb-1">Email</div>
                     <a
-                      href="mailto:info@freshrootspinksalt.com"
+                      href={`mailto:${contact.email}`}
                       className="text-white hover:text-white/90 break-all"
                     >
-                      info@freshrootspinksalt.com
+                      {contact.email}
                     </a>
                   </div>
                 </div>
@@ -127,8 +128,8 @@ export function RFQForm() {
                   </div>
                   <div className="min-w-0">
                     <div className="text-sm text-white/80 mb-1">Phone</div>
-                    <a href="tel:+92" className="text-white hover:text-white/90">
-                      +92 XXX XXXXXXX
+                    <a href={contact.telUrl} className="text-white hover:text-white/90">
+                      {contact.displayPhoneNumber}
                     </a>
                   </div>
                 </div>
@@ -140,8 +141,12 @@ export function RFQForm() {
                   <div className="min-w-0">
                     <div className="text-sm text-white/80 mb-1">Address</div>
                     <div className="text-white">
-                      [Your Address]<br />
-                      Pakistan
+                      {contact.addressLines.map((line) => (
+                        <span key={line}>
+                          {line}
+                          <br />
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -172,7 +177,16 @@ export function RFQForm() {
             <div className="bg-stone-100 dark:bg-stone-900 p-6 rounded-xl border border-stone-200 dark:border-stone-800">
               <p className="text-sm text-stone-700 dark:text-stone-300">
                 <strong>Note:</strong> For urgent inquiries, please contact us directly
-                via phone or WhatsApp. We typically respond to RFQs within 24 business hours.
+                via phone or{' '}
+                <a
+                  href={contact.whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[#3D9B93] hover:underline"
+                >
+                  WhatsApp
+                </a>
+                . We typically respond to RFQs within 24 business hours.
               </p>
             </div>
           </div>
