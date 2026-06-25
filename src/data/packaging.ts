@@ -130,7 +130,7 @@ export const packagingItems: PackagingItem[] = [
     material: 'Wooden crate packaging',
     highlights: ['Heavy-duty protection', 'Export safe', 'Reduced breakage'],
     specs: ['Custom sizes', 'Reinforced corners', 'Pallet compatible'],
-    appliesTo: ['Animal Lick Salt', 'Decor & Crafts', 'Tiles & Bricks'],
+    appliesTo: ['Animal Lick Salt', 'Decor & Crafts', 'Tiles & Bricks', 'Spa & Wellness'],
   },
   {
     slug: 'shrink-wrapped-pallets',
@@ -208,7 +208,7 @@ export const packagingItems: PackagingItem[] = [
     material: 'Decorative gift boxes',
     highlights: ['Premium unboxing', 'Protective inserts', 'Retail gifting'],
     specs: ['Custom prints', 'Insert trays', 'Retail shelf ready'],
-    appliesTo: ['Decor & Crafts'],
+    appliesTo: ['Decor & Crafts', 'Spa & Wellness'],
   },
   {
     slug: 'sample-packs',

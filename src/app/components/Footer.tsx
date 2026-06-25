@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { contact } from '../../data/contact';
 import { imageUrls } from '../../data/imageUrls';
@@ -23,18 +23,32 @@ export function Footer() {
               products from Pakistan.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-[#3D9B93] transition-colors">
+              <a
+                href="https://www.facebook.com/freshrootspinksalt/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Fresh Roots Pink Salt on Facebook"
+                className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-[#3D9B93] transition-colors"
+              >
                 <Facebook className="w-5 h-5" strokeWidth={1.5} />
               </a>
-              <a href="#" className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-[#3D9B93] transition-colors">
+              <a
+                href="https://www.instagram.com/freshrootspinksalt/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Fresh Roots Pink Salt on Instagram"
+                className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-[#3D9B93] transition-colors"
+              >
                 <Instagram className="w-5 h-5" strokeWidth={1.5} />
               </a>
+              {/*
               <a href="#" className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-[#3D9B93] transition-colors">
                 <Linkedin className="w-5 h-5" strokeWidth={1.5} />
               </a>
               <a href="#" className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-[#3D9B93] transition-colors">
                 <Twitter className="w-5 h-5" strokeWidth={1.5} />
               </a>
+              */}
             </div>
           </div>
           

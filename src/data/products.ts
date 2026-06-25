@@ -27,7 +27,7 @@ export const products: Product[] = [
       "retail-stand-up-pouches",
       "jar-packaging",
       "food-grade-pp-bags",
-      "bulk-pp-woven-bags",
+      "labeled-export-boxes",
     ],
     description:
       "Fine Himalayan pink salt is a smooth, powder-like grade that dissolves quickly and blends evenly. Ideal for daily cooking, baking, and food processing. Best for home kitchens, restaurants, and packaged food brands.",
@@ -44,7 +44,7 @@ export const products: Product[] = [
       "retail-stand-up-pouches",
       "jar-packaging",
       "food-grade-pp-bags",
-      "bulk-pp-woven-bags",
+      "labeled-export-boxes",
     ],
     description:
       "Small grain crystals dissolve easily while keeping a natural crystal look. Balanced for cooking and table use. Best for gourmet cooking, retail packs, and seasoning jars.",
@@ -58,10 +58,10 @@ export const products: Product[] = [
     // shade: "dark",
     image: imageUrls.granularSalt,
     packagingSlugs: [
-      "grinder-bottles",
-      "retail-stand-up-pouches",
+     "retail-stand-up-pouches",
       "jar-packaging",
-      "bulk-pp-woven-bags",
+      "food-grade-pp-bags",
+      "labeled-export-boxes",
     ],
     description:
       "Granular crystals hold their shape during cooking and offer controlled seasoning. Preferred for grinders and finishing dishes. Best for salt grinders, seasoning blends, and professional kitchens.",
@@ -75,9 +75,9 @@ export const products: Product[] = [
     // shade: "medium",
     image: imageUrls.rockSalt,
     packagingSlugs: [
-      "grinder-bottles",
       "retail-stand-up-pouches",
-      "bulk-pp-woven-bags",
+      "jar-packaging",
+      "food-grade-pp-bags",
       "labeled-export-boxes",
     ],
     description:
@@ -101,7 +101,7 @@ export const products: Product[] = [
     packaging: "Individual wrap, carton, or palletized",
     category: "Animal Lick Salt",
     image: imageUrls.lickSalt2KG,
-    packagingSlugs: ["carton-packs", "shrink-wrapped-pallets", "labeled-export-boxes"],
+    packagingSlugs: ["carton-packs", "wooden-crates", "salt-lamp-wooden-basket", "labeled-export-boxes"],
     description:
       "Small animal lick salt blocks provide essential natural minerals to livestock. Suitable for controlled feeding environments and smaller animals. Best for small livestock and indoor feeding areas.",
   },
@@ -112,7 +112,7 @@ export const products: Product[] = [
     packaging: "Individual wrap, carton, or palletized",
     category: "Animal Lick Salt",
     image: imageUrls.lickSalt4KG,
-    packagingSlugs: ["carton-packs", "shrink-wrapped-pallets", "labeled-export-boxes"],
+    packagingSlugs: ["carton-packs", "wooden-crates", "salt-lamp-wooden-basket", "labeled-export-boxes"],
     description:
       "Medium-sized lick salt blocks are long-lasting and suitable for regular livestock feeding. Weather resistant with consistent mineral supply. Best for cattle, goats, and horses.",
   },
@@ -123,7 +123,7 @@ export const products: Product[] = [
     packaging: "Individual wrap, carton, or palletized",
     category: "Animal Lick Salt",
     image: imageUrls.lickSalt6KG,
-    packagingSlugs: ["carton-packs", "shrink-wrapped-pallets", "labeled-export-boxes"],
+    packagingSlugs: ["wooden-crates", "carton-packs", "salt-lamp-wooden-basket", "labeled-export-boxes"],
     description:
       "Large animal lick salt blocks are designed for outdoor use and grazing fields. Their size ensures durability and extended usage. Best for open farms and large livestock herds.",
   },
@@ -134,7 +134,7 @@ export const products: Product[] = [
     packaging: "Individual wrap, carton, or palletized",
     category: "Animal Lick Salt",
     image: imageUrls.hangingLickSalt,
-    packagingSlugs: ["carton-packs", "shrink-wrapped-pallets", "labeled-export-boxes"],
+    packagingSlugs: ["carton-packs", "wooden-crates", "salt-lamp-wooden-basket", "labeled-export-boxes"],
     description:
       "Hanging salt licks reduce ground contact and contamination, improving hygiene and reducing wastage. Best for barns, stables, and managed grazing systems.",
   },
@@ -145,7 +145,7 @@ export const products: Product[] = [
     packaging: "Loose, carton, or palletized",
     category: "Tiles & Bricks",
     image: imageUrls.standardSaltBrick,
-    packagingSlugs: ["carton-packs", "wooden-crates", "shrink-wrapped-pallets"],
+    packagingSlugs: ["wooden-crates", "carton-packs", "labeled-export-boxes"],
     description:
       "Standard salt bricks are widely used in salt therapy rooms, spas, and wellness centers. Their thickness provides strength and long service life. Best for salt rooms, spa walls, and wellness centers.",
   },
@@ -156,7 +156,7 @@ export const products: Product[] = [
     packaging: "Loose, carton, or palletized",
     category: "Tiles & Bricks",
     image: imageUrls.smallerSaltBrick,
-    packagingSlugs: ["carton-packs", "wooden-crates", "shrink-wrapped-pallets"],
+    packagingSlugs: ["wooden-crates", "carton-packs", "labeled-export-boxes"],
     description:
       "Slim salt bricks are lighter and easier to install. Commonly used for decorative walls and interior design projects. Best for interior decor and light wall installations.",
   },
@@ -167,7 +167,7 @@ export const products: Product[] = [
     packaging: "Carton, crate, or palletized",
     category: "Tiles & Bricks",
     image: imageUrls.standardSaltBrick,
-    packagingSlugs: ["carton-packs", "wooden-crates", "shrink-wrapped-pallets"],
+    packagingSlugs: ["wooden-crates", "carton-packs", "labeled-export-boxes"],
     description:
       "Rectangular salt tiles create uniform patterns and smooth wall finishes for wellness rooms and decorative applications.",
   },
@@ -178,7 +178,7 @@ export const products: Product[] = [
     packaging: "Carton, crate, or palletized",
     category: "Tiles & Bricks",
     image: imageUrls.smallerSaltBrick,
-    packagingSlugs: ["wooden-crates", "carton-packs", "shrink-wrapped-pallets"],
+    packagingSlugs: ["wooden-crates", "carton-packs", "labeled-export-boxes"],
     description:
       "Large-format salt tiles are ideal for premium spa interiors and architectural projects that require fewer joints.",
   },
@@ -189,7 +189,7 @@ export const products: Product[] = [
     packaging: "Carton, crate, or palletized",
     category: "Tiles & Bricks",
     image: imageUrls.standardSaltBrick,
-    packagingSlugs: ["carton-packs", "wooden-crates", "shrink-wrapped-pallets"],
+    packagingSlugs: ["wooden-crates", "carton-packs","labeled-export-boxes"],
     description:
       "Square tiles cover larger surface areas and are suitable for modern wall designs.",
   },
@@ -200,7 +200,7 @@ export const products: Product[] = [
     packaging: "Crate or palletized",
     category: "Tiles & Bricks",
     image: imageUrls.saltPanels,
-    packagingSlugs: ["wooden-crates", "shrink-wrapped-pallets", "labeled-export-boxes"],
+    packagingSlugs: ["wooden-crates","carton-packs", "labeled-export-boxes"],
     description:
       "Interlocking panels simplify installation and ensure alignment. Commonly used in professional salt room construction.",
   },
@@ -213,9 +213,9 @@ export const products: Product[] = [
     image: imageUrls.bathSpaSalt,
     packagingSlugs: [
       "retail-stand-up-pouches",
-      "jar-packaging",
-      "bulk-pp-woven-bags",
       "reseal-zipper-bags",
+      "jar-packaging",
+      "food-grade-pp-bags"
     ],
     description:
       "Bath salt is used for relaxation, muscle relief, and skin care. It dissolves in warm water and is available in multiple grain sizes. Best for spas, wellness centers, and home baths.",
@@ -231,6 +231,7 @@ export const products: Product[] = [
       "jar-packaging",
       "retail-stand-up-pouches",
       "custom-printed-boxes",
+      "carton-packs",
       "labeled-export-boxes",
     ],
     description:
@@ -245,9 +246,10 @@ export const products: Product[] = [
     image: imageUrls.massageStones,
     packagingSlugs: [
       "custom-printed-boxes",
-      "carton-packs",
-      "labeled-export-boxes",
       "decor-gift-packaging",
+      "carton-packs",
+      "wooden-crates",
+      "labeled-export-boxes",
     ],
     description:
       "Massage stones are smooth salt pieces used in therapy sessions. When warmed, they help relax muscles and improve blood flow.",
@@ -260,10 +262,12 @@ export const products: Product[] = [
     category: "Decor & Crafts",
     image: imageUrls.saltLamps,
     packagingSlugs: [
-      "carton-packs",
-      "custom-printed-boxes",
       "salt-lamp-wooden-basket",
+      "iron-basket-lamp-packaging",
+      "custom-printed-boxes",
+      "carton-packs",
       "wooden-crates",
+      "labeled-export-boxes",
     ],
     description:
       "Natural salt lamps are carved from solid salt crystals. They provide warm ambient lighting for decorative and hospitality environments.",
@@ -276,10 +280,11 @@ export const products: Product[] = [
     category: "Decor & Crafts",
     image: imageUrls.saltLampsSphere,
     packagingSlugs: [
-      "custom-printed-boxes",
       "decor-gift-packaging",
+      "custom-printed-boxes",
       "carton-packs",
       "wooden-crates",
+      "labeled-export-boxes",
     ],
     description:
       "Shaped lamps such as spheres add decorative value and visual appeal in home and commercial interiors.",
@@ -292,9 +297,10 @@ export const products: Product[] = [
     category: "Decor & Crafts",
     image: imageUrls.candleHolders,
     packagingSlugs: [
-      "custom-printed-boxes",
       "decor-gift-packaging",
+      "custom-printed-boxes",
       "carton-packs",
+      "wooden-crates",
       "labeled-export-boxes",
     ],
     description:
@@ -309,9 +315,10 @@ export const products: Product[] = [
     image: imageUrls.sculpturesDecor,
     packagingSlugs: [
       "wooden-crates",
-      "decor-gift-packaging",
       "carton-packs",
       "shrink-wrapped-pallets",
+      "labeled-export-boxes",
+      "decor-gift-packaging",
     ],
     description:
       "Handcrafted salt sculptures are used as decorative pieces and custom designs for branded spaces.",
@@ -328,6 +335,7 @@ export const products: Product[] = [
       "carton-packs",
       "wooden-crates",
       "labeled-export-boxes",
+      "shrink-wrapped-pallets",
     ],
     description:
       "Salt plates are used for cooking, serving, and food presentation. They retain heat and enhance flavor.",
@@ -349,7 +357,7 @@ export const products: Product[] = [
     packaging: "Bags or cartons",
     category: "Raw / Industrial",
     image: imageUrls.saltAdhesive,
-    packagingSlugs: ["carton-packs", "bulk-pp-woven-bags", "labeled-export-boxes"],
+    packagingSlugs: ["carton-packs", "bulk-pp-woven-bags", "shrink-wrapped-pallets", "labeled-export-boxes"],
     description:
       "Special adhesive used for installing salt tiles and bricks securely.",
   },

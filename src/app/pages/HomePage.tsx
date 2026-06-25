@@ -1,23 +1,39 @@
-import { Hero } from "../components/Hero";
+import { lazy, Suspense } from "react";
 import { HomeBannerSliderSlick } from "../components/HomeBannerSliderSlick";
-import { ProductCategories } from "../components/ProductCategories";
-import { AboutSection } from "../components/AboutSection";
-import { SourcingQuality } from "../components/SourcingQuality";
-import { PackagingSection } from "../components/PackagingSection";
-import { PackagingCatalogSection } from "../components/PackagingCatalogSection";
-import { HomeCtaSection } from "../components/HomeCtaSection";
+
+const Hero = lazy(() =>
+  import("../components/Hero").then((module) => ({ default: module.Hero }))
+);
+const AboutSection = lazy(() =>
+  import("../components/AboutSection").then((module) => ({ default: module.AboutSection }))
+);
+const ProductCategories = lazy(() =>
+  import("../components/ProductCategories").then((module) => ({ default: module.ProductCategories }))
+);
+const PackagingCatalogSection = lazy(() =>
+  import("../components/PackagingCatalogSection").then((module) => ({
+    default: module.PackagingCatalogSection,
+  }))
+);
+const SourcingQuality = lazy(() =>
+  import("../components/SourcingQuality").then((module) => ({ default: module.SourcingQuality }))
+);
+const HomeCtaSection = lazy(() =>
+  import("../components/HomeCtaSection").then((module) => ({ default: module.HomeCtaSection }))
+);
 
 export default function HomePage() {
   return (
     <>
       <HomeBannerSliderSlick />
-      <Hero />
-      <AboutSection />
-      <ProductCategories />
-      {/* <PackagingSection /> */}
-      <PackagingCatalogSection />
-      <SourcingQuality />
-      <HomeCtaSection />
+      <Suspense fallback={null}>
+        <Hero />
+        <AboutSection />
+        <ProductCategories />
+        <PackagingCatalogSection />
+        <SourcingQuality />
+        <HomeCtaSection />
+      </Suspense>
     </>
   );
 }

@@ -60,6 +60,8 @@ export function HomeBannerSliderSlick() {
             {slides.map((slide, index) => {
               const isFirstSlide = index === 0;
               const isActiveSlide = index === activeIndex;
+              const shouldLoadImage =
+                isActiveSlide || index === (activeIndex + 1) % slides.length || isFirstSlide;
 
               return (
                 <div
@@ -70,16 +72,18 @@ export function HomeBannerSliderSlick() {
                   }`}
                 >
                   <div className="absolute inset-0">
-                    <ImageWithSkeleton
-                      src={slide.image}
-                      alt={slide.title}
-                      loading={isFirstSlide ? "eager" : "lazy"}
-                      decoding="async"
-                      fetchPriority={isFirstSlide ? "high" : "auto"}
-                      sizes="(min-width: 1280px) 1216px, calc(100vw - 48px)"
-                      wrapperClassName="w-full h-full"
-                      imgClassName="w-full h-full object-cover"
-                    />
+                    {shouldLoadImage ? (
+                      <ImageWithSkeleton
+                        src={slide.image}
+                        alt={slide.title}
+                        loading={isFirstSlide ? "eager" : "lazy"}
+                        decoding="async"
+                        fetchPriority={isFirstSlide ? "high" : "auto"}
+                        sizes="(min-width: 1280px) 1216px, calc(100vw - 48px)"
+                        wrapperClassName="w-full h-full"
+                        imgClassName="w-full h-full object-cover"
+                      />
+                    ) : null}
                     <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
                   </div>
                   <div className="relative h-full flex items-center px-6 sm:px-12 lg:px-16">
